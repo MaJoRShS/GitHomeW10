@@ -1,0 +1,125 @@
+Curso Git Udemy
+
+Aula 1 : Introdução
+Fala só dele mesmo
+
+Aula 2 : Gerencia de Configuração de Software
+
+
+Durante o desenvolvimento é necessario saber
+ O que mudou e quando mudou?
+ Porque mudou?
+ Quem fez a mudança?
+ Podemos reproduzir está mudança?
+
+Identificação
+
+Documentação
+
+Controle
+
+Auditoria
+
+
+Artefatos
+
+Código fonte
+
+Documentação do Software
+
+Manual do Usuario
+
+
+
+Aula 3 : Controle de Versão
+
+ele facilita fazendo merge das mudanças
+
+Sw de controle de versão
+
+SVN - subversion
+
+Mercurial  - Ha
+
+CVS - concurrent versioning system
+
+Bazaar
+
+Git
+
+
+
+Aula 4 : Github e alternativas
+
+O que é o Github
+
+é um servidor de repositórios git, e o Git é o proprio sistema de gerenciamento de versão
+
+
+
+Aula 5 : Ferramentas Git
+
+
+baixe o git e instale
+
+crie uma conta no github
+
+verifique qual inteface grafica funciona melhor para você, tem uma lista de interfaces no proprio site do git.
+
+
+
+
+Aula 6 : Chave SSH e documentação Git
+
+
+seguir o passo a passo para criar uma chave SSH e conectar ela no seu GitHub, tem que importar a chave ssh public do git do pc para o github se não você não consegue conectar com seu repositório do github.
+se usa o "ssh-keygen" que ele gera a chave publica , depois você utiliza "cat ~/.ssh/id_rsa.pub" que ele retorna o valor da chava composto do nome do PC ex :"(chav publica SSH)ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaKAcJz4LRNJmv4sBMuRX34/tcqh4YxxIMNnEFYiasXqbkXspgkPDUhCI+kjAqmODJxaXzRWHluw0jxbq12fu7gi8Sd9XZgPF88ZpsrtsUHECT0x1aZQqbppkuVB13cImgMxLdtBoPmR+tc7O7Y9tBMUzJWiULmBaWuwYMuK4sZPnA6ZFw8G6a1XLsPyGF2MFrJtU1dO4a8tkiXMeAqgU0htP4WHKCDXwvuYOYxkAEL8W8YaaZCUGPrmENM2JD/7UDZ33zeFvqoBGoj076xbcHZaMUP6njnaMLAWLbYDd3wG426CfC+eWRY831za5ym5F82g7n2teEYtUItPUAWFX1 (nome do PC)Lucas@NOTE-GR5-02"
+
+
+Aula 7 : Primeiros comandos Git
+
+git (comando) help = Mostra o manual do comando
+
+git init = inicia o repositório
+
+git config --global user.name "(meu nome)"
+
+git config --global user.email "(meu email)"
+
+git add (nome do arquivo + extensão) 
+
+git commit (envia o arquivo para o repositório git), em seguida abre um editor de texto para que você digite o que você fez nesse commit, como no meu ta com o "VI" 1º aperta o "i" que entra no modo de inserção digita o que você quer digitar e ai aperta "esc" que ele volta para os comandos do "VI" depois disso digita ":wq" serve para salvar o arquivo, ai pronto seu arquivo foi commitado.
+
+git status = mostra o status atual do seu repositório
+
+git log = mosta todos os log's de alteração
+
+
+
+Aula : 8 Criando repositório no GitHub
+
+Entra no GitHub e la cria um novo repositório, depois copia o que vai aparecer no segundo bloco que tem o titulo "…or push an existing repository from the command line" um comando de cada vez
+
+git remote -v serve para você verificar os remotes que você já tem no seu repositório e ainda o que você pode fazer com ele , no caso 
+"Lucas@NOTE-GR5-02 MINGW64 ~/Desktop/ShadowsCompany (master)
+$ git remote -v
+origin  git@github.com:MaJoRShS/CursoUdemy.git (fetch)
+origin  git@github.com:MaJoRShS/CursoUdemy.git (push)
+"
+
+fetch = baixa as coisas do repositório
+push =  envia as coisas para o repositório
+
+
+sempre temos que configurar a branch do repositório ou seja a linha de desenvolvimento do repositório, e quando se usa o "git push"  a 1ª vez ele mostra como fazer para setar a branch master.
+
+"git push --set-upstream origin master" =  Seta a branch master do repositório
+
+
+Aula 9 : Editando o README.md
+
+Esse arquivo é o tal do leia-me, na teoria eu devo colocar todas as recomendações e tudo que a de mais sagrado no meu codigo nesse cara aqui, da para inserir um titulo usando "#"  da para inserir imagens colocando "![caminho-da-imagem.extensão](comentario da imagem)".
+
+ai depois usa o "git status" que ele vai mostrar tudo de novo que está na pasta e que aida não foi commitado, e ai para adicionar mais um arquivo para o meu repositório sem ter que dar "git add" em um por um eu uso o "git add ." que ele adiciona a minha fila de commit tudo que entrou novo no meu repositório.
+
+git commit -m "O Texto que ia no commit" = Aqui é um atalho para commitar sem ter que entrar na tela do "VI" ou quer merda do tipo.
