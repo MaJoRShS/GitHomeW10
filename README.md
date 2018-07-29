@@ -3,4 +3,4 @@
 
 é só para conter essa parada ai no Meu repositório.
 
-![./coding-wallpapers-11.jpg](Sei la)
+![coding-wallpapers-11.jpg](Sei la)
