@@ -123,3 +123,22 @@ Esse arquivo é o tal do leia-me, na teoria eu devo colocar todas as recomendaç
 ai depois usa o "git status" que ele vai mostrar tudo de novo que está na pasta e que aida não foi commitado, e ai para adicionar mais um arquivo para o meu repositório sem ter que dar "git add" em um por um eu uso o "git add ." que ele adiciona a minha fila de commit tudo que entrou novo no meu repositório.
 
 git commit -m "O Texto que ia no commit" = Aqui é um atalho para commitar sem ter que entrar na tela do "VI" ou quer merda do tipo.
+
+
+Aula 9 :Revisão dos comandos
+
+
+git status = mostra o status do arquivo
+
+git log = mostra o que já foi feito
+
+git add "nome_do_arquivo.extensão"
+
+git add .  = manda todos os arquivos de uma unica vez
+
+git commit = insere uma descrição breve do que você fez
+
+git commit -m "" = aqui ele não entra no modo de edilção e já coloca como descrição o que está dentro do "".
+
+git push = sincroniza os arquivos nos repositorios.
+
