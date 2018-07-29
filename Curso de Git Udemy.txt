@@ -1,4 +1,4 @@
-Curso Git Udemy
+﻿Curso Git Udemy
 
 Aula 1 : Introdução
 Fala só dele mesmo
@@ -125,7 +125,7 @@ ai depois usa o "git status" que ele vai mostrar tudo de novo que está na pasta
 git commit -m "O Texto que ia no commit" = Aqui é um atalho para commitar sem ter que entrar na tela do "VI" ou quer merda do tipo.
 
 
-Aula 9 :Revisão dos comandos
+Aula 10 :Revisão dos comandos
 
 
 git status = mostra o status do arquivo
@@ -142,3 +142,34 @@ git commit -m "" = aqui ele não entra no modo de edilção e já coloca como de
 
 git push = sincroniza os arquivos nos repositorios.
 
+
+
+Aula 11 : Estado dos Arquivos no Git
+
+Não monitorado (untracked)
+
+Modificado (modified)
+
+Preparado (staged)
+
+Consolidado (commited)
+
+
+git diff = mostra diferenças entre commits e brands 
+
+
+
+Aula 12 : Exercício de commit
+
+Remover uma linha de um arquivo
+
+Adicione uma nova linha no arquivo
+
+Adicione um novo arquivo com pelo menos uma linha
+ 
+Faça o commit e o push das alterações
+
+Veja as diferenças do commit pelo GITHUB
+
+
+Para Fazer o Exercicio
