@@ -170,3 +170,36 @@ Adicione um novo arquivo com pelo menos uma linha
 Faça o commit e o push das alterações
 
 Veja as diferenças do commit pelo GITHUB
+
+
+Aula 13 : Comandos Clone e Pull
+
+git clone = ele também inicia um repositório porem ele copia um repositorio para a nossa pasta
+
+git pull = ele puxa todas as alterações do repositorios e só baixa os commits novos.
+
+
+Aula 14 : Exercício de colaboração em repositórios
+
+Aqui é importante configurar o cara como colaborador porque se não ele não consegue mandar "push" no seu repositorio.
+
+Aula 15 : Navegando no histórico
+
+git checkout = ele volta o arquivo ou o commit ou exatamente como ele era no momento que ele foi feito.
+
+Ai você da um "git log" pego o código do commit e passa ele como parâmetro e ai o git vai mudar o estado do repositorio para igual estava naquele commit em especifico, isso siginifica que você pode até compilar novamente aquele arquivo, mais para altera-lo o git recomenda que você crie uma branch nova usando o "git checkout -b (nome da branch)", depois para retornar o repositorio para o estado atual da um "git checkout master". 
+
+
+Aula 16 : Desfazendo com Checkout 
+
+git checkout --(nome do arquivo) = aqui ele desfaz a minha alteração ou seja alterei coisa errada e quero desfazer uso isso e ele retorna para o estado antigo do arquivo.
+
+git checkout HEAD --"nome do arquivo" = para quando eu já dei o add, no arquivo e quero retornalo para o estado antigo.
+
+Aula 17 : Desfazendo com Revert e Reset
+
+git revert "código do commit"= ele sempre vai ser o inverso de tudo que você fizer ou seja se você incluiu ele exclui, se commitou com 1 ele remove esse commit e deixa no estado antigo.
+
+git reset HEAD~1 = aqui ele reseta mesmo o que foi feito(no cado aqui como eu passei "~1" ele vai voltar só um commit se eu passar "~2" ele volta dois commits e assim por diante), ou seja se você tiver feito 1 commit e colocar esse cara aqui ele reseta para o estado antigo o que você fez, porém se você ja tiver dado o "push" melhor não usalo.
+
+git reset --hard = aqui ele apaga mesmo do historico o commit que você fez, no revert ele deixa la as alterações aqui não aqui ele remove até o historico da sua alteração.
