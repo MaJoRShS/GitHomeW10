@@ -1,4 +1,4 @@
-﻿Curso Git Udemy
+Curso Git Udemy
 
 Aula 1 : Introdução
 Fala só dele mesmo
@@ -203,3 +203,13 @@ git revert "código do commit"= ele sempre vai ser o inverso de tudo que você f
 git reset HEAD~1 = aqui ele reseta mesmo o que foi feito(no cado aqui como eu passei "~1" ele vai voltar só um commit se eu passar "~2" ele volta dois commits e assim por diante), ou seja se você tiver feito 1 commit e colocar esse cara aqui ele reseta para o estado antigo o que você fez, porém se você ja tiver dado o "push" melhor não usalo.
 
 git reset --hard = aqui ele apaga mesmo do historico o commit que você fez, no revert ele deixa la as alterações aqui não aqui ele remove até o historico da sua alteração.
+
+Aula 18 : Conflitos
+
+conflitos acontecem quando as alterações são feitas na mesma linha, ou seja eu alterei uma linha outra pessoa faz a mesma coisa, e como o git não sabe como resolver ele vai te avisar do que está acontecendo para que você resolva.
+
+Aula 19 : Exercício de conflitos
+
+ Tenho que criar um problema no repositório e depois corrigilo.
+
+eu e o mano devemos alterar a mesma linha e ai depois eu devo corrigir o problema com o "git pull", entro no arquvio depois de usar o "git pull" e removo na mão mesmo o que estiver entre o sinal de "=" e deixo as alterações nas linhas certas (achei meio bosta mais ok), ai segue todos os passos para subir a alteração no repositório.
