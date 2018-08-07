@@ -213,3 +213,33 @@ Aula 19 : Exercício de conflitos
  Tenho que criar um problema no repositório e depois corrigilo.
 
 eu e o mano devemos alterar a mesma linha e ai depois eu devo corrigir o problema com o "git pull", entro no arquvio depois de usar o "git pull" e removo na mão mesmo o que estiver entre o sinal de "=" e deixo as alterações nas linhas certas (achei meio bosta mais ok), ai segue todos os passos para subir a alteração no repositório.
+
+Aula 20 : Resolvendo conflitos com Merge
+
+aqui ele fez a mesma merda da aula pasada, mais mostrou que depois de remover as linhas la, ele te deixa já com uma mensagem padrão de "merge", e que se eu usar o terminal "fish" também aparece uma mensagem depois do nome do repositorio.
+
+
+Aula 21 : Visualizando o histórico em uma Interface Gráfica
+
+
+Aqui ele mostrou como é o github e o git eye, é legal , deve facilitar muito a vida,mais ao mesmo tempo a vibe deve ser o terminal.
+
+
+Seção: 4
+Branching, Merge e Rebase
+
+
+Aula 22 : Branching
+
+Branching = Ramificações
+
+git branch mostra o nome das branchis que tem no seu projeto, e o * antes do nome indica que você está nela.
+
+git branch nomeDaBranch = isso serve para você criar uma nova branch no seu projeto.
+
+o "git status" também mostra em qual branch você está.
+
+git checkout nomeDaBranch = permite você mudar de uma branch para outra
+
+
+Aula 23 : Exercício de Branchs
