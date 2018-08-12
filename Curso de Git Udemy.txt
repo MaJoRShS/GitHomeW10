@@ -268,8 +268,20 @@ como que se usa você usa esse cara aqui para poder unir duas branchs, ou deixar
 
 
 
-Fazendo o exercicio de rebase.
+
+Aula 25 : Git Rebase
+
+Esse cara aqui é utilizando quando não se quer que a no tenha aqueles montes de linhas de progresso no histórico.
+
+
+
+Aula 26 : Exercício de Rebase
 
 Nova Aula fazendo a parada do Rebase, aqui vou fazer o exercicio de rebase, e ver no que da.
+
+
+Fazendo o exercicio de rebase.
+
+
 
 Fazendo exercicio de REBASE
