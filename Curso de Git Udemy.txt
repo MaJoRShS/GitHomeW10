@@ -1,4 +1,4 @@
-Curso Git Udemy
+﻿Curso Git Udemy
 
 Aula 1 : Introdução
 Fala só dele mesmo
@@ -247,3 +247,5 @@ Aula 23 : Exercício de Branch
 Criar uma nova branch, fazer dois commits nela, e depois voltar para sua branch inicail(master) e fazer um novo commit na mesma linha e dar um push nas duas, assim termos dois arquivos diferentes um em cada branch.
 
 e olhar no github essas mudanças.
+
+Nova Branch criada e alterações feitas, to criando essa parada aqui apenas para fazer o que manda na aula.
