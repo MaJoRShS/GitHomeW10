@@ -252,6 +252,12 @@ Nova Branch criada e alterações feitas, to criando essa parada aqui apenas par
 
 
 
+Aula 23 : Exercício de Branchs
+
+Nesse Arquivo estou dentro da branch outraBranch e estou alterando coisas apenas para verificar se as alterações ficam mesmo só nessa branch e se quando eu commitar não vai dar b.o no outro.
+Aqui o segundo commit que foi proposto na aula, e essa parada ficou mesmo na branch master só tem coisa da branch master, e na branch outraBranch só coisas dessa branch o cuidado aqui é sempre commitar na branch certa.
+
+
 Aula 24 : Git Merge e Exercício 
 
 
