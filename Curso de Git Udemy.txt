@@ -258,6 +258,7 @@ Nesse Arquivo estou dentro da branch outraBranch e estou alterando coisas apenas
 Aqui o segundo commit que foi proposto na aula, e essa parada ficou mesmo na branch master só tem coisa da branch master, e na branch outraBranch só coisas dessa branch o cuidado aqui é sempre commitar na branch certa.
 
 
+
 Aula 24 : Git Merge e Exercício 
 
 
@@ -268,3 +269,7 @@ como que se usa você usa esse cara aqui para poder unir duas branchs, ou deixar
 
 
 Fazendo o exercicio de rebase.
+
+Nova Aula fazendo a parada do Rebase, aqui vou fazer o exercicio de rebase, e ver no que da.
+
+Fazendo exercicio de REBASE
