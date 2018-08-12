@@ -249,3 +249,12 @@ Criar uma nova branch, fazer dois commits nela, e depois voltar para sua branch 
 e olhar no github essas mudanças.
 
 Nova Branch criada e alterações feitas, to criando essa parada aqui apenas para fazer o que manda na aula.
+
+
+
+Aula 24 : Git Merge e Exercício 
+
+
+gitr merge <branch> = ele mescla as duas branchs
+
+como que se usa você usa esse cara aqui para poder unir duas branchs, ou deixar uma delas com a info das duas, então quando se usa esse merge ele vai dar conflito, mais isso meio que não tem como fugir e ai depois de corrigir o conflito naquele gato monstro é só dar o push e olhar no github.
