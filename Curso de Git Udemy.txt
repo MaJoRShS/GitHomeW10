@@ -245,4 +245,4 @@ git checkout nomeDaBranch = permite você mudar de uma branch para outra
 Aula 23 : Exercício de Branchs
 
 Nesse Arquivo estou dentro da branch outraBranch e estou alterando coisas apenas para verificar se as alterações ficam mesmo só nessa branch e se quando eu commitar não vai dar b.o no outro.
-Aui o segundo commit que foi proposto na aula, e essa parada ficou mesmo na branch master só tem coisa da branch master, e na branch outraBranch só coisas dessa branch o cuidado aqui é sempre commitar na branch certa.
+Aqui o segundo commit que foi proposto na aula, e essa parada ficou mesmo na branch master só tem coisa da branch master, e na branch outraBranch só coisas dessa branch o cuidado aqui é sempre commitar na branch certa.
