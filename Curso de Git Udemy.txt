@@ -1,4 +1,4 @@
-Curso Git Udemy
+﻿Curso Git Udemy
 
 Aula 1 : Introdução
 Fala só dele mesmo
@@ -243,3 +243,5 @@ git checkout nomeDaBranch = permite você mudar de uma branch para outra
 
 
 Aula 23 : Exercício de Branchs
+
+Nesse Arquivo estou dentro da branch outraBranch e estou alterando coisas apenas para verificar se as alterações ficam mesmo só nessa branch e se quando eu commitar não vai dar b.o no outro.
