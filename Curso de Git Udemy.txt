@@ -242,4 +242,8 @@ o "git status" também mostra em qual branch você está.
 git checkout nomeDaBranch = permite você mudar de uma branch para outra
 
 
-Aula 23 : Exercício de Branchs
+Aula 23 : Exercício de Branch
+
+Criar uma nova branch, fazer dois commits nela, e depois voltar para sua branch inicail(master) e fazer um novo commit na mesma linha e dar um push nas duas, assim termos dois arquivos diferentes um em cada branch.
+
+e olhar no github essas mudanças.
