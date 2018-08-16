@@ -311,3 +311,4 @@ geralmente se usa interfaces graficas para gerenciar muitos arquivos ao invés d
 
 Aula 30 : Dando estrelas e seguindo no GitHub
 
+Serve basicamente para verificar o que você ou as outras pessoas estão "curtindo" no momento.
