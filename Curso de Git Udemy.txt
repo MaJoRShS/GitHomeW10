@@ -287,3 +287,7 @@ Fazendo o exercicio de rebase.
 Fazendo exercicio de REBASE
 
 Nova Aula fazendo a parada do Rebase, aqui vou fazer o exercicio de rebase, e ver no que da.
+
+
+Aula 27 : git fetch
+
