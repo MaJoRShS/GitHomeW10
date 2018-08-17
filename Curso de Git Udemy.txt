@@ -1,4 +1,4 @@
-﻿Curso Git Udemy
+﻿so Git Udemy
 
 Aula 1 : Introdução
 Fala só dele mesmo
@@ -289,5 +289,27 @@ Fazendo exercicio de REBASE
 Nova Aula fazendo a parada do Rebase, aqui vou fazer o exercicio de rebase, e ver no que da.
 
 
-Aula 27 : git fetch
 
+Aula 27 : Git Fetch
+
+
+quando se usa o "git pull" é quase a mesma coisa que fazer um fetch + merge.
+
+mais ai primeiro se tem que dar um git fetch e ele vai apenas baixar as alterações e mesmo assim depois eu preciso dar um git rebase e ai nessa caso o histórico fica como se eu tivesse feito todos esses commits um após o outro.
+
+Aula 28 : Tags
+
+Serve como um marcador de versão ou release, e nesse caso elas não avançam a menos que você crie uma nova, ou seja quando se usa o "git tag nome_da_tag" ele vai e grava como versões.
+
+Aula 28 : Introdução à aula
+
+Falou nada e disse que vai falar de gihub.
+
+
+Aula 29 : Interfaces Gráficas
+
+geralmente se usa interfaces graficas para gerenciar muitos arquivos ao invés de ir pelo terminal, porque nelas da para copiar os arquivos para a area de transferencia e ai da para você fazer varios commits separados.
+
+Aula 30 : Dando estrelas e seguindo no GitHub
+
+Serve basicamente para verificar o que você ou as outras pessoas estão "curtindo" no momento.
