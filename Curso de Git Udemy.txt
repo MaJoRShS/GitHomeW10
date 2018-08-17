@@ -1,4 +1,4 @@
-﻿so Git Udemy
+so Git Udemy
 
 Aula 1 : Introdução
 Fala só dele mesmo
@@ -313,3 +313,18 @@ geralmente se usa interfaces graficas para gerenciar muitos arquivos ao invés d
 Aula 30 : Dando estrelas e seguindo no GitHub
 
 Serve basicamente para verificar o que você ou as outras pessoas estão "curtindo" no momento.
+
+
+Aula 31 : Dando estrelas e seguindo no GitHub
+
+Esse cara serve apenas para que você siga as pessoas e as pessoas saibam quantas pessoas estão curtindo ou seguindo seus trabalhos.
+
+
+
+Aula 32 : Fork e Issues
+
+fork = é apenas copiar o repositorio para sua maquina e você pode trabalhar com ele.
+
+Issues = é mais ou menos como uma questão, ou um abrir um ticket e sempre que tiver uma issues aberta se você der um commit #numero_da_issues ele encerra essa issues.
+
+e para fechar pelo que eu intendi é só commitar em qualquer lugar de preferencia corrigindo ela mesmo e adicionando o "#numero_da_issues" e já era. 
