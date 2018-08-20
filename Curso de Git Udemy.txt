@@ -328,3 +328,56 @@ fork = é apenas copiar o repositorio para sua maquina e você pode trabalhar co
 Issues = é mais ou menos como uma questão, ou um abrir um ticket e sempre que tiver uma issues aberta se você der um commit #numero_da_issues ele encerra essa issues.
 
 e para fechar pelo que eu intendi é só commitar em qualquer lugar de preferencia corrigindo ela mesmo e adicionando o "#numero_da_issues" e já era. 
+
+
+Aula 33 : Pull Request e Workflow do GitHub
+
+pelo que eu intendi é o seguinte, quando se ta trabalhando no projeto de alguém e ai você corrigiu algo e manda um "pull request" e ai o dono do repositório pode ou não aceitar minhas alterações e nesse caso eu também posso discutir com o dono e ai ele escolhe fazer ou não o merge das minhas alterações.
+
+esse esquema do workflow do git meio que mostra mais ou menos o fluxo que acontece no pull request.
+
+
+Aula 34 : Projeto Final do Curso
+
+Aqui tinha que clonar o repositório do curso e depois adicionar o arquivo com as minhas identificações, e enviar para o github.
+
+
+
+Aula 35 :  Verificando e aceitando Pull Request
+
+Aqui tem um comando via terminal mais é bem mais facil fazer pelo github.
+
+git fetch origin pull/ID/head:BRANCH aqui o id é o id do pull request e o nome que se da para a branch é o que você quiser.
+
+
+
+Aula 36 : Caso de Exemplo em Open Source
+
+Aqui ele conta uma historinha de como ele e um mano tocaram um projetinho que nem era deles.
+
+
+
+Aula 37 : Git Ignore
+
+git inore é um arquivo de configuração do git que simplesmente faz com que alguns arquivos / diretórios que você colocar la sejam ignorados pelo commit, ou seja eles não seram rastreados pelo git por isso de git ignore.
+
+é só colocar o nome do arquivo ou do repositório e até mesmo colocar todos os tipo de um determinado arquivo.
+
+ex : **/*.css ignora todos os arquivos .css
+	sexo/ ignora essa pasta
+
+
+Aula 38 : Commit Amend
+
+Esse cara altera o ultimo commit, vamos supor que você commitou uma parada e tinha mais coisa, ai você da um git commit --amend e ai ele vai abrir o seu ultimo commit para que você altere. (detalhe ele ainda não tinha dado o push.)
+
+
+Aula 39 : Stash
+
+Aqui ele guarda suas alterações porém sem a necessidade de um commit, então como funciona, quando você altera muitas coisas e tenta mudar de branchs gertalmente da pau, ai o que você faz, da um "git stash" que ele cria um lugar meio que alternativo para aquela mudança, e ai para ver as mudanças é so mandar um "git stash list" que ele mostra a sua alteração mais se você commitar não da nada, e para voltar para onde você estava é só mandar um "git stash pop".
+
+
+Aula 40 :  Cherrypick e Blame
+
+git cherry-pick = ele recommita algum commit antigo seu, para que aqui surta efeito em todos os seus commits posteriores, então você manda um "git cherry-pick BranchLucas~2" aqui eu passei o nome da branch que eu quero alterar o commit e ainda o numero de commits que eu quero voltar no caso 2.
+
