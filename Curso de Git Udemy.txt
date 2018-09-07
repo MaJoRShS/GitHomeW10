@@ -381,3 +381,36 @@ Aula 40 :  Cherrypick e Blame
 
 git cherry-pick = ele recommita algum commit antigo seu, para que aqui surta efeito em todos os seus commits posteriores, então você manda um "git cherry-pick BranchLucas~2" aqui eu passei o nome da branch que eu quero alterar o commit e ainda o numero de commits que eu quero voltar no caso 2.
 
+Git Blame : Mostra todos os commits que foram feitos linha a linha e quem fez aquele commit.
+
+
+Aula 41 : Git Bisect
+
+
+Serve para você identificar quem ou qual commit fez uma alteração que está errada, e ai ele te ajuda a voltar o seu arquivo ou repositório para aquele estado.
+
+
+Aula 42 : GitHub Pages
+
+
+Aqui você entra no github e cria uma pagina para o seu repositório, ai ao invés de você mandar para as pessoas o link do github e entrar naquela tela feinha do github você cria uma toda personalizada e cheia de frescura e pronto.
+
+
+
+Aula 43 : Github Milestones
+
+É uma pegada meio que trello , você cria uma milestone e coloca uma data final para ela, ai o que você faz, vai criando issues dentro dessa milestone e conforme elas vão sendo concluidas ele vai mudando o progresso e vai indo completando o sucesso.
+
+
+Aula 44 : Webhooks e Serviços
+
+
+Integração com outros sites e sistemas , pelo que eu intendi é mieo que para ajudar nos testes e para todos os contribuintes saberem os resultados e como está os testes.
+
+
+Aula 45 : GitKraken GUI
+
+
+É uma interface nova para ver o progresso do seu repósitório.
+
+
