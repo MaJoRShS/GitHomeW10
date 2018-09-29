@@ -1,0 +1,85 @@
+Curso Desvendando a linguagem JS
+
+
+Aula 1 : Intro
+
+variaveis devem ser declaradas com letra , $ ou "_" e sempre com camelCase.
+
+letra variaveis normais
+
+$ framworks
+
+_ declarado dentro de funções para determinar que são privados.
+
+
+Aula 2 : Tipo de dados
+
+
+Number
+
+é só colocar um numero na variavel e já era.
+
+
+Aula 3 : String
+
+são imutáveis, e podemos colocar aspas duplas ou simples
+
+dai define uma variavel e usa ela . alguma coisa.
+
+
+Aula 4 : Boolean
+
+0, null, undefined, NaN, false, "" = todos esses caras são falsos, e no exemplos que o mano deu aqui é importante saber isso porque se eles são falsos isso pode dar pau em algum lugar e nunca saberemos.
+
+ele deu a call de que se for setado assim não da erro a validação acaba ficando dentro do retorno do IF então se for identico ao que está escrito sucesso vai ser verdadeiro e vai devolver o nome que você está pegando na variavel.
+
+	if(nome){
+		console.log("Lucas");
+	}
+
+
+
+Aula 5 : undefined e null
+
+na teoria o undefined é quando não existe um valor para aquela variavel ou ainda não foi definido , é como se tivesse sido setado com em branco e depois vai ser passado um valor.
+
+já o null é a real ausencia, não tem nada e não foi setado em branco null é sem anda mesmo.
+
+
+
+Aula 6 : Object
+
+é uma coleção dinamica de chaves e valores de qualquer tipo de dado, e é possivel adcionar e remove-los a qualquer momento.
+
+para criar um objeto é só colocar as  chaves "{ }" na declaração da variavel, ai depois dentro das chaves você passa as propriedades desse objeto, separando os por "," (virgula) e ":" (dois ponto) é usado na atribuição e não "=" (igual) .
+
+exemplo: var sexoAnal{
+	nome :"Alhaor",
+	idade: 69,
+	posicao : "d4"
+}
+
+
+e da para passar um novo objeto dentro de um objeto.
+
+exemplo: var sexoAnal{
+	nome :"Alhaor",
+	idade: 69,
+	posicao : "d4",
+	kamaSutra:{
+	d4:"blablabla",
+	escaloba:69,
+	escalobaLoba:"Auuhuhuaua",
+	}
+}
+
+E depois que você setou a parada para acessar é o nome do objeto "sexoAnal" . o atributo "nome" ficando assim (sexoAnal.nome = "Lucas";)
+
+ou sexoAnal["nome"]= "Lucas";
+
+e para usar atributos que tem espaços no meio da parada é só mandar ele dessa forma (sexoAnal["nome do mano"]= "Lucas";) que ai funciona, porque se não da erro de sintax.
+
+e para passar um parâmetro dentro do outro é obrigatorio que os dois existam, e seria assim (sexoAnal["pessoa"]["nome"] = "Lucas";) assim eu acesso o nome dentro de pesso.
+
+
+e para deletar propriedades é só mandar um (delete sexoAnal.(nome da propriedade))
