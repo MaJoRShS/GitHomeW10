@@ -1,0 +1,46 @@
+Aula 1 : Conta
+
+Os caras usam linker, ele te deixa usar a hospedagem gratis por 14 dias gratis.
+
+Aual 2 : Importante: Ajude a divulgar o curso
+era só um informativo.
+
+Aula 3 : Wordpress
+
+Configuração do wordpress no linker,tudo no padrão.
+
+Aula 4 : Novo menu do Linker Digital
+era só um informativo.
+
+Aula 5 : Conteúdo
+
+Paginas :Estáticas
+
+Posts : Notícias, postagens
+
+para criar paginas entra no painel e clica em paginas, ai ou adiciona uma nova ou da para olhar todas as outras paginas já criadas.
+
+nas config de paginas da para colocar ela como pai ou filho, e ai ela aparece como um submenu de pagina.
+
+e para apresentar um menu ou usa um plugins ou entra em aparecias e menus.
+
+Aula 6 : Temas
+
+vai la em aparencia e temas, ai ou você instala um novo clicando em instalar ou só ativa um que já esta la na sua pagina, ai depois clica em presonalizar.
+
+Aula 7 : Plugins
+
+Plugins e adcionar novo, e ai depois que você instalou vai la e ativa ele, clicando em plugins e ativar.
+
+Aula 8 : Domínio
+
+A mesma parada para configurar seu dominio que todos os cursos ensinam.
+e para acessar todos os sites com o novo dominio entra primeiro nas configurações e em geral altera as URLS para o seu dominio.
+
+Aula 9 : Comunidade
+
+o mano tem uma cominudade no facebook que chama descomplica para mim, e pediu para entrar nela.
+
+Aula 10 : Extras
+
+segundo a lenda ele tem um esquema de consultoria para o sites.
