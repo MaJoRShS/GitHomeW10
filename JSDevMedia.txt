@@ -1,0 +1,42 @@
+Aula 1 : Intro
+
+blábláblá.
+
+Aula 2 : Preparando o ambiente
+
+Visual studio code.
+
+criou o index.html e o index.js e ai depois aponta o js para o html e já elvis.
+
+ai ele usou o console.log(aqui carregou); e isso aqui vemos no console do devtools.
+
+
+Aula 3 : Declarando variáveis
+
+var (nome da variavel) sexo = 'anal';
+
+console.log(nome);
+
+aqui está a variavel vai aparecer no console,  e se eu quiser saber o tipo dela mando um {console.log(nome, typeof nome)} dai no console e mostra não só o nome mais também o tipo da variavel.
+as variaveis não tem tipagem forte ou seja você não precisa declarar o tipo dela quando vocẽ declara ela mais ainda assim é aconselhavel que sempre que você for fazer qualquer tratamento que você não altere o tipo de dado daquela variavel para evitar merda no futuro.
+
+var idade = 25;
+var peso = 100.0
+var Picoroso = true;
+
+aqui é o seguinte tanto numeros inteiros quanto ponto flutuante são considerados "number", e o tipos booleanos normal "true" ou "false".
+
+
+Aula 4 : Declarando Arrays e Objetos
+
+Array é um vetor , que basicamente é uma lista
+
+var nomes = ['lucas', 'thomaiz', 'thanos'];
+
+aqui é a declaração do array, só abrir os conchetes que ta tudo certo o que estiver dentro dos conchetes é parte do array, 
+
+Aula 5 : Operadores aritméticos
+
+Aula 6 : Estruturas Condicionais
+
+Aula 7 : Trabalhando com for
