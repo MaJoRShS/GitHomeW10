@@ -103,9 +103,7 @@ if (convidado.bebeRefrigerante){
 console.log(comprarRefrigerante)
 
 
-
-
-
+apenas para testar a chave.
 
 
 Aula 7 : Trabalhando com for
