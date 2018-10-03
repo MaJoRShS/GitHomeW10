@@ -33,10 +33,79 @@ Array é um vetor , que basicamente é uma lista
 
 var nomes = ['lucas', 'thomaiz', 'thanos'];
 
-aqui é a declaração do array, só abrir os conchetes que ta tudo certo o que estiver dentro dos conchetes é parte do array, 
+aqui é a declaração do array, só abrir os conchetes que ta tudo certo o que estiver dentro dos conchetes é parte do array, e para acessar os atributos do array é só mandar o array.(nome do atributo) nomes.[1], porque "1" porque no JS o array começa pelo 1 e não pelo "0"(zero.)
+
+
+Objeto
+
+var pessoa = {
+	nome : 'lucas'
+}
+
+os objetos são diferentes pelo seguinte fato são "{}" (chaves) para abrir e não conchetes, e você coloca o nome do atributo ":" (dois pontos) o valor do atributo.
+e para acessalo é igual nomeDoObjeto.nomeDoAtributo
+
+
+
+var pessoa = {
+	nome : 'lucas',
+		amigos : [
+		'lucas', 
+		'thomaiz', 
+		'thanos'
+		]
+}
+
+e tem o mesmo principio que que seja exibido apenas um dos valores tem que ser passado um parâmeto.
+
+console.log(pessoa.amigos[1]);
+
+
 
 Aula 5 : Operadores aritméticos
 
+var peso = 80;
+var altura = 1.83;
+var imc = peso /(altura * altura);
+
+imc += 10;
+imc -= 10;
+imc++;
+imc--;
+
+
+console.log(imc);
+
 Aula 6 : Estruturas Condicionais
+
+
+if, else if, else
+
+var bebeRefrigerante = false;
+var bebeCerveja = false;
+var bebeSucoNatural = false;
+
+var convidado ={
+	nome:'Lucas',
+	idade: 25,
+	bebeCerveja: true,
+	bebeRefrigerante: false
+}
+
+if (convidado.bebeRefrigerante){
+	comprarRefrigerante = true
+} else if(convidado.bebeCerveja && convidado.iade >=18){
+	comprarCerveja = true
+} else{
+	comprarSucoNatural = true
+}
+
+console.log(comprarRefrigerante)
+
+
+
+
+
+
 
 Aula 7 : Trabalhando com for
