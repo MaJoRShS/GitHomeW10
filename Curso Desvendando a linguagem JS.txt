@@ -83,3 +83,92 @@ e para passar um parâmetro dentro do outro é obrigatorio que os dois existam, 
 
 
 e para deletar propriedades é só mandar um (delete sexoAnal.(nome da propriedade))
+
+
+Aula 7 : function
+
+O js não tem: classe, contrutor, método, módulo, para todas essas coisas se usa função.
+
+Uma função é um "Objeto", e dentro dele tem código que pode e deve ser interpretado ou executado, e tudo que for definido dentro de função não pode ser acessado de fora da classe.
+
+Função de primeira classe é aquela que pode ser atribuída a uma variavel, passada como parâmetro ou ser retornada de uma outra função.
+
+Function declaration 
+
+
+function soma(a, b){
+	return a+b;
+}
+
+
+aqui temos o padrão a palavra reservada function o nome propriamente dito da função e as variaveis de atribuição.
+
+Function Expression 
+
+var soma = function (a, b){
+	return a + b;
+}
+
+
+Aqui eu to vendo a operação de atribuição acontecer, e o soma é o nome variavel que estamos criando mais também é o nome da função, na real ela é uma função anonima, e tem uma parada ali de "NAMED FUNCTION EXPRESSION" que é utilizado para aparecer em stack trace, uma lista de breakpoints e demais ferramentas de debbuging.
+
+Qual a diferença entre as duas é que a declaration é carregada antes da execução do código, ou sejá eu posso invocala antes da declaração que vai funcionar, mais quando é na expression eu sou obrigado a invoca-la apenas após minha delcaração.
+
+
+
+Invocando functions dentro do escopo global
+
+
+Invocando diretamente
+
+
+	var soma = function (a, b){
+		return a + b;
+	};
+
+	soma(2 , 3); //5
+
+
+Aqui ta normal, acredito que todos ou a maioria da galera use assim, porque me parece ser o mais facil e normal de utilização.
+
+
+Invocando functions como parâmetro
+
+
+	var produto = {nome : "Sapato" , preco : 150 };
+
+	var formulaImpostoA = function (preco) {return preco*0.1;};
+	var formulaImpostoB = function (preco) {return preco*0.2;};
+
+	var calcularPreco = function (produto, formulaImposto){
+		return produto.preco + formulaImposto(produto.preco);
+	}
+
+
+	calcularPreco(produto, formulaImpostoA);
+	calcularPreco(produto, formulaImpostoB);
+
+
+Esse aqui não saquei muito bem mais parece ser bem interessante, é uma parada de lambda, segundo o que o mano disse, e ainda não me liguei porque ali ao invés de "formulaImpostoA ou formulaImpostoB" ele só passou "formulaImposto", acho que é porque ele declara "formulaImposto" como sendo mais uma função e não como se estivesse reutilizando a que já existe.
+
+
+
+Retornando uma função
+
+	var HelloWorld = function (){	
+	return function(){
+		return "Hello World!";
+		};
+	};
+
+	HelloWorld ();   // [Function]
+	HelloWorld ()(); // 'Hello World!'
+
+
+Aqui tem uma parada meio que maneira mais não vejo muita utilidade (posso estar enganado), mais como que funciona, você coloca uma função dentro de outra e o valor está dentro da segunda, dai no caso quando você chama essa função para pegar o valor vai ser retornado uma nova função, ai o que você tem que fazer é mandar dois parenteses para poder acessar o valor da segunda.
+
+
+
+Invocando função por meio de objeto 
+
+
