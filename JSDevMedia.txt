@@ -107,3 +107,173 @@ apenas para testar a chave.
 
 
 Aula 7 : Trabalhando com for
+
+var convidados = [
+
+{
+nome: 'Pedro',
+idade : 20,
+bebeRefrigerante : false,
+bebeCerveja : true
+},
+{
+nome: 'Maria',
+idade : 17,
+bebeRefrigerante : true,
+bebeCerveja : false
+},
+{
+nome: 'João',
+idade : 19,
+bebeRefrigerante : true,
+bebeCerveja : true
+}
+]
+
+var comprarCerveja = false;
+
+
+ai aqui ao invés de usar varios if's para validar se o cara bebe ou não para cada user ia dar bosta ou demorar muito dai usa-se o "for"
+
+for(var i = 0; i < convidados.length; i++) {
+console.log(convidados[i].nome, convidados[i].bebeCerveja);
+	if (convidados[i].bebeCerveja){
+		comprarCerveja = true
+break
+		}
+
+}
+
+console.log(comprarCerveja)
+
+Aqui o resultado é uma lista com os nomes de todos os que ele passou e ainda com a info se ele bebe ou não, e no caso como tem um "break" ali no final do if ele vai parar assim que encontrar o 1 nego que bebe, isso meio que serve para saber se você vai ter que comprar breja e o quanto, e no "convidados.length" o "length" é um atributo padrão do JS que permite saber o tamanho das coisas, nesse casso do meu obejto.
+
+
+
+Aula 8 : Estrutura de repetição com WHILE
+
+
+var convidados = [
+
+{
+nome: 'Pedro',
+idade : 20,
+bebeRefrigerante : false,
+bebeCerveja : false
+},
+{
+nome: 'Maria',
+idade : 17,
+bebeRefrigerante : true,
+bebeCerveja : false
+},
+{
+nome: 'João',
+idade : 19,
+bebeRefrigerante : true,
+bebeCerveja : true
+}
+]
+
+var comprarCerveja = false;
+
+var i=0;
+while(i < convidados.length) {
+console.log(convidados[i].nome, convidados[i].bebeCerveja);
+	if (convidados[i].bebeCerveja){
+		comprarCerveja = true
+		break
+		}
+	i++
+}
+
+console.log(comprarCerveja)var convidados = [
+
+{
+nome: 'Pedro',
+idade : 20,
+bebeRefrigerante : false,
+bebeCerveja : true
+},
+{
+nome: 'Maria',
+idade : 17,
+bebeRefrigerante : true,
+bebeCerveja : false
+},
+{
+nome: 'João',
+idade : 19,
+bebeRefrigerante : true,
+bebeCerveja : true
+}
+]
+
+var comprarCerveja = false;
+
+var i=0;
+while(i < convidados.length) {
+console.log(convidados[i].nome, convidados[i].bebeCerveja);
+	if (convidados[i].bebeCerveja){
+		comprarCerveja = true
+		break
+		}
+	i++
+}
+
+console.log(comprarCerveja)
+
+
+
+Aqui segue a mesma ideia, o while é basicamente um "for" com algumas particularidades, ali eu tive que declarar uma variavel inicial como 0(zero) e colocar na expressão que ele ia execultar até "i" ser maior ou igual a "convidados" e nos convidados usei o ".length" para descobrir o tamnho desse cara.
+
+
+Aula 9 : Declaração de funções
+
+function imc (altura, peso){
+	return peso / (altura * altura)
+}
+
+
+var pessoas = [
+{
+	nome : 'pedro',
+	altura : 1.83,
+	peso : 80
+},
+{
+	nome : 'maria',
+	altura : 1.90,
+	peso : 90
+},
+{
+	nome : 'joão',
+	altura : 2.00,
+	peso : 100
+}
+]
+
+for (var pessoa of pessoas) {
+	//console.log(pessoa)	
+	var resultado = imc (pessoa.altura, pessoa.peso)
+	console.log(pessoa.nome, resultado)
+}
+
+
+
+Nesse caso aqui como funciona a parada, eu peguei aqui esse "of" no meio do meu "for" que é uma das formas de "for" e ai ele percorre o meu objeto, e atribui os valores de "pessoas" dentro da variavel "pessoa" e como tem um "for" ele vai printando a parada e já faz os calculos porque eu disse para fazer isso dentro do "for".
+
+
+
+
+CURSO DE INTRODUÇÃO AO JAVASCRIPT
+
+
+Aula 1 : Introdução
+
+Introdução ao curso e ao JS, e mostrando que na real o JS é mais utilizado para manipular o HMTL e trazer interações com o usuario no site, faz validações antes de enviar realmente um requisição http etc.
+
+ai ele ta mostrando que mesmo com uma tag <link> do html ele consegue mudar o comportamento e fazer com que esse link se torne um contador dinâmico.
+
+
+Aula 2 : Manipulando Elementos da View
