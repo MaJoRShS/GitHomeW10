@@ -277,3 +277,42 @@ ai ele ta mostrando que mesmo com uma tag <link> do html ele consegue mudar o co
 
 
 Aula 2 : Manipulando Elementos da View
+
+Aqui a parada foi simples os manos mostraram como usar o console para alterar a DOM(Document Object Model),e mostrou como usar o console para manipular as paradas.
+
+
+
+
+Aula 3 : Executando código a partir de um arquivo
+
+Nesse caso ele colocou referenciou o JS, no html usando "<sript src= ""></script>" que é uma tag utilizada para referenciar um arquivo dentro do outro, e deu a call de sempre colocar isso no final do seu código HTML, porque como o carregamento do HTML é sequencial e o código vai estar no final da pagina ele vai carregar a pagina todo e por ultimo ele vai carregar o JS.
+
+
+Aula 4 : Entendendo um pouco sobre os tipos
+
+Aqui ele mostrou que o valor que está no "input" é uma string, e que mesmo que tenha um numero la é uma sting, ai para podermos calcular precisamos antes fazer a conversão.
+
+var input = document.getElementById("quantidade");
+input.value = 1 + Number(input.value);
+input.value++;
+
+assim eu estou convertendo o valor do input para um numero.
+
+e sempre que eu coloco o "++" o JS já tenta converter para numero.
+
+
+
+Aula 5 : Capturando um evento de click
+
+var input = document.getElementById("quantidade");
+var botaoIncrementa = document.querySelector("#btn-incrementa");
+
+botaoIncrementa.addEventListener('click', incrementa);
+
+function incrementa()
+{
+	input.value++
+}
+
+aqui qual a fita, eu coloquei os "id" dentro das tags html, e no input foi o (id = "quantidade"), e no botão de mais foi "<a id ="btn-incrementa"), sendo assim quando eu vou buscar esses caras é igual no CSS, quando é "id" usa o "#" e quando é clase usa o ".", também usou um novo esquema que é o "addEventListener" que segundo a lenda eu colo isso para que o JS fique escutando um evento ou ação do usuario, e o "querySelector" pelo que eu intendi é para pegar o elemento HTML mesmo e trazer para o JS e ele sempre retorna o objeto, e o "getElemente" é tem a mesma função mais sem a ordenação de "ByID" ele não serve para nada.
+
