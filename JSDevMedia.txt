@@ -316,3 +316,340 @@ function incrementa()
 
 aqui qual a fita, eu coloquei os "id" dentro das tags html, e no input foi o (id = "quantidade"), e no botão de mais foi "<a id ="btn-incrementa"), sendo assim quando eu vou buscar esses caras é igual no CSS, quando é "id" usa o "#" e quando é clase usa o ".", também usou um novo esquema que é o "addEventListener" que segundo a lenda eu colo isso para que o JS fique escutando um evento ou ação do usuario, e o "querySelector" pelo que eu intendi é para pegar o elemento HTML mesmo e trazer para o JS e ele sempre retorna o objeto, e o "getElemente" é tem a mesma função mais sem a ordenação de "ByID" ele não serve para nada.
 
+
+
+Aula 6 : Codificando o botão decrementa
+
+var input = document.getElementById("quantidade");
+var botaoIncrementa = document.querySelector("#btn-incrementa");
+
+var botaoDecrementa = document.querySelector("#btn-decrementa");
+
+
+botaoIncrementa.addEventListener('click', incrementa);
+botaoDecrementa.addEventListener('click', decrementa);
+
+function incrementa()
+{
+	input.value++;
+}
+
+function decrementa()
+{
+	input.value--;
+}
+
+aqui é a mesma coisa só que ele inseriu o decrementa na parada, mesma operação, mesmo modo de operação, ai só para massificar, tem que primeiro buscar o seletr com o "querySelector" ou getElementById" , e jogar ele em uma variavel(var botaoIncrementa ou var botaoDecrementa), depois se da e ai usa uma função para fazer o trampo.
+
+function incrementa()
+{
+	input.value++;
+}
+
+function decrementa()
+{
+	input.value--;
+}
+
+
+Aula 7 : Calculando o total
+
+
+var input = document.getElementById("quantidade");
+var botaoIncrementa = document.querySelector("#btn-incrementa");
+
+var botaoDecrementa = document.querySelector("#btn-decrementa");
+
+
+botaoIncrementa.addEventListener('click', incrementa);
+botaoDecrementa.addEventListener('click', decrementa);
+
+function incrementa()
+{
+	input.value++;
+	var item = botaoIncrementa.closest('.item');
+	var precoItem = item.querySelector('.preco-item');
+	var preco = Number(precoItem.textContent);
+
+	var elementoTotal = document.querySelector('#total');
+	elementoTotal.textContent = preco + Number(elementoTotal.textContent);
+}
+
+function decrementa()
+{
+	input.value--;
+}
+
+
+aqui foi inserido a soma ou incremento de valores no saldo total, o que pegou, ali ele estava dentro do elemento do botão (botaoIncrementa), usando ".closest();" ele procura um nivel acima do "botaoIncrementa" e o parâmetro passado dentro do () é o que eu vou procurar ficando assim, (var item = botaoIncrementa.closest('.item');) depois eu procuro dentro de "item" a classe "preco-item", e ai para pegar o valor eu pego e converto ele para numero(var preco = Number(precoItem.textContent);)
+
+depois eu procuro no documento inteiro o elemento "total"(var elementoTotal = document.querySelector('#total');) e faço a atribuição do preço pela quantidade.(elementoTotal.textContent = preco + Number(elementoTotal.textContent);)
+
+
+Aula 8 : Aplicando boas práticas com funções
+
+var input = document.getElementById("quantidade");
+var botaoIncrementa = document.querySelector("#btn-incrementa");
+
+var botaoDecrementa = document.querySelector("#btn-decrementa");
+
+
+botaoIncrementa.addEventListener('click', incrementa);
+botaoDecrementa.addEventListener('click', decrementa);
+
+function incrementa()
+{
+	input.value++;
+	var item = botaoIncrementa.closest('.item');
+	
+	var preco = pegarPrecoItem(item);
+	adicionaAoTotal(preco)
+}
+
+function decrementa()
+{
+	input.value--;
+}
+
+
+//Foi incluido essa função aqui para fazer o trampo de pegar o preço que está dentro do item, e deixar o código mais limpo e facil de ler.
+function pegarPrecoItem(item){
+	var precoItem = item.querySelector('.preco-item');
+	//Aqui ele está retornando o valor para a variavel que está fora dessa função.
+	return Number(precoItem.textContent);
+}
+
+
+//essa função soma o valor total da compra , o marcador começa em 0 e vai somando o valor da pizza e a quantidade dela, e também deixando o código mais limpo e facil de ler.
+function adicionaAoTotal(valor){
+	var elementoTotal = document.querySelector('#total');
+	elementoTotal.textContent = valor + Number(elementoTotal.textContent);
+}
+
+//E esse processo de deixar o código mais "limpo" e ou mais facil de ler se chama refatoração de código.
+
+
+Aula 9 : Buscando o input quantidade pela classe
+
+
+var botaoIncrementa = document.querySelector("#btn-incrementa");
+
+var botaoDecrementa = document.querySelector("#btn-decrementa");
+
+
+botaoIncrementa.addEventListener('click', incrementa);
+botaoDecrementa.addEventListener('click', decrementa);
+
+function incrementa()
+{
+	var item = botaoIncrementa.closest('.item');
+
+//aqui foi inserido dessa forma porque eu vou procurar dentro de "item" (por isso que eu pego item na declaração de cima) todos os botões que tiverem a classe quantiade e faço o incremento, aqui eu me lasquei porque eu tinha deixado no automatico o "document", só que como eu tó pegando o proprio "input" eu to pegando todas as ocorrencias de "input's" que tem a classe "quantidade"
+	var input = item.querySelector(".quantidade");
+	input.value++;
+	
+	var preco = pegarPrecoItem(item);
+	adicionaAoTotal(preco)
+}
+
+function decrementa()
+{
+	input.value--;
+}
+
+
+
+function pegarPrecoItem(item){
+	var precoItem = item.querySelector('.preco-item');
+	return Number(precoItem.textContent);
+}
+
+
+
+function adicionaAoTotal(valor){
+	var elementoTotal = document.querySelector('#total');
+	elementoTotal.textContent = valor + Number(elementoTotal.textContent);
+}
+
+
+
+Aula 10 : Codificando a função decrementa
+
+var botaoIncrementa = document.querySelector("#btn-incrementa");
+
+var botaoDecrementa = document.querySelector("#btn-decrementa");
+
+
+botaoIncrementa.addEventListener('click', incrementa);
+botaoDecrementa.addEventListener('click', decrementa);
+
+function incrementa()
+{
+	var item = botaoIncrementa.closest('.item');
+
+	var input = document.querySelector(".quantidade");
+	input.value++;
+	
+	var preco = pegarPrecoItem(item);
+	adicionaAoTotal(preco);
+}
+
+
+//Copiei o esquema do incrementa no decrementa mantendo a condição de (input.value--;) e deixei como subtração o preço (adicionaAoTotal(-preco);)
+function decrementa()
+{
+	var item = botaoIncrementa.closest('.item');
+
+	var input = document.querySelector(".quantidade");
+	
+//Aqui foi inserido esse if para fazer a validação do valor do input, ou seja se o input for maior que zero eu executo o decremento, removo o valor da unidade do valor total, caso contrario só mostro uma mensagem no console.
+	if (input.value > 0) {
+		input.value--;
+		var preco = pegarPrecoItem(item);
+		adicionaAoTotal(-preco);
+		}
+	else{
+		console.log(input.value);
+		}
+
+}
+
+
+
+function pegarPrecoItem(item){
+	var precoItem = item.querySelector('.preco-item');
+	return Number(precoItem.textContent);
+}
+
+
+
+function adicionaAoTotal(valor){
+	var elementoTotal = document.querySelector('#total');
+	elementoTotal.textContent = valor + Number(elementoTotal.textContent);
+}
+
+
+Aula 11 : Utilizando o for em uma lista
+
+//Troque os esquemas de "id" pra "class", para que seja possivel pegar todos esses botões, e corrigi isso no HTML também.
+
+//Incrementa
+var botoesIncrementa = document.querySelectorAll(".btn-incrementa");
+//esse console ta aqui para mostar quantos btn-incrementa foram encontrados durante o carregamento.
+//console.log(botoesIncrementa);
+
+
+for (let botao of botoesIncrementa) 
+{
+	
+	botao.addEventListener('click', incrementa);
+
+	function incrementa()
+	{
+		var item = botao.closest('.item');
+
+		var input = item.querySelector('.quantidade');
+		input.value++;
+		
+		var preco = pegarPrecoItem(item);
+		adicionaAoTotal(preco);
+	}
+	
+}
+
+
+//Decrementa
+var botaoDecrementa = document.querySelector('#btn-decrementa');
+botaoDecrementa.addEventListener('click', decrementa);
+
+function decrementa()
+{
+	var item = botaoIncrementa.closest('.item');
+	var input = document.querySelector(".quantidade");
+
+	if (input.value > 0) {
+		input.value--;
+		var preco = pegarPrecoItem(item);
+		adicionaAoTotal(-preco);
+		}
+	else{
+		console.log(input.value);
+		}
+}
+
+
+
+//Funções Auxiliares
+function pegarPrecoItem(item){
+	var precoItem = item.querySelector('.preco-item');
+	return Number(precoItem.textContent);
+}
+
+function adicionaAoTotal(valor){
+	var elementoTotal = document.querySelector('#total');
+	elementoTotal.textContent = valor + Number(elementoTotal.textContent);
+}
+
+
+
+Aula 12 : Codificando o botão decrementa
+
+
+//Incrementa
+var botoesIncrementa = document.querySelectorAll(".btn-incrementa");
+
+for (let botao of botoesIncrementa) 
+{
+	
+	botao.addEventListener('click', incrementa);
+
+	function incrementa()
+	{
+		var item = botao.closest('.item');
+		var input = item.querySelector('.quantidade');
+		input.value++;
+		
+		var preco = pegarPrecoItem(item);
+		adicionaAoTotal(preco);
+	}
+	
+}
+
+
+//Decrementa
+var botoesDecrementa = document.querySelectorAll('.btn-decrementa');
+
+
+//Explicou o porque do "let" no "for", é o seguinte, conforme você vai iterando as paradas as variaveis vão sendo sobrescritas, e ai o JS daria pau, mais com o "let" dentro do "for" todas as vezes for para executar o "for" ele vai fechar o escopo fazendo com que as variaveis não sejam sobrescritas e sendo possivel assim manter o valor de "a" diferente mesmo dentro do mesmo "for". 
+	for (let botao of botoesDecrementa){
+
+		botao.addEventListener('click', decrementa);
+
+		function decrementa()
+		{
+			var item = botao.closest('.item');
+			var input = item.querySelector(".quantidade");
+
+			if (input.value > 0) {
+				input.value--;
+				var preco = pegarPrecoItem(item);
+				adicionaAoTotal(-preco);
+				}
+			else{
+				console.log(input.value);
+				}
+		}
+
+	}
+
+
+//Funções Auxiliares
+function pegarPrecoItem(item){
+	var precoItem = item.querySelector('.preco-item');
+	return Number(precoItem.textContent);
+}
+
+function adicionaAoTotal(valor){
+	var elementoTotal = document.querySelector('#total');
+	elementoTotal.textContent = valor + Number(elementoTotal.textContent);
+}
