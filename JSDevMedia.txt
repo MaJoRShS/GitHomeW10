@@ -653,3 +653,81 @@ function adicionaAoTotal(valor){
 	var elementoTotal = document.querySelector('#total');
 	elementoTotal.textContent = valor + Number(elementoTotal.textContent);
 }
+
+
+
+Aula 13 : Preparando o envio do formulário
+
+
+//Incrementa
+var botoesIncrementa = document.querySelectorAll(".btn-incrementa");
+
+for (let botao of botoesIncrementa) 
+{
+	
+	botao.addEventListener('click', incrementa);
+
+	function incrementa()
+	{
+		var item = botao.closest('.item');
+		var input = item.querySelector('.quantidade');
+		input.value++;
+		
+		var preco = pegarPrecoItem(item);
+		adicionaAoTotal(preco);
+	}
+	
+}
+
+
+//Decrementa
+var botoesDecrementa = document.querySelectorAll('.btn-decrementa');
+
+
+//Explicou o porque do "let" no "for", é o seguinte, conforme você vai iterando as paradas as variaveis vão sendo sobrescritas, e ai o JS daria pau, mais com o "let" dentro do "for" todas as vezes for para executar o "for" ele vai fechar o escopo fazendo com que as variaveis não sejam sobrescritas e sendo possivel assim manter o valor de "a" diferente mesmo dentro do mesmo "for". 
+	for (let botao of botoesDecrementa){
+
+		botao.addEventListener('click', decrementa);
+
+		function decrementa()
+		{
+			var item = botao.closest('.item');
+			var input = item.querySelector(".quantidade");
+
+			if (input.value > 0) {
+				input.value--;
+				var preco = pegarPrecoItem(item);
+				adicionaAoTotal(-preco);
+				}
+			else{
+				console.log(input.value);
+				}
+		}
+
+	}
+
+
+
+//Aqui foi inserido uma validação, quando o nego clicar no "submit" ele vai redirecionado para essa validação antes de ir para o esquema certo, a principio ele introduziu uma função anonima, quando não tem nome na funçã é porque na teoria ela não vai ser utilizada varias vezes.
+var formPedido = document.forms.pedido;
+
+form.addEventListener('submit', function(){
+
+});
+
+
+
+//Funções Auxiliares
+function pegarPrecoItem(item){
+	var precoItem = item.querySelector('.preco-item');
+	return Number(precoItem.textContent);
+}
+
+function adicionaAoTotal(valor){
+	var elementoTotal = document.querySelector('#total');
+	elementoTotal.textContent = valor + Number(elementoTotal.textContent);
+}
+
+
+
+
