@@ -731,3 +731,146 @@ function adicionaAoTotal(valor){
 
 
 
+aula 14 : Enviando um formulário
+
+//Incrementa
+var botoesIncrementa = document.querySelectorAll(".btn-incrementa");
+
+for (let botao of botoesIncrementa) 
+{
+	
+	botao.addEventListener('click', incrementa);
+
+	function incrementa()
+	{
+		var item = botao.closest('.item');
+		var input = item.querySelector('.quantidade');
+		input.value++;
+		
+		var preco = pegarPrecoItem(item);
+		adicionaAoTotal(preco);
+	}
+	
+}
+
+
+//Decrementa
+var botoesDecrementa = document.querySelectorAll('.btn-decrementa');
+
+
+//Explicou o porque do "let" no "for", é o seguinte, conforme você vai iterando as paradas as variaveis vão sendo sobrescritas, e ai o JS daria pau, mais com o "let" dentro do "for" todas as vezes for para executar o "for" ele vai fechar o escopo fazendo com que as variaveis não sejam sobrescritas e sendo possivel assim manter o valor de "a" diferente mesmo dentro do mesmo "for". 
+	for (let botao of botoesDecrementa){
+
+		botao.addEventListener('click', decrementa);
+
+		function decrementa()
+		{
+			var item = botao.closest('.item');
+			var input = item.querySelector(".quantidade");
+
+			if (input.value > 0) {
+				input.value--;
+				var preco = pegarPrecoItem(item);
+				adicionaAoTotal(-preco);
+				}
+			else{
+				console.log(input.value);
+				}
+		}
+
+	}
+
+
+
+//procura dentro do formulario tudo que tem a classe pedido
+var formPedido = document.forms.pedido;
+
+
+//adiciona um evento quando clico no botão de enviar
+formPedido.addEventListener('submit', function(event){
+	
+//tem um contador para saber a quantidade dos pedidos e qual é o sabor
+	var contador =0;
+
+	var inputs = formPedido.querySelectorAll('input.quantidade');
+
+	for (let input of inputs) {
+		if (input.value > 0) {
+			contador++;
+		}
+	}
+
+//faz a validação antes de enviar para não enviar um formulario vazio
+	if (contador == 0) {
+		alert('Deve ter pelo menos 1 pizza no pedido');
+		event.preventDefault();
+	}
+
+});
+
+
+
+//Funções Auxiliares
+function pegarPrecoItem(item){
+	var precoItem = item.querySelector('.preco-item');
+	return Number(precoItem.textContent);
+}
+
+function adicionaAoTotal(valor){
+	var elementoTotal = document.querySelector('#total');
+	elementoTotal.textContent = valor + Number(elementoTotal.textContent);
+}
+
+
+
+Conteúdo Extra
+
+
+
+Aula 15 : Off-topic
+
+Basicamente trabalhar com WEB é o seguinte , manipular o DOM e HTML capturando clicks ou movimentos do mouse, criamos formularios ou eventos no proprio formulario, e AJAX que são requisições e envios e recebimento de dados.
+
+
+Aula 16 : JavaScript replace(): substituindo valores em uma string
+
+// Valor retornado: “Curso de PHP na DevMedia!”
+exemplo = "Curso de JavaScript na DevMedia!";
+resultado = exemplo.replace("JavaScript", "PHP");
+//aquie ele é case sensitive vai procurar igual ta escrito no primeiro parâmetro
+
+
+// Valor retornado: “Curso de PHP na DevMedia! JavaScript também.”
+exemplo = "Curso de JavaScript na DevMedia! JavaScript também.";
+resultado = exemplo.replace("JavaScript", "PHP");
+//Aqui ele mostra que o replace só funciona na primeira ocorrencia do texto achou uma vez já era.
+
+  
+// Valor retornado: “Estudando PHP! PHP é uma linguagem dinâmica”
+exemplo = "Estudando JavaScript! JavaScript é uma linguagem dinâmica";
+resultado = exemplo.replace(/JavaScript/g, "PHP"); 
+//Aqui pelo que eu entendi é uma expressão regular e é utilizado regex para passar o parâmetro por isso as barras e o 'g', porém com expressões regulares é possivel pegar todas as ocorrencias da mesma palavra
+
+  
+// Valor retornado: “Aprendendo JavaScript. JavaScript é na DevMedia”
+exemplo = "Aprendendo Javascript. JAVAScript é na DevMedia "; 
+resultado = exemplo.replace(/javascript/gi, "JavaScript"); 
+//mesma coisa do regex porém aqui ele ignora os caseSensiti e substitui todas as palavras.
+
+  
+// Valor retornado: “texto 1 <i> texto 2 </i> texto 3 <i> texto 4 </i>”
+stringExemplo = " texto 1 <b> texto 2 </b> texto 3 <b> texto 4 </b>";
+stringExemplo = stringExemplo.replace(/<b>/g , "<i>");
+resultado = stringExemplo.replace(/<\/b>/g, "</i>");
+//Aqui pelo que eu entendi é o seguinte ele ta usando regex para substituir todas as ocorrencias tanto da tag abrindo como da tag fechando, e substituindo por <i> ou </i>
+
+  
+// Valor retornado: “Contrato no valor de R$ 1050. 
+// Lucro de R$ 210 para a empresa.”
+string = "Contrato no valor de R$ 1000. Lucro de R$ 200 para a empresa.";
+resultado = string.replace(/\d+/g, function aplicarIndice(x){
+x = x*1.05;
+return Math.floor(x);});
+//Pelo que eu consegui entender é o seguinte, aqui ele usa REGEX para poder pegar todas as ocorrencias numéricas que existem na minha string e aplica a função que tem no segundo parâmetro já fazendo a conta.
+
+
