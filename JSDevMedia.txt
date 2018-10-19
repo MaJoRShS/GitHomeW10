@@ -867,7 +867,7 @@ resultado = stringExemplo.replace(/<\/b>/g, "</i>");
   
 // Valor retornado: “Contrato no valor de R$ 1050. 
 // Lucro de R$ 210 para a empresa.”
-string = "Contrato no valor de R$ 1000. Lucro de R$ 200 para a empresa.";
+var string = "Contrato no valor de R$ 1000. Lucro de R$ 200 para a empresa.";
 resultado = string.replace(/\d+/g, function aplicarIndice(x){
 x = x*1.05;
 return Math.floor(x);});
