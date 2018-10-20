@@ -871,6 +871,7 @@ var string = "Contrato no valor de R$ 1000. Lucro de R$ 200 para a empresa.";
 resultado = string.replace(/\d+/g, function aplicarIndice(x){
 x = x*1.05;
 return Math.floor(x);});
-//Pelo que eu consegui entender é o seguinte, aqui ele usa REGEX para poder pegar todas as ocorrencias numéricas que existem na minha string e aplica a função que tem no segundo parâmetro já fazendo a conta.
+//Pelo que eu consegui entender é o seguinte, aqui ele usa REGEX para poder pegar todas as ocorrencias numéricas que existem na minha string e aplica a função que tem no segundo parâmetro já fazendo a conta, explicação tecnica da para que o mano andrézinho desenrolou para nós, quando você declara uma variavél, o console exibe o "undefined" porque ali não houve nenhum erro na declaração, ou seja, você declarou corretamente, e quando é a declaração de uma função tambpem.
+agora quando você invoca uma variavél sem passar o "var" ele automaticamente identifica que aquela variavel já existe e só processa o conteudo dela por isso que ele trás o resultado da variavel sem o a declaração do "var" antes no console do devtools.
 
 
