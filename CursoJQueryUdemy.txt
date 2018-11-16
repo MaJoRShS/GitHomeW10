@@ -1,0 +1,125 @@
+Seção 1
+
+Começando no JQuery com o pé direito
+
+Aula 1 : O que é o JQuery?
+
+JQuery é uma "lib" que foi feita com base no javascript, e surgiu como uma forma de se fazer uma requisição ajax, com mais facilidade.
+
+
+Aula 2 : Como o jQuery funciona?
+
+primeiro entra no site do JQuery e acessa a sessão de downloads , e ai você baixa a versão minificada que fica mais leve no site, mais para estudos usamos a descompactada, e para inserir o JQuery na sua pagina é só colocar o "<script type="text/javascript" src="jquery-3.3.1.min.js"></script>" e ai nesse caso é necesario que o nosso arquivo que contem o javascript mesmo seja colocado abaixo do JQuery,porque pode ser que no arquivo JS ja tenha alguma coisa d JQuery.
+
+
+Seção 2
+
+
+Fundamentos do JQuery
+
+
+Aula 3 : $ vs $()
+
+$.acao = é quando você execulta uma determinada ação dentro do jquery, diretamente a ação.
+
+$(elemento).acao = é quando você manda executar uma ação dentro ou em um elemento especifico.
+
+
+
+Aula 4 : $( document ).ready()
+
+Para evitar de ter problemas de carregamento de pagina ou de tentar executar uma ação do JS ou JQuery antes do elemento ter sido carregado o bizu é manda o JQuery executar só quando a pagina já tiver sido totalmente carregada.
+
+$(document).ready(function(){
+    alert("Curso de JQuery.");
+});
+
+Nesse exemplo eu chamo falo parao JQuery que eu quero que ele execute a minha função só quando o documento html estiver pronto, e a minha função assume que o "alert" é um atributo dela.
+
+
+outra forma de ter o memso efeito é 
+$(function(){
+    alert("Curso de JQuery exemplo 2.");
+});
+
+Nesse aqui eu não passei o documento html mais memso assim o JQuery intende que só é para execultar o código após o carregamento completo da pagina.
+
+
+Outra forma de fazer 
+function tudoPronto(){
+    alert("Tudo Pronto. exemplo 3");
+}
+
+$(document).ready(tudoPronto);
+
+Nesse aqui eu criei uma função que será carregada junto com o documento HTML mais ela só vai ser executada quando o documento HTML estiver completamente carregado porque o JQuery vai garantir isso para mim, ai eu passo no "ready" o nome da minha função.
+
+
+Aula 5 : Evitando conflito com outras bibliotecas
+
+Como entre bibliotecas diferentes os metedos de utilização são os mesmos, podemos criar um atalho diferente para o JQuery, que ele mesmo já deixa por padrão.
+
+var $L = jQuery.noConflict();
+
+$L(document).ready(function(){
+    alert("JQuery sendo chamado com $L");
+});
+
+que ai da para deixar o "$" para ser utilizado por qualquer outra lib que utilize isso como padrão.
+
+jQuery(document).ready(function(){
+    alert("Usando JQuery Nativamente, ou seja sem atalhos.")
+});
+
+essa aqui é outra forma de se evitar conflitos, utilizando o JQuery nativamente, é só trocar o "$" por pela palvra "jQuery()".
+
+Aula 6 : Selecionando Elementos do HTML
+
+Aqui para selecionarmos elementos HTML com JQuery é praticamente igual ao JS, mais é mais simples, porque pegamos ele com "$(tag)", e ai ele vai no nosso documento HTML e pega todas as tags com esse nome, para pegarmos apenas uma tag em especifico temos que pegar por "ID", e é a mesma sintax só que com o id  "$(#id);" igual em no css, e quando queremos pegar classes também é igual no css "$(.class);" só que as vezes precisamos pegar elementos dentro de listas e essas listas tem a mesma composição e tem a mesma classe, ai como faremos "$(.class tag.class);" ou "$(.class #id);" que funciona do mesmo jeito.
+
+também tem uma forma de verificar se existe o elemento na pagiana, como 
+
+if($(.botao).length > 0){
+    alert ("Tem botão man.");
+}
+
+Porque todas as vezes ele sempre retorna um array, e mesmo que o array esteja vazio ele tem info, ou seja sempre vai ser verdadeiro, ai usamos essa validação JS para verificar se o retorno é maior que ZERO.
+
+Ou ainda podemos atribuir o elemento a uma variavel, e para utilizar ele uso a propria variavel ao invés de refazer toda a seleção.
+
+var meuItem = $('.lista2 li.botao');
+
+
+
+Aula 7 : Manipulando Atributos de uma TAG
+
+Isso serve para alterarmos atributos de uma tag, e como fazemos isso, primeiro você informa qual o nome da tag que você que pegar e depois usa uma propriedade chamda "attr()" de "attribute" e ai passa dois parâmetros o primeiro é qual atributo daquela tag que você quer alterar e o segundo para o que você quer alterar.
+
+$('a').attr('href', 'https://xvideos.com');
+
+Aqui eu peguei a tag "a" do meu documento HTML, peguei o atributo "href" dele e troquei o conteudo por "https://xvideos.com", mais isso só acontece no carregamento, e para pegar o valor de um atributo é só passar apenas o nome do atributo e ele tras o valor atual dele.
+
+$('a').attr('href');
+
+Assim ele vai trazer só o https://xvideos.com.
+
+
+
+Aula 8 : O que fazer após a seleção?
+
+Aqui eu criei uma div, e mesmo sendo uma div eu disse para o JQuery que eu quero mudar o valor que esta dentro dessa div para um outro e ai eu passo assim,
+
+$('#teste').html('Novo TeXXto');
+
+Pegeui pelo "ID" e disse que naquele "ID" eu quero mudar o valor para "Novo TEXXTO".
+
+
+
+$('#teste').html();
+
+Para ver o valor que está dentro segue o mesmo esquema do "attr", e deixa em branco.
+
+
+$('#teste').find('button').addClass('estilo');
+
+Aqui eu procurei o "id" "teste", depois mandei procurar um "button" dentro desse "id" e por ultimo adicionei uma classe usandoo "addClass" com o nome da classe que eu queria que fosse atribuida a esse elemento.
