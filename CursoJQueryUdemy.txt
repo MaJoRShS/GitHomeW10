@@ -263,8 +263,28 @@ Já nesse caso o que estamos fazendo, retornando ao primeiro nivel de ".irmao" q
 Dica: Só usar o "parent()", quando se tem a certeza que o que você procura está um nivel acima de onde você está, caso contrario use o "find();" ou o "closest();"
 
 
-Aula 11 : CSS, Styling e Dimensões
+Aula 12 : CSS, Styling e Dimensões
 
 
-Aqui vemos como adicionar ou remover css dos elementos com JQuery.
+Aqui vemos como adicionar ou remover css dos elementos com JQuery, primeiro a classe tem que existir ou no documento HTML ou no proprio arquivo de css,depois é muito simples seleciona o elemento tanto pelo nome(li, ul, div, etc) quanto pelo "id" ou pela "class", e usa uma propriedade do JQuery que é o "addClass();"
 
+$('button').addClass('estilo');
+
+Aqui como eu já estou dizendo que vou adicionar uma classe eu não preciso pasar com o ponto(.) o nome da classe.
+
+$('button').removeClass('estilo');
+
+e aqui é para removermos a classe do elemento selecionado, detalhe ele só remove a classe que você passou as outras vão permancer la.
+
+if ( $('li').hasClass('estilo') ){
+	alert("Ies Mein")
+}else{
+	alert("Nou Mein")
+}
+
+Aqui nesse caso estamos fazendo uma verificação para ver se o meu "li" tem a classe "estilo", e utilizamos dessa forma porque o parâmetro "hasClass();" devolver "true" ou "false", e essa informação por sim só não adianta muito por isso já colocamos ele dentro do "if" que dependendo do retorno ele já mostra a mensagem que preparamos.
+
+$('li').css('color', '#ccc');
+
+
+Aqui estamos acrescentando um estilização especifica no elemento, que também pode ser selecionado de qualquer maneira, nome, id, class, e com o parâmetro ".css();" adicionamos esse estilo novo ao elemento, sempre passando o proredade , valor.
