@@ -123,3 +123,148 @@ Para ver o valor que está dentro segue o mesmo esquema do "attr", e deixa em br
 $('#teste').find('button').addClass('estilo');
 
 Aqui eu procurei o "id" "teste", depois mandei procurar um "button" dentro desse "id" e por ultimo adicionei uma classe usandoo "addClass" com o nome da classe que eu queria que fosse atribuida a esse elemento.
+
+
+Aula 9 : Manipulando Elementos
+
+Nessa aula ele ta mostrando mais algumas coisas que podem ser alteradas com o JQuery, e uma delas é ao invés de eu colocar "$().html();" eu coloco no lugar do "html" "text" , e nesse caso o JQuery, sabe que eu quero inserir um texto naquele lugar só que se eu tiver colocado TAGS HTML dentro do meu texto ele não interpreta e só printa o que eu mandei como valor.
+
+$('#teste').text('<h1>Novo Texto</h1>');
+
+Aqui apresenta exatamente como está dentro do bloco.
+
+$('#teste').find('img').attr('width', '100');
+Essa é uma das forma de se alterar um atributo de um elemento utilizando o "attr" e ai passa o nome do atributo a ser alterado e o valor desse atributo.
+
+mais pode ser feito asssim também
+
+$('#teste').find('img').width('100');
+
+já passando o nome do atribuito como parâmetro e o valor a ser alterado.
+
+
+Já com os campos "input" como ele não possui um "valor" de conteudo porque ele na teoria só captura valores não da para inserir valor trocando com o ".html();", neste caso temos que utilizar ou o "attr();" , ou utilizamos uma outra propriedade que é o "val();"
+
+$('input').attr('value', 'Anal');
+
+Assim funciona mais é dar muitas voltas.
+
+$('input').val('Anal');
+
+asssim é mais rapido e mais acertivo.
+
+
+$('input').attr('placeholder', 'PlugAnal').attr('legend','Gay');
+
+Aqui foi um teste meu, para ver se ele aceita varios parâmetros no mesmo "attr" e ele aceitou, 
+
+Dica: Quando vamos alterar o valor que já existe dentro das TAGS "<li>Item 1</li>" usamos o "html();", e sempre que vamos alterar um atributo desse cara usamos o "attr();" mais para campos que não possuem um valor como o "<input type="text" name="nome"/>" utilizamos o "val();"
+
+
+
+Para adicionarmos um novo elemento antes ou depois, 
+
+
+Depois do Elemento
+$('input').after('<input type="text" name="sobrenome"/>');
+
+
+
+Antes do Elemento
+$('input').before('<input type="text" name="sobrenome"/>');
+
+
+ou só adicionar um novo, ao final de todo o conteudo já existente
+$('ul').append("<li>Item 6</li>");
+
+
+Adicionar um item novo antes do conteudo já existe
+$('ul').prepend("<li>Item 0</li>");
+
+
+Dica : O ".after();" e o ".before();" inserem antes e depois do elemento que foi selecionado.
+já o "append();" e o "prepend();" inserem dentro do conteúdo do elemento selecionado respectivamente.
+
+
+Aula 10 Transformando Elementos em Objetos jQuery
+
+
+Nessa aula ele mostra como transformar elementos do HTML, em objetos do JQuery e ainda mais como é possivel trabalhar com isso.
+
+var irineu = document.getElementById('div');
+
+Aqui eu to pegando a minha "div" pelo "id" usando JS puro e como é pelo "id" não precisa usar o "#" porque o "getElementById" já declara que é por "id",e para se mandar esse valor atribuido a variavel "irineu" para o JQuery é assim:
+
+$(irineu).html("New Irineu");
+
+Dica: Quando se está passando uma variavel não se usa os apocrifos('').
+
+
+$(document.getElementById("div")).html("Novo Teste do IRINEu");
+
+Aqui eu estou passando como parâmetro para o JQuery a propria seleção em JS puro e já trabalhando diretamento na seleção.
+
+
+Para selecionar item dentro de uma lista, apenas itens que possuem o mesmo nome mais nenhum "id" usamos o "eq();"
+
+$('li:eq(1)');
+
+Ele começa a varedura em todos as tags "li" e começa a contagem em zero"0", sendo assim ele vai me devolver a segunda ocorrencia de "li"
+
+$('li').eq(1);
+
+esse é outra forma de se obter o mesmo resultado.
+
+
+Aqui temos uma forma de como alterar o valor de um item que não possui "id" utilizando os conhecimentos dos exemplos acima, primeiro eu defini que a variavel "eqTeste" seria igual ao item 3 da minha lista.
+
+var eqTeste = $('li').eq(3);
+
+e depois utilizei o JQuery para subistituir apenas o valor dele para mim.
+
+$(eqTeste).html("Meu novo Item de Numero 4");
+
+
+Aula 11 : Navegando Entre Elementos
+
+Aqui vemos modos de como navegar entre os elementos, mesmo os que não possuem nenhuma identificação de "id" ou "classe", nesse caso em especifico eu tenho uma "div" com uma classe que se chama "filha" e eu quero pegar uma outra "div" apartir dela, então como eu faço isso?
+se eu sei que o elemento em questão está envolvendo o elemento em que eu estou eu uso o "parent();"
+
+$('.filha').parent();
+
+mais o "parent();" só pega elementos que envolvem outros como por exemplo uma "div", o "body", uma "table", "ul", etc, essas são forma de busca de um elemento interno para elementos externos.
+
+E ai temos as forma de procura de um elemento externo para os elementos internos.
+
+$('.site').find('.topo').find('.subtopo').find('.filha');
+
+Aqui eu fui pegando elemento por elemento até chegar onde eu queria, claro que como eu sei o nome do elemento (classe ou id dele), eu posso acessalo diretamente, mais essa é uma forma de pesquisa.
+
+$('body').find('div').eq(0);
+
+Nesse caso eu estou procurando a primeira "div" dentro de "body", e mesmo ela tendo uma "class" ele ainda me retorna ela e a class.
+
+$('div').eq(0);
+
+Aqui eu estou procurando uma "div" e não sei o nome da "class" nem do "id" dela eu mando procurar dentro do meu documento HTML a primeira ocorrencia de "div".
+
+
+$('.irmao').closest('.topo');
+
+Nesse caso aqui em especifico estou procurando uma "div" ou quem tem uma "class" que se chama  (topo), e eu estou em um elemento que tem uma "class" que se chama (irmao), o que eu fiz usei uma função nativa do JQuery que se chama ".closest();" que procura em todo o contexto de ".irmao" onde está o tal do ".topo".
+
+Obs. só funciona se a sua busca for por um elemento que está no mesmo contexto do seu elemento, porque se você tiver uma "div" com 3 "div's" dentro dela formando niveis, o "closest();" só vai retornar ao primeiro nivel, e se não encontrar ele para ali a busca.
+
+
+$('.irmao').closest('.site').find('.conteudo');
+
+Já nesse caso o que estamos fazendo, retornando ao primeiro nivel de ".irmao" que nesse caso é o ".site" e apartir dele procuro o ".conteudo".
+
+Dica: Só usar o "parent()", quando se tem a certeza que o que você procura está um nivel acima de onde você está, caso contrario use o "find();" ou o "closest();"
+
+
+Aula 11 : CSS, Styling e Dimensões
+
+
+Aqui vemos como adicionar ou remover css dos elementos com JQuery.
+
