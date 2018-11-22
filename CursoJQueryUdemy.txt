@@ -288,3 +288,36 @@ $('li').css('color', '#ccc');
 
 
 Aqui estamos acrescentando um estilização especifica no elemento, que também pode ser selecionado de qualquer maneira, nome, id, class, e com o parâmetro ".css();" adicionamos esse estilo novo ao elemento, sempre passando o proredade , valor.
+
+
+Aula 13 : Guardando dados em um elemento
+
+$('input').attr('data-idade','90');
+
+Aqui temos algumas opções, ou colocamos como ".attr();" e atribuimos os valores nas variaveis, e nesse caso vira um atributo do elemento HTML
+
+
+
+$('input').data('idade');
+
+E para acessa-lo fazemos assim, é como se a propriedade ".data();" procurasse um parâmetro com nome "data" e depois do traço é o nome proprimente dito do meu parâmetro.
+
+
+
+$('input').data('idade', 25);
+
+Porém quando eu faço dessa forma eu gravo essa info apenas na memoria do navegador(é meio que um cache), e ele não muda minha TAG HTML.
+
+
+
+$('input').data('idade');
+
+Acesso o valor que está só na memoria e não no elemento HTML.
+
+
+
+$('input').data('texto',$('input').val().length);
+
+Nesse caso estou querendo pegar a quantidade de caracteres que está sendo passada no meu "input", e já estou atribuindo essa valor a memoria com o JQuery, e para acessa-lo é igual o de cima.
+
+$('input').data('texto');
