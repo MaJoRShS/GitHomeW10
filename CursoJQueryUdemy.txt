@@ -321,3 +321,130 @@ $('input').data('texto',$('input').val().length);
 Nesse caso estou querendo pegar a quantidade de caracteres que está sendo passada no meu "input", e já estou atribuindo essa valor a memoria com o JQuery, e para acessa-lo é igual o de cima.
 
 $('input').data('texto');
+
+
+Aula 14 : Métodos Muito Úteis no dia-a-dia
+
+
+Aqui logo de cara vemos uma função top que é o "$.trim();", o que ele faz, ele remove todos os espaços do seu texto ou variavel que são irelevante, ou seja todo espaço antes e depois da frase ou do texto.
+
+
+
+var zeroEspacos = $('.anal').html();
+
+Aqui estou atribuindo o valor da classe anal para a variavel zeroEspacos.
+
+
+
+$.trim(zeroEspacos);
+
+aqui estou aplicando o "$.trim();" e removendo todos os espaços antes e depois do texto.
+
+
+
+var zeroEspacos = $.trim($('.anal').html());
+
+Aqui é a mesma coisa porém de uma forma mais direta, ao invés de ir parte por parte eu já passo o "$.trim();" com  a seleção JQuery e ai quando eu mostro a variavel ela já esta com o valor formatado.
+
+
+Outra função nativa do JQuery que serve para varrer arrays ou elementos é a "$.each(function(){});", e ela tem que receber uma função como parâmetro.
+
+$('li').each(function(){
+	alert($(this).html());
+})
+
+aqui eu to pegando todas as "li" que existem no meu documento HTML e dando um alerta para cada uma delas.
+
+
+var nome = "Lucas";
+
+$.type(nome);
+
+Aqui eu to definindo uma varialvel e pedindo para o JQuery que ele me de o tipo dessa varialvel.
+
+
+
+typeof(anal);
+
+Aqui é com o JS puro, que é mais facil.
+
+
+Ai ainda temos os esquemas de validação do proprio JQuery que é para saber se uma variaveis é de um determinado tipo como por exemplo "$.isNumeric();"
+
+
+$.isNumeric(idade);
+->true
+
+Aqui eu determinei um valor para a variavel idade e depois verifiquei se aquela variavel é numerica ou não, o retorno é booleano., e tem mais opções como "$.isArray();", "$.isFunction();" etc.
+
+*Vou ter que dar uma estudada a parte nessas paradas*
+
+
+
+
+Aula 15 : FAQ: Como saber se um elemento existe?
+
+Aqui ele mostrou como devemos fazer seleções com o JQuery da maneira correta, toda seleção feita em JQuery sempre retorna um array vazio "[]", ou seja como trouxe retorno mesmoq que vazio sua validação vai dar "treu", então temos que sempre verificar se o array é maior que "0(zero)".
+
+
+if( $('.anal').length > 0){
+	alert("Elemento Existe no Docuemnto");
+}else{
+	alert("Elemento Não Existe no Documento");
+}
+
+Aqui eu to verificando se o elemento existe ainda verificando se o tamanho do array de retorno é maior que "0(zero)".
+
+
+
+
+
+Aula 16 : FAQ: Como saber se um elemento tem uma classe em particular?
+
+
+if( $('li').hasClass('nome')){
+	alert("Classe existe no documento");
+}else{
+	alert("Classe não existe no documento");
+}
+
+
+Aqui é igual o exemplo de cima porém é para verificar a existencia de uma classe, ai é utilizado o "$('elemento').hasClass('nomeDaClasse');"
+
+
+
+Aula 17 : FAQ: Como ativar/desativar um elemento de formulário?
+
+
+$('#btn').attr('disabled','disabled');
+
+Aqui eu to selecionando o meu "input" que tem um "id = btn" e adicionando nele o atributo "disabled",que faz com que o meu campo fique readyonly.
+
+
+
+$('#btn').removeAttr('disabled');
+
+Aqui eu estou removendo o atributo "disabled" do meu "input".
+
+
+
+$('#check').attr('disabled','disabled');
+
+Aqui eu desabilito o campo, ele não pode ser mais acionado com click.
+
+
+$('#check').removeAttr('disabled');
+
+Aqui eu deixo o campo ativo novamente removendo o atributo "disabled".
+
+
+$('#check').attr('checked','checked');
+
+Aqui eu estou deixando marcada uma checkbox que tem no meu docuemnto HTML, utilizando JQuery.
+
+
+$('#check').removeAttr('checked')
+
+e aqui igual ao exemplo de cima removendo o atributo "checked" do meu checkbox.
+
+
