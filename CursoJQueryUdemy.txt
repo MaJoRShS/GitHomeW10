@@ -1,4 +1,4 @@
-Seção 1
+Seção 1 : Começando no jQuery com o pé direito
 
 Começando no JQuery com o pé direito
 
@@ -12,7 +12,7 @@ Aula 2 : Como o jQuery funciona?
 primeiro entra no site do JQuery e acessa a sessão de downloads , e ai você baixa a versão minificada que fica mais leve no site, mais para estudos usamos a descompactada, e para inserir o JQuery na sua pagina é só colocar o "<script type="text/javascript" src="jquery-3.3.1.min.js"></script>" e ai nesse caso é necesario que o nosso arquivo que contem o javascript mesmo seja colocado abaixo do JQuery,porque pode ser que no arquivo JS ja tenha alguma coisa d JQuery.
 
 
-Seção 2
+Seção 2 : Fundamentos do jQuery
 
 
 Fundamentos do JQuery
@@ -448,3 +448,176 @@ $('#check').removeAttr('checked')
 e aqui igual ao exemplo de cima removendo o atributo "checked" do meu checkbox.
 
 
+
+
+Aula 18 :  FAQ: Como pegar o Item selecionado de um SELECT?
+
+
+
+$('#numeral').val();
+
+Aqui estamos pegando as informações que estão selecionadas dentro do "select" do HTML, e como ele está selecionado eu preciso apenas pegar o valor dele.
+
+
+
+$('#numeral').find('option').eq(2).attr('selected','selected');
+
+Nesse caso eu estou pegando pelo "id" e dando procurando em todo o meu documento HTML os "option", após isso eu seto ele na na possição igual a "2" e por ultimo eu adiciono o atributo "selected" com o valor de "selected".
+
+
+
+
+Aula 19 : FAQ: Como alterar o 3º elemento de uma lista de 10 itens?
+
+
+
+Aqui ele mostra como selecionar um elemento especifico dentro de uma lista ou de vario elementos do mesmo,
+
+$('li').eq(3).html('Item Alterado.');
+
+Aqui eu pegeui todos os "li" do meu documento HTML, procurei o que está na terceira posição, e alterei o HTML dele.
+
+
+
+
+Aula 20 : FAQ: Como pegar um elemento nativo com jQuery?
+
+
+
+Nessa aula fazemos o processo reverso, pegamos um elemento com JQuery e passamos ele para o JS, e ai alteramos ele.
+
+$('li')[2];
+
+Para conseguirmos pegar o elemento com o JQuery como ele sempre devolve um array com todos os elementos dentro e para acessar os elementos de um array é necessario que se passe o numero do elemento que se quer pegar, sempre o primeiro elemento é a posição "0(Zero)", feito isso você tem o elemento fora do JQuery e pode trabalhar com o JS puro.
+
+
+$('li')[2].innerHTML = "Mudando elemento";
+
+Aqui eu fiz o mesmo processo e ainda alterei o valor do elemento com o "innerHTML="";".
+
+
+
+
+Seção 3 : Eventos, Clicks, Teclado, Mouse, Selects e Ações no jQuery
+
+Aula 21 : O que é um Evento?
+
+
+Nesta aula ele explica o que é um "evento" e "eventos" nada mais do que to que as ações executadas pelo usuario, ou seja, um movimento de mouse, um redimensionamento de tela, um click, digitar um texto, mover o mouse.
+
+
+Aula 22 : Definindo Eventos em Elementos DOM
+
+    $('button').click(function(){
+        $(this).addClass('estilo')
+    });
+
+Aqui eu estou pegando o evento de click no meu botão e quando isso acontece eu adiciono nele a classe "estilo".
+
+
+$('button').click(function(){
+        if($(this).hasClass('estilo')){
+            $(this).removeClass ('estilo')
+        }else{
+            $(this).addClass('estilo')
+        }
+    });
+
+
+Aqui é uma validação já com a inserção da classe "estilo" no meu botão(pego bem mal essa frase mais tudo certo,suahsuah), então eu verifico se a classe "estilo" existe no meu botão, e se ela existir eu removo ela do botão, mais se ele não existir eu adiciono.
+
+
+
+    $('button').click(function(){
+        $(this).toggleClass('estilo');
+	});
+
+
+Já aqui eu estou fazendo  a mesma coisa do exemplo anterior mais com menos linhas de código utilizando a propriedade ".toggleClass('');".
+
+
+	$('button').mouseover(function(){
+		$(this).addClass('estilo');
+	});
+
+	$('button').mouseout(function(){
+		$(this).removeClass('estilo');
+	});
+
+Nesse caso eu estou adicionando uma classe ao meu botão quando eu passo o mouse sobre ele e removendo a classe quando eu retiro o mouse dele.
+
+
+
+Aula 23 : Eventos Auxiliadores
+
+
+
+
+  $('button').hover(function(){
+        $(this).addClass('estilo');
+    },function(){
+        $(this).removeClass('estilo');
+    });
+
+O ultimo exemplo da aula anterior fica mais facil de ser executado nessa aula, tudo por causa do atributo ".hover( , );" que é igual ao hover do CSS, e ele faz o ".mouseover();" e ".mouseout();"
+
+
+
+ $('button').hover(function(){
+        $(this).toggleClass('estilo');
+    });
+
+
+Aqui é a mesma coisado exemplo acima, porém como eu to passando o ".toggleClass('');" o JQuery já sabe que eu to querendo adicionar e remover uma classe no meu "button", sempre que eu passar o mouse, então passo o mouse ele adiciona uma classe, e quando eu tiro o mouse ele esconde minha classe.
+
+
+Aula 24 : Removendo Eventos de um Elemento DOM
+
+
+    $('button').on('click',function(){
+        alert('Clicou Aqui.');
+    });
+
+Nesse caso eu to incluindo um evento com o JQuery utilizando a propriedade ".on('', );", que eu passo o nome do meu evento e já passo o que esse evento vai fazer, também é possivel fazera mesma coisa utilizando o ".bind('', );".
+
+
+    $('button').bind('click',function(){
+        alert('Clicou Aqui.');
+    });
+
+
+
+$('button').off('click');
+
+Aqui eu "desligo" o meu evento.
+
+
+
+
+
+    $('button').on('click',function(){
+        alert('Clicou Aqui.');
+    });
+
+    $('button').on('mouseover',function(){
+        $(this).addClass('estilo');
+    });
+
+
+    $('button').on('mouseout',function(){
+        $(this).removeClass('estilo');
+    });
+
+Aqui eu estou adicionando 3 eventos ao mesmo botão, e o que acontece, da para desativar qualquer um deles e os outros se mantem funcionando normalmente da mesma forma.
+
+$('button').off('click');
+
+ou
+
+$('button').off('mouseover');
+
+ou
+
+$('button').off('mouseout');
+
+Assim eu desativo qualquer um dos três eventos e os outros permanecem funcionando.
