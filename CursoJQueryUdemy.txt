@@ -621,3 +621,87 @@ ou
 $('button').off('mouseout');
 
 Assim eu desativo qualquer um dos três eventos e os outros permanecem funcionando.
+
+
+
+Aula 25 : Acionamento Falso de Eventos
+
+
+Nessa aula vemos como falsear eventos, no caso vamos falsear um evento de click.
+
+
+$('#btn1').on('click',function(){
+    $('#btn2').trigger('click');
+});
+
+
+$('#btn2').on('click',function(){
+    alert('clicou no 2');
+});
+
+Tenho dois botões e quando eu clico no primeiro ele usa a propriedade ".trigger('');" do JQuery e da o click no segundo botão, detalhe que eu setei como retorno na função do primerio botão o ID do segundo mais o propriedade ".trigger('');"
+
+e o ".trigger('');" pode ser utilizado para qualquer ação que eu quiser.
+
+
+Aula 26 : Propriedades padrão de um Evento
+
+Nessa aula o exemplo é bem pratico, aqui eu consigo tanto ver qual evento está sendo executado como alterar as propriedades default de um evento com JQuery.
+
+
+$('#btn1').on('click',function(){
+
+    var txt = $('#nome').val();
+    alert(txt);
+});  
+
+Nessa caso aqui eu estou pegando o que foi digitado em um "input" e dando um alerta com o valor que foi digitado, porém aqui temos um pequeno problema, mesmo dando o alerta, o formulario será enviado, e isso pode ser um problema em determinados casos.
+
+
+$('#btn1').on('click',function(a){
+a.preventDefault();
+
+var txt = $('#nome').val();
+alert(txt);
+
+}); 
+
+
+Já nesse caso, eu estou suprimindo a ação padrão do envio do formulario, utilizando o ".preventDefault();" em branco mesmo, e essa para conseguir utilizar esse propriedade temos que passar pelo menos um parâmetro na chamada da função(no meu caso foi a letra "a", mais pelo que eu percebi pode ser qualquer coisa).
+
+
+
+$('#btn1').on('click',function(a){
+a.preventDefault();
+
+alert(a.type);
+});
+
+
+Aqui eu estou dando um "alert();" com o evento que acabou de ser executado.
+
+
+function eventoDoBotao(a){
+    a.preventDefault();
+    alert(a.type);
+}
+
+$(function(){
+
+$('#btn1').on('click', eventoDoBotao);
+$('#btn1').on('mouseover', eventoDoBotao);
+$('#btn1').on('mouseout', eventoDoBotao);
+  
+});
+
+
+
+
+Aqui eu declaro o esquema do ".preventDefault();" como uma função no escopo global e uso ela dentro do meu JQuery.
+
+
+console.log(a.target);
+console.log(this);
+
+
+ambos os exemplos mostram onde que ocorreu aquela ação.
