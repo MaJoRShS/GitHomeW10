@@ -781,3 +781,117 @@ Aqui nesse caso eu estou pegando os valores que são selecionados do "select" do
 
 
 
+Aula 29 : Eventos de Teclado
+
+Aqui temos eventos que reconhecem as teclas do teclado e é possivel fazer algumas coisas com eles.
+
+$('#nome').keydown(function () { 
+    console.log('Tecla pressionada')
+});
+
+$('#nome').keyup(function () { 
+    console.log('Tecla solta')
+});
+
+Aqui eu mando printar no console toda vez que uma tecla é pressionada e todas vez que a tecla é solta, Obs(eu usei direto a propriedade ".keydown();" e ".keyup();" porque eu instalei um gerenciador de snippts do JQuery que facilita e muito a escrita, e como não tem problema nenhum em utilizar assim ou com o ".on('','');" então zero job.).
+
+
+
+$('#nome').keypress(function (e) { 
+    console.log( $(this).val());    
+});
+
+
+essa opção eu achei nos snippts, e serve para a mesma coisa só que sem a necessidade de você pegar quando a tecla é pressionada ou solta.
+
+
+
+$('#nome').keyup(function (e) { 
+    console.log(e.keyCode)
+});
+
+
+Aqui temos uma forma de pegar as teclas que foram digitadas, essas teclas não são exibidas como vemos, mais sim com numeros porque eu estou usando o "keyCode", mais podemos usar apenas o "key" e pegaremos o valor que foi digitado não com numeros mais sim a letra mesmo da tecla.
+
+
+
+$('#nome').keyup(function (e) { 
+    if(e.keyCode == 13){
+        console.log('Apertou o enter')
+    }
+});
+
+
+
+Ou
+
+
+$('#nome').keyup(function (e) { 
+    if(e.key == 'Enter'){
+        console.log('Apertou o enter')
+    }
+});
+
+
+Aqui temos as duas formas de pegar ou executar alguma coisa com o enter, tanto pegando pelo "keyCode" ou pelo "key" só.
+
+
+$('#nome').keyup(function (e) { 
+    if(e.key == 'Enter'){
+        var txt = $(this).val();
+        console.log(txt);
+        $(this).val('');
+
+    }
+});
+
+Nesse exemplo eu to simulando um chat, então eu jogo todo o valor do elemento para uma varialvel, e eu printo no console essa varialvel, e ai por ultimo eu limpo o elemento, mais tudo isso só ocorre quando eu aperto o enter.
+
+
+Aula 30 : Eventos de Mouse
+
+
+$('.btn').mousedown(function () { 
+    console.log('Clickou saporra é um click.')
+});
+
+$('.btn').mouseup(function () { 
+    console.log('Soltou saporra é um click.')
+});
+
+Aqui basicamente eu to pegando os clicks do mouse em um elemento que não é um botão mais mesmo assim podemos fazer com que se passe por um botão, e é a mesma funcionalidade do "keydown" e do "keyup", quando eu clico ele dispara um evento e quando eu solto o click ele dispara um outro evento.
+
+Obs.(to usando mesmo direto porque fica mais facil e escrevo bem menos)
+
+
+
+$('.btn').mouseover(function () { 
+    $(this).addClass('estilo');
+});
+
+$('.btn').mouseout(function () { 
+    $(this).removeClass('estilo');
+});
+
+
+aqui é a mesma parada que já fizemos la atrás, quando se passa o mouse ele adiciona a classe "estilo" e quando se tira o mouse ele remove a classe.
+
+
+
+$('.btn').click(function () { 
+    console.log('So mostra quando eu solto o botão do mouse')
+    
+});
+
+
+Esse cara aqui é o mesmo que o ".mouseup();" só que ele executa o ".mouseup();" junto com o ".click();", basicamente a mesma coisa, mais feita de uma outra maneira.
+
+$('.btn').dblclick(function () { 
+    console.log('Dois clicks no mouse')
+    
+});
+
+
+Aqui é para capturar quando o usuario der dois clicks no mouse.
+
+
