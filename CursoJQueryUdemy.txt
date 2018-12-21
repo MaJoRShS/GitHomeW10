@@ -705,3 +705,79 @@ console.log(this);
 
 
 ambos os exemplos mostram onde que ocorreu aquela ação.
+
+
+Aula 27 : Eventos de Browser
+
+Aqui temos alguns eventos que são executados pelo Browser e que temos como capturar , alterar e realizar algumas ações pelo JQuery.
+
+
+    $('.scroll').on('scroll',function(){
+        console.log('Scrollou');
+        $(this).css('background-color','blue');
+    });
+
+Aqui é um evento de "scroll" que eu to capturando o scroll da tela e mudando o "background-color" e apresentando um texto na mudança.
+
+
+    $(window).on('resize',function(){
+        console.log('Mudou o tamanho da TELA.')
+    });
+
+Aqui eu capturo o tamanho da tela,e as alterações que tiveram nesse tamanho e printo no "console" uma mensagem, e nesse caso como o que vamos pegar é o tamanho da tela, trabalhamos com a propriedade "window".
+
+
+
+Aula 28 : Eventos de Formulário
+
+
+Nessa aula temos eventos especificos para formularios.
+
+$('#form').on('submit',function(e){
+    e.preventDefault();
+    console.log('Parei a Execução natural do submit do formulario.')
+})
+
+
+esse evento é o "submit", esse cara pega o envio do formulario para fazer qualquer coisa, como tratamento e/ou validação de informação, já no exemplo acima eu estou alterando o evento padrão de envio, e printando uma mensagem no console.
+
+
+
+
+$('#form').on('select',function(){
+    console.log('Algo foi selecionado');
+});
+
+
+Aqui eu to printando no console só quando eu seleciono alguma coisa na tela, e como eu mandei pegar tudo do formulario qualquer seleção no formulario eu consigo identificar, caso eu queira verificar se foi em algum elemento especifico é só colocar a seleção no "ID" dele.
+
+
+$('#nome, #email').on('select',function(){
+    console.log( $(this).val() );
+});
+
+
+Aqui por exemplo eu to mandando printar exatamento o que foi selecionado, ou seja o valor que foi selecionado na tela.
+
+
+$('#nome,#email').on('focus',function(){
+    $(this).addClass('focus');
+});
+
+$('#nome,#email').on('blur',function(){
+    $(this).removeClass('focus');
+});
+
+
+Aqui eu to usando a propriedade "focus" para todas as vezes que o usuario focar(clicando nele) em um elemento, eu adiciona uma classe, e todas as vezes que esse elemento é desfocado eu removo essa classe usando a propriedade "blur".
+
+
+$('#idade').on('change',function(){
+    console.log( $(this).val() );
+});
+
+
+Aqui nesse caso eu estou pegando os valores que são selecionados do "select" do HTML, e todas as vezes que eu altero ele printa no console o valor.
+
+
+
