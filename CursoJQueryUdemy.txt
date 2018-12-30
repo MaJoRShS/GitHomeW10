@@ -895,3 +895,174 @@ $('.btn').dblclick(function () {
 Aqui é para capturar quando o usuario der dois clicks no mouse.
 
 
+Seção: 4
+
+Efeitos Especiais e Animação com jQuery
+
+
+
+Aula 31 :  O que são Efeitos?
+
+
+Introdução a efeitos com JQuery que são coisas que acontecem enquanto eu realizo alguma coisa, por exemplo clico em um botão e ele muda de cor .
+
+
+Aual 32 :  Fazendo um Elemento Aparecer/Desaparecer na tela
+
+Aqui como funciona eu adiciono e removo alguns elementos ou classes via JQuery, e tem como deixar mais rapido ou mais de vagar.
+
+
+$('.div').hide('fast');
+
+$('.div').hide('slow');
+
+Aqui eu estou escondendo a minha "div" completa pela sua classe, e aplicando a propriedade "fast" e ou "slow" ele coloca uma animação pelo menos ao invés de sumir do nada com a classe.
+
+
+$('.div').show('fast');
+
+$('.div').show('slow');
+
+
+Aqui  é a mesma coisa do de cima porém ele está mostrando a minha "div" com todos os seus efeitos.
+
+
+$('.div').toggle('fast');
+
+Aqui é uma das formas de fazer com que a classe suma e apareça com o mesmo comando.
+
+
+$('.btn').click(function () { 
+    $('.div').toggle('fast');
+
+});
+
+
+Aqui a unica diferença é que eu coloquei para que o elemento suma e apareça pelo click do meu "botão" que é uma "div" e não um botão.
+
+
+
+Aula 33 : Efeitos de Fade
+
+
+A propriedade "fade" altera a opacidade do seu elemento, fazendo com que o elemento fique mais transparente é desaparecer sem perder seu tamanho, e depois ele ganha cor até ficar 100% visivel, e para isso usamos ".fadeOut();" e ou ".fadeIn();".
+
+
+
+$('.btn').click(function () { 
+        $('.div').fadeTo('fast', 1);
+
+    });
+
+$('.btn').click(function () { 
+        $('.div').fadeTo('slow', 1);
+
+    });
+
+Aqui temos que fazer diferente, para conseguirmos ir mais rapido ou mais devagar, usamos o ".fadeTo('',);" e nele passamos dois parâmetros, o preimeiro é "fast" ou "slow", e o segundo é o tempo que vai demorar essa transição, indo de "0(zero)" até "1(um)".
+
+
+$('.btn').click(function () { 
+    $('.div').fadeToggle('slow');
+
+    });
+
+
+$('.btn').click(function () { 
+    $('.div').fadeToggle('fast');
+
+    });
+
+Nesse caso é o mesmo esquema do Toggle em qualquer lugar se ele existir ele remove e se não existir ele adiciona, porém é possivel colocar a velocidade.
+
+
+Aula 34 : Efeitos de Deslizamento (Slide)
+
+
+Aqui tem uma função bem parecida com o fade, porém ela é propria para esse tipo de transição, que se chama ".slide();"
+
+
+
+$('.btn').click(function () { 
+    $('.div').slideUp();
+
+    });
+
+$('.btn').click(function () { 
+    $('.div').slideUp('slow');
+    });
+
+$('.btn').click(function () { 
+    $('.div').slideUp('fast');
+
+    });
+
+Aqui temos a função de ".slideUp();" que faz com que o seu menu ou div ou elemento suba até sumir quando ele for clicado(apenas um exemplo), e ainda é possivel colocar as velocidades nele.
+
+
+
+
+$('.btn').click(function () { 
+    $('.div').slideDown();
+
+    });
+
+
+$('.btn').click(function () { 
+    $('.div').slideDown('slow');
+
+    });
+
+
+$('.btn').click(function () { 
+    $('.div').slideDown('fast');
+
+    });
+
+
+Aqui a mesma coisa porém é para que o slide desça por completo e fique visivel para o usuario.
+
+$('.btn').click(function () { 
+    $('.div').slideToggle();
+
+    });
+
+
+$('.btn').click(function () { 
+    $('.div').slideToggle('slow');
+
+    });
+
+
+$('.btn').click(function () { 
+    $('.div').slideToggle('fast');
+
+    });
+
+
+Aqui temos o famoso toggle, e com velocidades diferentes para execução.
+
+
+
+
+Aula 35 :  Animações: Como usar o Animate
+
+
+
+A propriedade ".animate({}, );" tem inumeras utilizações, as mais comuns são para transição ou efeitos em botões ou elementos que devem ser deslocados ou alterados, e ao invés de só alterar a propriedade utilizando o que vimos até agora e ficar colocando velocidades fixas como "fast" e "slow"  o animate já tem o esquema de tempo, eu coloco o tempo que eu quero que dure a animação dando ainda mais poder para o DEV.
+
+
+$('.div').animate({'border-radius': '110px',
+                    "height": 200,
+                    'width':200,
+                    "margin-left":550,
+                    'margin-top':150
+                    }
+, 1500);
+
+});
+
+
+Aqui temos algumas particularidades, que o primeiro parâmetro do animate é um JSon, onde podemos colocar todas as alterações que vamos fazer naquele elemento, e como podemos ver no exemplo é tudo CSS, e após a ",(virgula)" temos a marcação de tempo, e é em milisegundos sendo assim essa animação vai durar 1.5 segundos.
+
+Obs. ainda podemos utilizar na marcação de tamanho o padrão mostrado acima ou colocar com '' ou ""(aspas simples ou duplas) e só o numero ou a marcação igual CSS ex:"150px" ou 150.
