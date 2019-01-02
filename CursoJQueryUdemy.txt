@@ -1066,3 +1066,129 @@ $('.div').animate({'border-radius': '110px',
 Aqui temos algumas particularidades, que o primeiro parâmetro do animate é um JSon, onde podemos colocar todas as alterações que vamos fazer naquele elemento, e como podemos ver no exemplo é tudo CSS, e após a ",(virgula)" temos a marcação de tempo, e é em milisegundos sendo assim essa animação vai durar 1.5 segundos.
 
 Obs. ainda podemos utilizar na marcação de tamanho o padrão mostrado acima ou colocar com '' ou ""(aspas simples ou duplas) e só o numero ou a marcação igual CSS ex:"150px" ou 150.
+
+
+Aula 36 : Animações: Como aplicar Eventos no Animate
+
+
+Aqui temos algumas coisas a mais que servem para a animação, vimos anteriormente que sempre que vamos trabalhar com o ".animate({},);" passamos um Json como primeiro parâmetro e como segundo paraâmetro um numero que é a velociadade da animação, porém agora sabemso que também temos a opção de passar um segundo Json, como parâmetro no lugar desse tempo de animação, o que faz com que eu tenha ainda mais opções para animações.
+
+
+$('.div').animate({'border-radius': '110px',
+                            'height': 200,
+                            'width':200,
+                            'margin-left':550,
+                            'margin-top':150
+                         }
+        , {
+            duration : 1500,
+            complete(){
+            console.log("Animação Finalizada");
+        },
+        start(){
+            console.log("Animação Inicializada");
+        },
+        step(){
+            console.log("Passo a passo da animação.");
+        }
+
+    });
+
+
+Aqui temos a opção de "duration: ; " que é a duração da animação propriamente dita, mais como ela está dentro do Json e tem mais parâmetros depois temos que descriminala, e após cara parâmetro novo a separação é por ", (virgula)".
+
+Temos outros 3 parâmetros "start(){}" , "step(){}" , "complete(){}".
+
+O evento "start(){}" é executado no começo da animação, logo que ela é disparada.
+
+O evento "step(){}" é executado em cada passo da animação, ou seja se ela mudou um pixel ele é disparado.
+
+O evento "complete(){}" é executado quando a animação é finalizada.
+
+No exemplo acima não existe nada além de uma mensagem no console, porém é possivel fazer todos os efeitos de animação visto anteriormente dentro de cada parâmetro desse como no exemplo abaixo.
+
+
+
+complete(){
+    $(".div").css('background-color', 'red');
+        console.log("complete.");
+
+}
+
+
+-> OU <-
+
+
+$('.btn').click(function () { 
+        $('.div').css('background-color','green');
+        $('.div').animate({'border-radius': '110px',
+                            'height': 200,
+                            'width':200,
+                            'margin-left':550,
+                            'margin-top':150,
+                         }
+        , {
+            duration : 1500,
+
+        start(){
+            $('.div').css('background-color','green');
+            console.log('start verde')
+        },
+
+        step(){
+            
+            console.log('meio do caminho');
+        },  
+
+        complete(){
+            $('.div').animate({'border-radius': '0',
+                                'height': 250,
+                                'width':150,
+                                'margin-left':0,
+                                'margin-top':0,
+                                },    1500);
+                                $('.div').css('background-color','blue');
+            console.log("complete and back blue.");
+            
+
+        }
+
+    
+    });
+   
+
+    });
+
+
+
+
+Aula 37 : FAQ: Como parar uma animação no meio do processo?
+
+
+
+    $('#stop').click(function () {
+        $('.div').css('background-color','green');
+        $('.div').stop();
+     });
+
+É só usar a propriedade "stop();", aqui eu usei junto com tudo que já tinha da aula passada, fazendo com que todas as vezes em que eu parasse a minha animação ela ficava verde.
+
+
+
+
+Aula 38 : FAQ: Como somar/subtrair propriedades na animação?
+
+
+
+É só usar os operadores aritiméticos "+=", "-=".
+
+$('#btn').click(function () { 
+        $('.div').animate({'margin-left': '+=50'});
+});
+
+$('#btn1').click(function () { 
+        $('.div').animate({'margin-right': '-=50'});
+});
+
+
+Assim eu incremento e decremento pela quantidade que eu quero.
