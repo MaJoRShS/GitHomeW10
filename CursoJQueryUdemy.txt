@@ -1187,7 +1187,7 @@ $('#btn').click(function () {
 });
 
 $('#btn1').click(function () { 
-        $('.div').animate({'margin-right': '-=50'});
+        $('.div').animate({'margin-left': '-=50'});
 });
 
 
