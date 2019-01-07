@@ -1192,3 +1192,126 @@ $('#btn1').click(function () {
 
 
 Assim eu incremento e decremento pela quantidade que eu quero.
+
+
+
+Seção: 5
+
+Ajax
+
+Aula 39 : O que é AJAX?
+
+
+Aqui ele explicou que o AJAX é uma requisição que funciona de forma assincrona, e que com o JQuery é possivel fazer essa requisição de uma forma ainda mais simples e descomplicada.
+
+
+
+Aula 40 : Conceitos Importantes
+
+
+Aqui ele só está falando os tipos de envio de um AJAX, que são o GET e o POST, e que sempre que é enviado um ajax ele sempre espera alguns tipos de retorno, como por exempĺo, JSon, HTML, XML, Texto e etc.
+
+
+
+Aula 41 : Como monitorar requisições AJAX no navegador?
+
+
+Aqui ele mostrou o DevTools do Google-Chrome, e onde que você verifica o que está acontecendo em termos de requisição, ou seja onde você se tem ou não um AJAX rodando, que é na aba Network do DevTools, ai ou você deixa aopção "ALL" ativa que vai mostrar tudo que foi carregado no seu navegador ou você marca apenas a opção "XHR" que só vai mostrar os seus AJAX.
+
+
+Aula 42 : Métodos Auxiliares/Facilitadores de AJAX no jQuery
+
+
+Aqui tem uma dica que esse maldito não falou no video, AJAX, só funciona se estiver em um servidor, mesmo que seja local, tem que ter um server rodando, porque ao que parece os navegadores recusão qualquer tipo de requisição quando se está usando o prefixo "file:///" o minimo esperado é um "http" ou "https".
+
+
+$('button').click(function () { 
+        $('.div').load("anal.html");   
+});
+
+
+Aqui eu carrego o conteúdo de um outro arquivo dentro da minha "div", porém esse aqui ainda é só um metodo auxiliar do AJAX.
+
+
+
+
+
+$.get("anal.html", function (data) {
+    $('.div').html(data);                
+});
+
+Aqui eu estou passando como "GET" o meu AJAX para recuperar o arquivo, ainda é um metodo auxiliar e eu posso passar como nome do parâmetro qualquer coisa, e ai eu passo ele dentro do ".html();" para que esse seja carregado no lugar correto.
+
+
+
+
+$.post("anal.html", function (data) {
+    $('.div').html(data);                
+});
+
+Aqui é a mesma coisa do exemplo de cima porém aqui é feito pelo metodo "POST" que em geral é mais seguro que o "GET".
+
+
+
+Aula 43 : Método Serialize: Pegue todos os dados de um formulário
+
+
+Existe um parâmetro que auxilia na formatação para envio de AJAX que se chama ".serialize();", esse cara deixa tudo bem formatado no padrão de URL, ou seja cara parâmetro com se nome e valor e separados por "?".
+
+
+        $('#form').submit(function (e) { 
+                e.preventDefault();
+
+
+                var txt = $(this).serialize();
+                console.log(txt);
+        });
+
+
+Aqui eu estou pegando o meu formulario completo e parando a execução padrão dele, ai depois eu pego todas as informações que serão enviadas passo para o ".serialize();" e mando printar na tela.
+
+
+OBS. para essa parada funcionar todos os parâmetros enviados ter conter a TAG "name="" " porque se não as info não apareceram, e no caso de ter "select" as "option" se não tiverem as propriedade "value" nelas será apresentado o conteúdo no ".serialize();"
+
+
+Aula 44 : Requisição Ajax Completa usando o método $.ajax
+
+
+Aqui temos uma requisição completa com AJAX.
+
+
+    $.ajax({
+            type: "GET",
+            url: "anal.php",
+            data: txt,
+            success: function (response) {
+                    $('.div').html(response);
+            },
+            error: function() {  
+                    alert('Deu chabu');
+            },
+            
+            
+    });
+
+
+Aqui eu uso o parâmetro "$.ajax({});" onde eu sou obrigado a passar um JSon, e nele eu tenho alguns parâmetros para enviar, o primeiro geralmente é o "type" ou o tipo do meu envio, o segundo é a "url" de onde eu vou enviar e processar o meu AJAX, o terceiro é o "data" que é de onde eu vou pegar os dados para serem enviados no meu caso eu armazenei tudo na variavel "txt" e ai apartir dela eu mando para o meu "serialize();" que formata para poder enviar para o meu AJAX, e ai no final eu tenho duas funções uma de sucesso e outra de erro que servem para avisar se deu certo e errado e ainda ter alguma ação dependendo do resultado, mais como eu estou usando o metodo "GET" tudo vai ficar exposto na url tornando assim o uso apenas para coisas que sejam irelevantes ou não comprometam em nada a integridade do sistema.
+
+
+
+    $.ajax({
+            type: "POST",
+            url: "anal.php",
+            data: txt,
+            success: function (response) {
+                    $('.div').html(response);
+            },
+            error: function() {  
+                    alert('Deu chabu');
+            },
+            
+            
+    });
+
+
+Aqui é igual ao exemplo de cima porém eu estou usando o  metodo "POST", que deixa tudo um pouco mais seguro por não enviar nada via URL e por deixar as coisa mais escondidas, mais o funcionamento é o mesmo.
