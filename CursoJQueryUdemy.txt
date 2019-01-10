@@ -1315,3 +1315,134 @@ Aqui eu uso o parâmetro "$.ajax({});" onde eu sou obrigado a passar um JSon, e 
 
 
 Aqui é igual ao exemplo de cima porém eu estou usando o  metodo "POST", que deixa tudo um pouco mais seguro por não enviar nada via URL e por deixar as coisa mais escondidas, mais o funcionamento é o mesmo.
+
+
+Aula 45 : Recebendo e Manipulando JSON
+
+
+        $('#form').submit(function (e) { 
+                e.preventDefault();
+
+
+                var txt = $(this).serialize();
+                console.log(txt);
+
+
+                $.ajax({
+                        type: 'POST',
+                        url: 'anal.php',
+                        data: txt,
+                        dataType:'json',
+                        success: function (json) {
+                                alert("Meu nome é: "+json.nome);
+                        },
+                        error: function() {  
+                                alert('Deu chabu');
+                        },
+                        
+                        
+                });
+
+
+Aqui eu to usando o AJAX para fazer o envio das minhas informações para a mesma pagina sem ter que recarregala, e ai eu uso igual na aula passada o "$.ajax({});", só que dessa fez eu to usando uma parâmetro a mais que é o "dataType", esse cara fala para a minha aplicação que eu vou receber como retorno um JSON, e nesse caso eu to usando o PHP como back-end, la eu pego o que foi enviado e devolvo formatado como JSON, dai eu pego o JSON e printo na tela só o meu nome, mais já acessando diretamente o JSon.
+(OBS aqui ele nao colocou o tratamento de erros na aula mais eu quis deixar para ir acostumando a fazer sempre o try, cath.)
+
+
+echo json_encode($_POST);
+
+Esse é o conteúdo do meu arquivo ".php" .
+
+
+
+
+
+                $.ajax({
+                        type: 'POST',
+                        url: 'anal.php',
+                        data: txt,
+                        dataType:'json',
+                        success: function (json) {
+                                alert("Minha senha é: "+json.senha);
+                        },
+                        error: function() {  
+                                alert('Deu chabu');
+                        },
+                        
+                        
+                });
+
+
+
+Aqui mesma coisa porém agora apresentando a senha.
+
+
+
+                $.ajax({
+                        type: 'POST',
+                        url: 'anal.php',
+                        data: txt,
+                        dataType:'json',
+                        success: function (json) {
+                                alert("Meu nome é : "+json.nome+" e tem "+json.qt_nome+" caracteres.");
+                        },
+                        error: function() {  
+                                alert('Deu chabu');
+                        },
+                        
+                        
+                });
+
+
+Já nesse caso muda um pouco a situação, eu to enviando os parâmetros para la e trabalhando com eles no meu php, e ai quando eu pego o retorno eu jogo na tela o apenas as info que eu quero já também acessando diretamente o meu JSon.
+
+
+
+$p = $_POST;
+$p['qt_nome'] = strlen($_POST['nome']);
+echo json_encode($p);
+
+
+conteudo do arquivo php.
+
+
+
+
+
+                $.ajax({
+                        type: 'POST',
+                        url: 'anal.php',
+                        data: txt,
+                        dataType:'json',
+                        success: function (json) {
+                               if(json.status == 'ok'){
+                                       alert("Logado com Sucesso")
+                               }else{
+                                       alert("Usuario ou Senha Invalidos")
+                               }
+                        },
+                        error: function() {  
+                                alert('Deu chabu');
+                        },
+                        
+                        
+                });
+
+
+Neste ultimo exemplo eu estou validando com o meu AJAX as informações que estão sendo enviadas, claro que tem validação do lado do PHP também, mais aqui já fica mais claro como se fazer algumas validações e requisições utilizando AJAX.
+
+
+$nome = $_POST['nome'];
+$senha = $_POST['senha'];
+
+$array = array('status' => '');
+
+if ($nome == 'MajoR' && $senha == 'ECvLmhJ3asj@JSFY%A') {
+    $array['status'] = 'ok';
+}
+
+echo json_encode($array);
+
+
+Conteudo do arquivo.php
+
+
