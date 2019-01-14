@@ -1446,3 +1446,75 @@ echo json_encode($array);
 Conteudo do arquivo.php
 
 
+Seção: 6
+
+Plugins
+
+
+Aula 46 : O que são Plugins?
+
+No JQuery um plugin é uma extensão do JQuery.
+
+
+
+Aula 47 : Como usar um Plugin jQuery?
+
+Nessa aula peguei um plugin de mascara para campos que ele passou, cara criou e deixou no github, eu baixei esse cara, ai eu adciono ele depois do JQuery e antes do meu script no meu HTML, ai depois é só seguir a documentação para utilizar.
+
+
+
+Aula 48 : Como criar seu próprio Plugin jQuery?
+
+
+
+(function($){
+
+
+}(jQuery));
+
+
+Essa é uma estrutura basica de um plugin JQuery, primeiro coloca tudo dentro de um "() parenteses" , e passa uma função e como parâmetro dessa função se passa o "$", assim que você fechar as chaves da função apre outro "() parenteses" e coloca "jQuery", ai dentro da função tudo que você colocar vai ser o seu plugin.
+
+
+
+$.fn.showRealLink = function () { }
+
+Aqui é uma estrutura basica de plugin também, eu to dizendo para o JQuery que eu to adicionando uma nova função para ele, e por isso eu preciso iniciar com "$" e depois mandar um ".fn" de função, assim o jquery intende que eu estou atribuindo uma nova função para ele, logo em seguida é o nome da minha função, e ai eu passo a função propriamente dita, e dentro dela que eu vou fazer as coisas acontecerem.
+
+
+ $.fn.showRealLink = function () { 
+        
+    this.each(function(){
+        var link = $(this).attr('href');
+        $(this).append(' ('+link+') ');  
+    });
+        
+    return this;
+    }
+
+
+Aqui eu tenho a função inteira, eu passo a estrutura basica, e dentro dela eu dou um "this.each();" que é para pegar todas as ocorrencias do meu elemento, e dentro dele eu passo uma função, que vai realmente trabalhar com o meu elemento, ele vai pegar o  ".attr();" atributo  "href" e apresentar ou adicionar ele depois do meu texto, com o ".append();". 
+
+Obs(eu não tinha colocado o "this.each(){};" e mesmo assim ele trocou em todos os links, não sei bem o porque mais a recomendação é de que se use o "this.each(){};" para evitar que de merda no futuro.").
+
+
+
+(function($){
+
+    $.fn.colors = function (cor) { 
+
+        this.each(function(){
+        $(this).css('color', cor);
+        $(this).css('text-decoration','none');
+     });
+
+     return this;
+    }
+
+
+}(jQuery));
+
+
+Esse aqui seria um novo Plugin mais para trocar as cores dos links.
+
+Obs(na real da para colocar essa merda toda dentro do mesmo arquivo, fazendo assim igual o jquery, um compiladão de varias funções, na real eu testei e da para criar a sua função jogar dentro do arquivo do JQuery e ele funciona normal.).
