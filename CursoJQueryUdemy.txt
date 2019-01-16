@@ -1518,3 +1518,60 @@ Obs(eu não tinha colocado o "this.each(){};" e mesmo assim ele trocou em todos 
 Esse aqui seria um novo Plugin mais para trocar as cores dos links.
 
 Obs(na real da para colocar essa merda toda dentro do mesmo arquivo, fazendo assim igual o jquery, um compiladão de varias funções, na real eu testei e da para criar a sua função jogar dentro do arquivo do JQuery e ele funciona normal.).
+
+
+
+Seção: 7
+
+PROJETO: Calculadora de IMC
+
+Aula 49 : Projeto: Calculadora de IMC
+
+Aqui é um projeto de uma calculadora de IMC, e 100% feita com JQuery.
+
+
+
+        $('#calcular').click(function () {                 
+        
+                var altura = $('#altura').val();
+                var peso = $('#peso').val();
+                altura = altura.replace(',','.');
+                peso = peso.replace(',','.');
+
+                var imc = peso / (altura*altura);
+
+
+                if(imc < 16 ){
+                        status    = "Muito abaixo do peso";
+                }
+                else if(imc >=17 && imc < 18.49){
+                        status    = "Abaixo do peso";
+                }
+                else if(imc >= 18.50 && imc < 24.99){
+                        status    = "Peso normal";
+                }
+                else if(imc >=25 && imc < 29.99){
+                        status    = "Acima do peso";
+                }
+                else if(imc >=30 && imc < 34.99){
+                        status    = "Obesidade I";
+                }
+                else if(imc >=35 && imc < 39.99){
+                        status    = "Obesidade II (severa)";
+                }
+                else if(imc >= 40){
+                        status    = "Obesidade III (mórbida)";
+                }
+
+
+        $('#resultado').html(" <br> Seu IMC é :"+imc+ " e Seu Status é: "+status);
+        });
+
+
+Aqui o que estamos fazendo 1º pegando o valor que vem nos inputs do HTML e jogando em uma variavel, após isso já fazemos um ".replace();" para trocar todas as vezes em que o usuario digitar "," nós trocamos por "." porque se não da erro, porque o JQuery ou JS puro é no padrão americano e la não se usa virgula para peso nem altura.
+
+após isso realizamos a conta do IMC que é peso dividido por altura ao quadrado.
+
+depois disso o resultado entra nas condicionais aninhadas que contem todas as opções existemtes para IMC.
+
+e por ultimo mandamos mostrar na tela o resultado mais o status do IMC da pessoa.
