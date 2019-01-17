@@ -1575,3 +1575,59 @@ após isso realizamos a conta do IMC que é peso dividido por altura ao quadrado
 depois disso o resultado entra nas condicionais aninhadas que contem todas as opções existemtes para IMC.
 
 e por ultimo mandamos mostrar na tela o resultado mais o status do IMC da pessoa.
+
+
+Seção: 8
+
+PROJETO: Menu Dropdown
+
+Aula 50 : Projeto: Menu Dropdown
+
+Nessa aula(projeto) faremos um menu dropdown.
+
+
+$('li').hover(function () {
+                        $(this).find('.menu2').slideDown();
+                        
+                }, function () {
+                        $(this).find('.menu2').slideUp();
+                }
+        );
+
+Aqui é simples, eu to procurando dentro dos meus "li" uma classe chamda ".menu2", e isso é importante para que quando eu tirar o mouse do botão do menu ele mesmo assim deixe o meu segundo menu visivel e não fique sumindo com ele igual loko.
+
+
+
+Código HTML
+
+<div class="menu">
+       
+        <ul>
+            <li>
+                <div class="menu1">home</div>
+                <div class="menu2">Quem somos <br>
+                Valores e Missão <br>
+                A empresa <br>
+            </li>
+            <li>
+                <div class="menu1">Serviços</div>
+                <div class="menu2">API <br>
+                Web Services <br>
+                SOA <br>
+                Micro Services <br>
+                Refatoração <br>
+
+            </li>
+            <li>
+                <div class="menu1">Contato</div>
+                <div class="menu2">Tel ou Chat <br>
+                E-mail <br>
+                Duvidas e Sugestões<br>
+            </li>
+
+        </ul>
+    
+   </div>
+
+
+Não tem nada de mais ele apensa da uma dica que a galera costuma colcar os menus dropdown com divs dentro das listas, igual ta ai, ai coloca o nome do campo que vai ficar visivel em uma div e deixa ela como pricipal e ai coloca todo o conteúdo que vai ficar escondido dentro de outra div.
