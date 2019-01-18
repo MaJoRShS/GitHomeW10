@@ -1631,3 +1631,53 @@ Código HTML
 
 
 Não tem nada de mais ele apensa da uma dica que a galera costuma colcar os menus dropdown com divs dentro das listas, igual ta ai, ai coloca o nome do campo que vai ficar visivel em uma div e deixa ela como pricipal e ai coloca todo o conteúdo que vai ficar escondido dentro de outra div.
+
+
+Seção: 9
+
+PROJETO: Selecionador de Data (Date Picker)
+
+Aula 51 : Projeto: Selecionador de Data (Date Picker)
+
+
+        var campoSelect;
+        $('input').focus(function () { 
+
+        var offset = $(this).offset();
+        var top = offset.top;
+        var left = offset.left;
+        var width = $(this).width();
+
+        $('.menu2').css('left', left + width + 10);
+        $('.menu2').css('top', top);
+        $('.menu2').show();
+                
+        campoSelect = $(this);
+        });
+        
+
+        $('input').blur(function () {
+                setTimeout(function(){
+                        $('.menu2').hide();
+                },200); 
+                
+                
+        });
+
+        $('.menu2 button').click(function () { 
+                var select = $(this).html();
+                campoSelect.val(select);
+                
+        });
+
+
+Aqui temos um esquema para pegar os dados de campos que seram apresentados apenas quando o user clicar para preencher um campo, e depois que ele seleciona o valor que ele quer ai esse valor é apresentado no campo.
+
+1º é feito um esquema com o ".focus();" para que os campos só sejam apresentados quando o campo for selecionado, alem disso tem uma função que ele não tinha passado no curso que se chama ".offset();" esse cara é o responsavél por me trazer as informações de posição top e left do elemento onde ele foi setado, ele ta nesse formato ai porque o plugin que eu to usando do JQuery no VSCode já me deu essa formatação, mais basicamente ele pega o top e o left coloca em um array e deixa la para que eu possa utilizar, e ainda mostrou mais uma só aqui que é a ".width()" que só pega o tamanho do elemento que está sendo selecionado e armazena em uma variavél, ai eu ainda tive que adicionar alguns pixels no final do do meu "LEFT" porque nem sempre a conta que o ".width();" faz é bem correta, e as vezes falta pixels.
+
+Alem disso eu criei uma variavel global que vai armazenar o valor do botão que o usuario digitou e eu coloco ela dentro do meu ".focus();" passando com valor "$(this);"  para pegar o valor dele.
+
+
+2º é o esquema de esconder o meu "submenu" assim que eu tiro o mouse dele, porém ali tem um esquema que ele só mostrou ali também, que é o do "setTimeout(function(){}){}" (função nativa do JS puro)e nesse caso eu to falando para o JQuery que eu quero que ele demore um determinado tempo até execultar o ".blur();", caso o contrario o meu "submenu" some antes de eu clicar.
+
+3º Quando eu clico no botão eu armazeno o valor dele dentro de uma variavel e depois de armazenar ele eu pego esse valor e jogo dentro do meu "input", falando que o valor do meu "input" é o valor que foi pego no meu ".click();".
