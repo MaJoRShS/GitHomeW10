@@ -1681,3 +1681,33 @@ Alem disso eu criei uma variavel global que vai armazenar o valor do botão que 
 2º é o esquema de esconder o meu "submenu" assim que eu tiro o mouse dele, porém ali tem um esquema que ele só mostrou ali também, que é o do "setTimeout(function(){}){}" (função nativa do JS puro)e nesse caso eu to falando para o JQuery que eu quero que ele demore um determinado tempo até execultar o ".blur();", caso o contrario o meu "submenu" some antes de eu clicar.
 
 3º Quando eu clico no botão eu armazeno o valor dele dentro de uma variavel e depois de armazenar ele eu pego esse valor e jogo dentro do meu "input", falando que o valor do meu "input" é o valor que foi pego no meu ".click();".
+
+
+Seção: 10
+
+PROJETO: Menu Apple (Fisheye)
+
+Aula 52 : Projeto: Menu Apple (Fisheye)
+
+
+Menu que é usado nos MAC OS que é apenas uma barra que fica em baixo da tela com os icones , e todas as vezes que você passa o mouse por cima do icone ele aumenta de tamanho.
+
+
+
+$('img').hover(function () {
+                       $(this).animate({
+                               "width":94,
+                               "height":94,
+                               "margin-top":-10
+                       }, 100);
+                       
+                        }, function () {
+                                $(this).animate({
+                                        "width":64,
+                                        "height":64,
+                                        "margin-top":0
+                                },100);
+               }
+       );
+
+Aqui eu to usando o "hover(function () { }, function () {} );" para execultar essa ação quando passar e tirar o mouse e o ".animate({},);" para fazer a animação dos icones, ai eu aumento o tamanho deles para 94px, e depois eu volto eles para o tamanho original.
