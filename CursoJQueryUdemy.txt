@@ -1756,7 +1756,7 @@ Aqui temos um switch normal ond eu verifico qual o numero de 0 a 4 que foi gerad
                         bola.css('background-color','black');
                 break;
                 case 1:
-                        bola.css('background-colorr','red');
+                        bola.css('background-color','red');
                 break;
                 case 2:
                         bola.css('background-color','green');
