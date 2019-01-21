@@ -1711,3 +1711,84 @@ $('img').hover(function () {
        );
 
 Aqui eu to usando o "hover(function () { }, function () {} );" para execultar essa ação quando passar e tirar o mouse e o ".animate({},);" para fazer a animação dos icones, ai eu aumento o tamanho deles para 94px, e depois eu volto eles para o tamanho original.
+
+
+Seção: 11
+
+PROJETO: Jogo Estoure a Bolha
+
+Aula 53 : Projeto: Jogo Estoure a Bolha
+
+
+$(function(){
+
+Aqui é para quando o botão de iniciar for clicado eu inicie o JOGO e adicione uma bola a cada 1segundo
+
+        $('#iniciar').click(function () { 
+                
+                setInterval(addBola, 1000);                
+        });
+
+
+});
+
+
+
+Aqui é função que determina onde cada bola sera criada, essa parada do "Math." segundo ele é uma lib do proprio JS que é utilizada para pegar ou gerar numeros aleatórios, sendo assim eu uso o "Math.random()" para pegar um numero aleatório de 0 até 800 para a variavél "x", e a do "y" vai só até 500, e isso tudo está dentro do "Math.floor();" que segundo ele serve para transformar o numero em inteiro ou pelo menos arredondar o numero.
+
+       function addBola() {
+        var x = Math.floor(Math.random()*800);
+        var y = Math.floor(Math.random()*500);
+        var cor = Math.floor(Math.random()*4);
+
+Aqui são as duas formas de se fazer a mesma coisa, na 1ª você cria o elemento no JQuery, e depois da um "appendTo();" onde ele vai ser inserido.
+Na outra eu primeiro digo onde eu vou colocar e depois o elemento propriamente dito, as duas funcionam e não vejo nada que possa causar erro em ambas.
+ 
+        // $('<div class="bola"></div>').appendTo(document.body);
+        
+        var bola = $('<div class="bola"></div>');
+        bola.css('left', x +'px');
+        bola.css('top', y +'px');
+        
+Aqui temos um switch normal ond eu verifico qual o numero de 0 a 4 que foi gerado aleatóriamente na variavel cor, e ai dependendo do resultado eu coloco uma cor diferente.
+        switch (cor) {
+                case 0:
+                        bola.css('background-color','black');
+                break;
+                case 1:
+                        bola.css('background-colorr','red');
+                break;
+                case 2:
+                        bola.css('background-color','green');
+                break;
+                case 3:
+                        bola.css('background-color','yellow');
+                break;
+                case 4:
+                        bola.css('background-color','blue');
+                break;
+        
+                default:
+                        bola.css('background-color', 'pink');
+                        break;
+        }
+        
+        
+        $(document.body).append(bola);
+Aqui estava com o elemento igual está la na declaração da variavel bola, mais como eu já declarei ela la em cima não preciso fazer isso de novo aqui.
+
+        $(bola).click(function () { 
+                $(this).fadeOut('fast');
+                placar++;
+                updatePlacar();
+        });
+Aqui temos apenas uma função para incrementar o placar, então eu tenho uma varivel que se chama placar, e se inicia com 0, e eu incremento ela aqui, e ai eu chamo a atualização de placar para poder printar na tela o novo valor.
+        
+}
+
+
+var placar = 0;
+
+function updatePlacar() {
+        $('#placar').html(placar);
+}
