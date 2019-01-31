@@ -1,0 +1,72 @@
+Seção: 1
+
+Introdução
+Aula 1 : Introdução: visão geral do curso
+
+Falou como que vai ser o curso, parece que vai ter muito conteúdo pratico e parece ser bem didatico e bem voltado para o mercado de trabalho porque ele usa git e github e ainda tem todas as modelagens de dados.
+
+Seção: 2
+
+Apresentação da linguagem Java e tópicos básicos
+
+Aula 2 : Visão geral do capítulo 2
+
+Explicou de novo como vai ser o curso e ja deixa a aula 3 como sendo apenas para baixar o material do curso.
+
+Aula 3 : Material de apoio do capítulo
+
+Baixei o material do curso.
+
+Aula 4 : Nota de atualização
+
+Explicou que o JAVA ta na versão 11, e que apartir daqui ele se tornou pago, e quando eu encontrar JAVA em empresas vou encontra ou o JAVA 11 ou o JAVA 8.
+
+Aula 5 : Contextualização Parte 1: histórico e edições
+
+O Java é uma linguagem de programação mais também é uma ambiente de desenvolvimento e de execução, ou seja para codar em java você precisa não só saber a syntax e estrutura da linguagem mais também precisa do ambiente de desenvolvimento JAVA, além disso para que você consiga rodar um programa em JAVA você precisa do ambiente de execução do JAVA instalado e configurado na maquina ou onde você for rodar esse programa.
+
+Ainda ta na história do JAVA e explicando um pouco sobre as versões e tipos de JAVA.
+
+
+Aula 6 : Contextualização Parte 2: JRE, JDK, bytecodes e máquina virtual
+
+Aqui ele explica mais ou menos a parada do JDK, JRE e serverJRE.
+
+
+JRE - Java Runtime Environment 
+Aqui é necessario apenas para usuarios finais poderem rodar os apps java que foram desenvolvidos.
+
+
+Server JRE - Java Runtime Environment 
+É a mesma coisa do de cima só que ele é voltado para aplicações que rodam em servidores.
+
+
+JDK - Java Development KIT
+É para quem vai desenvolver com java, aqui tem tudo que é necessario para um desenvolvedor JAVA poder trabalhar.
+
+
+E aqui ele ainda mostra o porque java é ou foi um sucesso, porque geralmente as linguagens que são compiladas tendem a ser mais rapidas porque elas são compiladas para aquele S.O expecifico, o que faz com que ele seja um programa de execução mais rapida, porém geralmente você precisará modificar o seu código quando você for criar a versão para um S.O diferente.
+
+Já as linguagens interpretadas, é mais simples porque o interpretador já existe em cada um dos S.O sendo assim você escreve uma unica vez e o interpretador de cada S.O faz o resto para você, porém o problema disso é que a interpretação é feita na hora do carregamento da aplicação o que gera uma certa lentidão em comparação com as aplicações compiladas e um dos problemas com linguagens interpretadas é que geralmente elas tem uma tipagem fraca, o que pode causar erros na aplicação.
+
+Já o Java é meio a meio, ele é pré processado, é gerado um bytecode, que é em uma linguagem de mais baixo nivel e que já foi feita a validação de tipagem e ai o bytecode é interpretado pela JVM de cada S.O, fazendo com que o programa tenha a garantia de ser validado e compilado, e ainda é interpretado.
+
+
+Aula 7 : Estrutura de uma Aplicação Java
+
+O java é uma linguagem que é basicamente estruturada em classes, ou seja todo código java está dentro de uma class ou de varias classes,  e essas classes podem ser agrupadas logicamente em pacotes(packages), onde eu posso organizar as minhas classes e todas as susas dependencias.
+
+Depois do Java 9 podemos agrupar pacotes em grupos e que são chamados de modulos, e ai cada modulo pode conter todos os pacotes referentes a uma aplicação ou serviço expecifico.
+
+Tudo isso é em um nivel logico, ou seja é feito apenas em regra de negocio ou na forma como está sendo codificado, e quando isso é compilado para ser enviado para um servidor de aplicação é feito ai sim o agrupamento Fisico, quando é gerado o build ou runtime.
+
+Aplicação é composta por varios modulos relacionados.
+
+
+Aula 8 : Aviso sobre sistemas x86 (32 bits)
+
+Aqui ele explica que o JDK só pode ser instalado a versão 11 se o seu sistema for x64, porque os sistemas x32, não tem suporte ainda para o java 11, então é necessario instalar o java 8.
+
+
+Aula 9 : Instalação do JDK e Eclipse no Windows
+
