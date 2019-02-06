@@ -1792,3 +1792,142 @@ var placar = 0;
 function updatePlacar() {
         $('#placar').html(placar);
 }
+
+
+
+Seção: 12
+
+PROJETO: Força de Senha
+
+Aula 54 : Projeto: Força de Senha
+
+$(function(){
+
+        $('#forca').keyup(function () { 
+                
+                var txt = $(this).val();
+                var forca = 0;
+
+
+                if (txt.length > 6) {
+                        forca += 25;
+                }
+
+                //texto
+                var reg = new RegExp(/[a-z]/i);
+                if (reg.test(txt) ){
+                        forca += 25;
+                }
+
+
+                //Numero
+                var reg = new RegExp(/[0-9]/i);
+                if (reg.test(txt) ){
+                        forca += 25;
+                }
+
+
+                //especial
+
+                var reg = new RegExp(/[^a-z0-9]/i);
+                if (reg.test(txt) ){
+                        forca += 25;
+                }
+
+                if (forca < 75) {
+                        var aceita = "Não aceita"
+                } else {
+                        var aceita = "Aceita"
+                }
+                
+                $('#result').html('Resultado :' + forca +' '+ txt + ' ' +aceita);
+        });
+
+});     
+
+Aqui eu basicamente pego tudo que está sendo digitado no input, e faço essa captura quando o o botão é solto, fazendo com que a variavel seja atualizada a cada caracter que digitado, e ai uso o ".val()" para recuperar o valor digitado, e verificar o que foi digitado com expressão regular, ai eu verifico se tem letra, numero, char especial, e ainda o tamanho do que foi digitado, compondo assim a força da senha, ai eu printo na tela a força da senha e de quebra a senha só para testar e ainda de quebra coloco uma info para o usuario que diz se a senha dele é aceita ou não baseado na pontuação que ela tem.
+
+
+Seção: 13
+
+PROJETO: Buscador de Clima (com API externa)
+
+Aula 55 : Projeto: Buscador do Youtube
+
+
+Aqui não tem nada a ver com YOUTUBE, aqui é um esquema de busca de temperatura utilizando a API do yahoo para busca de temperatura.
+
+
+$(function(){
+
+        $('button').bind('click',function(){
+
+        var cidade = $('#cidade').val();
+
+        var now = new Date();
+
+        var tempURL = 'https://query.yahooapis.com/v1/public/yql?format=json&rnd=' +now.getFullYear() + now.getMonth() + now.getDay() + now.getHours() + ' &diagnostics=true&callback=?&q=select * from weather. forecast where woeid in (select woeid from geo.places(1) where text="'+cidade+'") and u="c"';
+
+        $.ajax({
+
+        url:encodeURI(tempURL),
+        dataType: 'json',
+        type: 'GET',
+        beforeSend: function(){
+        $('#res').html('Carregando...');
+        },
+        success: function(data){
+
+        if (data !== null && data.query !== null && data.query.results !== null && data.query.results.channel.description !== 'Yahoo! Weather Error') {
+
+        var temp = data.query.results.channel.item.condition.temp;
+
+        $('#res').html(temp+' °C');
+
+        }
+        },
+        error: function(){
+        $('#res').html('Erro!');
+        }
+        });
+        });
+
+});
+
+
+
+Aqui eu peguei o código dos caras que também fizeram o curso, o meu não funcionou mais pode ser porque eu tomei restrição do serviço ou porque o serviço está fora do ar, mais basicamente é só você seguir a documentação da API, e ali o que importa mesmo é no "$.ajax({});" que tem mais um parâmetro novo que é o "beforeSend: function(){}," que basicamente me permite printar uma mensagem enquanto o Ajax está sendo executado.    
+
+
+
+Seção: 14
+
+PROJETO: Drag & Drop
+
+Aula 56 : Projeto: Drag & Drop
+
+
+$('#obj').bind('mousedown',function () { 
+                $('#obj').bind('mousemove',function (e) { 
+                        var x = e.originalEvent.clientX;
+                        var y = e.originalEvent.clientY;
+
+                        var width  = $(this).width();
+                        var height = $(this).height();
+
+                        $(this).css('left', (x - (width/2)  ) + 'px');
+                        $(this).css('top', (y - (height/2) ) + 'px');
+
+                });
+
+        });
+
+        $('#obj').bind('mouseup',function () { 
+                $('#obj').unbind('mousemove');
+        });
+
+Aqui é o seguinte é para você poder pegar o um elemento e arrastalo pela tela e ainda poder soltar ele em qualquer lugar da tela e ele ficar la.
+
+obs(tive que fazer saporra com o ".bind('','')", porque eu ainda não sei como remover eventos sem ser com o "unbind('');" e alias isso só foi mostrado agora.)
+
+Então ali sempre que o mouse for clicado eu vou mover o meu "Objeto", porem eu vou move-lo usando as proprias coordenadas dele, então eu pego a posição dele na tela com o x e o y, e ai armazendo esses valores em variaveis e pego a largura e altura do meu "objeto" para depois quando eu for arrastar o mouse não ir para o canto superior esquerdo, e ai conforme eu vou movendo o mouse eu vou alterando o css do "Objeto" adicionando as posições novas.
