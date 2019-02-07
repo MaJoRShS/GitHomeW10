@@ -1931,3 +1931,30 @@ Aqui é o seguinte é para você poder pegar o um elemento e arrastalo pela tela
 obs(tive que fazer saporra com o ".bind('','')", porque eu ainda não sei como remover eventos sem ser com o "unbind('');" e alias isso só foi mostrado agora.)
 
 Então ali sempre que o mouse for clicado eu vou mover o meu "Objeto", porem eu vou move-lo usando as proprias coordenadas dele, então eu pego a posição dele na tela com o x e o y, e ai armazendo esses valores em variaveis e pego a largura e altura do meu "objeto" para depois quando eu for arrastar o mouse não ir para o canto superior esquerdo, e ai conforme eu vou movendo o mouse eu vou alterando o css do "Objeto" adicionando as posições novas.
+
+
+
+Seção: 15
+
+PROJETO: Galeria de Fotos com Lightbox
+
+Aula 57 : Projeto: Galeria de Fotos com Lightbox
+
+        $('a').click(function () { 
+                var img = $(this).find('img').attr('src');
+                $('.bgwhite img').attr('src', img);
+                $('.bgwhite').find('img').css('width','100%').css('height','100%');
+                $('.bgblack, .bgwhite').fadeIn('fast');
+                
+                
+        });
+
+        $('.bgblack, .bgwhite button').click(function () { 
+
+                $('.bgblack, .bgwhite').fadeOut('fast');
+                
+                
+        });
+
+
+Aqui eu peguei duas imagens que estavam na tela e joguei elas dentro de uma div que eu criei quase como um "iframe", e ainda tinha uma outra div que era quase toda preta com uma certa transparencia e ai eu ainda fiz como conteudo extra da aula deixando a imagem dentro da div com 100% do espaço preenchido, e era possivel fechar isso tanto clicando no botão fechar quanto clicando no fundo preto.
