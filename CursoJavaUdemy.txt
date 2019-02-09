@@ -70,3 +70,211 @@ Aqui ele explica que o JDK só pode ser instalado a versão 11 se o seu sistema 
 
 Aula 9 : Instalação do JDK e Eclipse no Windows
 
+Aqui ele simplimente mostou como instalar o JAVA e o Eclipse no Windows.
+
+
+Aula 10 : Primeiro programa em Java no Eclipse
+
+A principio ele mostrou como criar um projeto com o eclipse e como fica a estrutura de pastas dentro do projeto, ele ainda mostrou um app basico em java que printa algo na tela, e ainda esplicou que com o Ctlr + Shift + F você indenta o código no eclipse.
+
+
+Aula 11 : Tipos primitivos em Java
+
+		boolean completed = false;
+		char gender = 'F';
+		char letter = '\u0041';
+		byte n1 = 126;
+		int n2 = 1000;
+		int n3 = 2147483647;
+		long n4 = 2147483648L;
+		float n5 = 4.5f;
+		double n6 = 4.5;
+
+O tipo char aceita tanto o caracter propriamente dito quanto o seu referencial em unicode.
+
+Os tipos numericos tem limite de tamanho, o bute só vai de -127 até 126.
+
+O int vai de -2147483648 até 2147483647.
+
+O long é maior que o int e precisa ser referenciado com um "L" maiusculo no final da declaração do valor.
+
+O float precisa também da mesma referencia do final com um "f" minusculo para que o sistema entenda que ele é um float e não um double, e ele é de ponto flutuante ou seja aceita valore de moedas e de milhar.
+
+O double é só declarar e já era.
+
+
+Os elementos do tipo String são um conjunto de caractéres, normal igual qualquer outro.
+
+ai tem os tipos "Object" que pelo que eu intendi toda string é filha de um Object que é um objeto generico, e aceita qualquer tipo primitivo a ser referenciado nele.
+
+
+Aula 12 : Restrições e convenções para nomes
+
+Não pode começar com dígito: use uma letra ou _
+Não usar acentos ou til
+Não pode ter espaço em branco
+Sugestão: use nomes que tenham um significado
+
+
+convenções
+
+Camel Case: lastName
+pacotes
+atributos
+métodos
+variáveis e parâmetros
+Pascal Case: ProductService
+classes
+
+
+Aula 13 : Conversão implícita e casting
+
+Casting é quando eu quero transformar a variavel de destino no mesmo tipo da de saida, por exemplo eu tenho um double a, e quero jogar o valor de a em b, mais b é int, isso resultaria em perca de informação, e posivel erro de compilação, então para que o java me permita fazer isso sem dar erro eu posso colocar assim.
+
+
+double a;
+float b;
+a = 5.0;
+b = (float)a;
+System.out.println(b);
+
+
+declaro que o b vai se transformar em double para receber o valor de a.
+
+Perca de informação é mais ou menos esse caso aqui 
+
+double a;
+int b;
+a = 5.0;
+b = (int)a;
+System.out.println(b);
+
+aqui eu tenho um double e to mandando ele para uma int o que vai fazer com que ele não mostre as casas decimais ou faça um "arredendamento".
+
+
+
+já a Conversão implícita é quando eu to convertendo tipos primitivos basicos para tipos mais complexos
+
+int a, b;
+double result;
+a = 5;
+b = 2;
+result = (double) a / b;
+System.out.println(result);
+
+aqui o resultado é um double porque vai dar "2.5" logo virou um double.
+
+
+e para conversões de tipos existem alguns converores nativos por exemplo quero converter uma string para um int
+
+
+int a, b;
+double result;
+String s = "33";
+
+
+a.Integer.parseInt(s);
+
+result.Double.parseDouble(s);
+
+System.out.println(a);
+System.out.println(s);
+
+
+Aula 14 : Saída de dados em Java
+
+
+Imprimir na saída padrão (console)
+Comandos
+System.out.println = imprime com quebra de linha.
+System.out.print   = imprime tudo na mesma linha.
+System.out.printf  = imprime valores como ponto flutuante.
+
+
+%d	representa números inteiros
+%f	representa números floats
+%2f	representa números doubles
+%b	representa valores booleanos
+%c	representa valores char
+
+
+Nos flutuantes o esquema das casas decimais é só colocar a quantidade de casas que se quer apresentar assim %.2f, assim eu apresento duas casas decimais depois da virgula ou ponto.
+
+e também para setar uma localização especifica é utlizado a lib import "java.util.Locale;" e se declara assim "Locale.setDefault(Locale.US);" antes de onde se quer formatar.
+
+
+
+Aula 15 : Operadores aritméticos
+
+
+Operador Significado
++        adição
+-        subtração
+*        multiplicação
+/        divisão
+%        resto da divisão
+
+
+
+    int n1 = 3 + 4 * 2;
+    int n2 = (3+4)*2;
+    int n3 = 17 % 3;
+    double n4 = 10.0 / 8.0;
+    
+    System.out.printf("%d %d  %d  %.2f" ,n1 , n2, n3, n4);
+
+
+Aqui tem um pequeno macete, para não ter que colocar antes da expressão que é um double, é só colocar o valor com .alguma coisa, por exemplo "10.0".
+
+Formula de Baskara
+
+double a = 1.0, b = -3.0, c = -4.0;
+double x1 = (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a);
+
+esse "Math.sqrt()" pelo que eu intendi é o esquema para fazer a raiz quadrada.
+
+tem que dar 4.0
+
+
+Aula 16 : Operadores de atribuição
+
+Operador    Exemplo     Significado
+=           a = 10;     a RECEBE 10
++=          a += 2;     a RECEBE a + 2;
+-=          a -= 2;     a RECEBE a - 2;
+*=          a *= 2;     a RECEBE a * 2;
+/=          a /= 2;     a RECEBE a / 2;
+%=          a %= 3;     a RECEBE a % 3;
+
+Aqui é normal igual as outras linguagens
+
+Operador     Exemplo          Significado
+++           a++; ou ++a;     a = a + 1;
+--           a--; ou --a;     a = a - 1;
+
+Aqui tem uma certa diferença eu achoque se eu colocar o "a++;"  ele vai fazer a iteração no valor do e se eu colocar o "++a;" ele vai iterar primeiro o valor e depois ele vai adicionar esse valor a "a";
+
+
+
+int a = 10;
+int b = ++a;
+
+System.out.println(a);
+System.out.println(b);
+
+Resultado a = 11
+          b = 11
+
+
+
+int a = 10;
+int b = a++;
+
+System.out.println(a);
+System.out.println(b);
+
+Resultado a = 11
+          b = 10
+
+
+mais ou menos assim, se o "a" tiver antes ele atribui o valor de "a" a variavel "b" e depois incrementa a variavel "a", e se for ao contrario ele incrementa a variavel "a" e depois ele joga o valor de "a" em "b".
