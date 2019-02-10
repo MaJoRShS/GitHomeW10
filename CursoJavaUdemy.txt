@@ -278,3 +278,146 @@ Resultado a = 11
 
 
 mais ou menos assim, se o "a" tiver antes ele atribui o valor de "a" a variavel "b" e depois incrementa a variavel "a", e se for ao contrario ele incrementa a variavel "a" e depois ele joga o valor de "a" em "b".
+
+
+Aula 17 : Entrada de dados em Java - Parte 1
+
+package course;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Please tell me what you want :");
+		String sentence = sc.nextLine();
+		
+		System.out.println("good choice " + sentence + " is DELICIUS");
+		
+		
+		System.out.println("say something I break into words ");
+		String a,b,c,d;
+		a = sc.next();
+		b = sc.next();
+		c = sc.next();
+		d = sc.next();
+		
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+		System.out.println(d);
+
+		
+		sc.close();
+	}
+
+}
+
+Nesse cara aqui eu to trabalhando com captura de informação digitada, e para isso eu uso a lib "Scanner" e ela pega basicamente tudo que é digitado, eu tenho que falar para ela qual é o tipo de dado que vai ser inputado(o que na minha humilde opniao é bom e ruim ao mesmo tempo).
+
+ai o que eu fiz, criei uma variavel chamada "sentence" que pegou o que foi digitado, mesmo se for frase ele pega tudo e armazena na minha variavel, ai eu printei na tela o que foi digitado, na real ainda coloquei um textinho para dar uma embelezada na parada.
+
+depois disso o que eu fiz, eu peguei basicamente o que foi digitado e quebrei todas as palavras limitando até 4 palavras e joguei cada uma delas e uma variavel, e depois eu printo cada uma delas.
+
+e o "sc.close();" fecha a utilização do meu "Scanner".
+
+
+Aula 18 : Entrada de dados em Java - Parte 2
+
+
+package course;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int n1 = sc.nextInt();
+		sc.nextLine();
+		String name = sc.nextLine();
+		char gender = sc.next().charAt(0);
+		
+		String s = sc.next();
+		char letter = s.charAt(0);
+		int digit = Integer.parseInt(s.substring(1));	
+		
+		
+		System.out.println(n1);
+		System.out.println(name);
+		System.out.println(gender);
+		System.out.println(letter);
+		System.out.println(digit);
+		sc.close();
+	}
+
+}
+
+
+Nesse caso o primeiro que estamos fazendo é pegando um valor inteiro e printando ele na tela, porém aqui tem uma macete, como depois de você digitar o inteiro ele já tem um outro "nextLine();" esse cara acha que quando você deu enter na linha de cima você já executou ele, e na verdade você não quer isso , por isso tem um "nextLine();" vazio entre os dois, para evitar que o programa seja encerrado antecipadamente.
+		
+		int n1 = sc.nextInt();
+		sc.nextLine();
+		String name = sc.nextLine();
+
+
+continuando jogo um valor alfa numerico em uma variavel no meu exemplo "b5" e quebro ela em duas variaveis diferente, eu depois pego apenas o 1º caracter que foi digitado independente de quantos forem digitados eu vou pegar apenas o 1º usando o "charAt();" , e depois eu pego o numero para jogar em outra variavel, mais como era uma "string" e eu vou transformala em "int" eu preciso usar aquele esquema do "Integer.parseInt(s.substring(1));" aqui eu converto para inteirto apenas a o que está na posição 1 da minha string para inteiro.
+
+
+package course;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter your full name: ");
+		String name = sc.nextLine();
+		System.out.println("How many bedrooms are there in your house? ");
+		int badroom = sc.nextInt();
+		System.out.println("Enter product price: ");
+		double price = sc.nextDouble();
+		System.out.println("Enter your last name, age and height (same line): ");
+		String lastName = sc.next();
+		int age = sc.nextInt();
+		double height = sc.nextDouble();
+		
+		
+		System.out.println(name);
+		System.out.println(badroom);
+		System.out.printf("%.2f%n",price);
+		System.out.println(lastName);
+		System.out.println(age);
+		System.out.println(height);
+		
+		sc.close();
+	}
+
+}
+
+
+Nesse caso aqui é um exercicio proposto, eu tinha que fazer com que algumas info fossem printadas na tela e com que a apresentação delas fosse formatada e apresentada de uma determinada forma, apenas para treinamento e fixação.
+
+
+Aula 19 : AVISO: exercícios para iniciantes PARTE 1
+
+apenas o mano falando que eu tenho que fazer alguns exercicios mais que é opcional.
+
+Aula 20 : Exercícios para Iniciantes - PARTE 1
+
+Não tem aula, só uma conteudo em texto mesmo.
