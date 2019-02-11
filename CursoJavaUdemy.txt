@@ -421,3 +421,133 @@ apenas o mano falando que eu tenho que fazer alguns exercicios mais que é opcio
 Aula 20 : Exercícios para Iniciantes - PARTE 1
 
 Não tem aula, só uma conteudo em texto mesmo.
+
+
+Exercicios feitos por mim.
+
+
+package course;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		//SOMA
+		System.out.println("Entrada =");
+		int valor1 = sc.nextInt();
+		int valor2 = sc.nextInt();
+		int result = valor1 + valor2;
+		System.out.println("Saida =" + result);
+
+		//Subtração
+		System.out.println("Entrada = ");
+		int valor1 = sc.nextInt();
+		int valor2 = sc.nextInt();
+		int result = valor1 + valor2;
+		System.out.printf("Saida = %d",result);
+		
+
+		//Area do Circulo
+		System.out.println("Digite o valor para a Area : ");
+		double raio =sc.nextDouble();		
+		double pi = 3.14159;
+		double area = (raio * raio) * pi;
+		System.out.printf("%.4f",area);
+		
+		
+		//Diferença
+		System.out.println("Digite 4 Valores inteiros :");
+	
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		int d = sc.nextInt();
+		
+		int result = (a * b)-(c * d);
+		System.out.println(result);
+		
+		
+		//Salario 
+		System.out.println("Digite o numero do Usuario : ");
+		int usu = sc.nextInt();
+		System.out.println("Digite a quantidade de horas trabalhadas : ");
+		double horas = sc.nextDouble();
+		System.out.println("Digite o valor da hora de trabalho : ");
+		double valor = sc.nextDouble();
+		
+		
+		System.out.printf("Number :%d%n", usu);
+		double result = valor * horas;
+		System.out.printf("SALARY : U$ %.2f", result);
+		
+		
+		
+		
+		//Calculo de Valor de produtos
+		//Produto 1
+		System.out.println("Digite o Código do produto 1 : ");
+		int produto = sc.nextInt();
+		System.out.println("Digite a quantidade de produtos : ");
+		int qtd = sc.nextInt();
+		System.out.println("Digite o valor unitario de cada produto : ");
+		double valor = sc.nextDouble();
+		double calc = valor * qtd;
+		
+		//Produto 2
+		System.out.println("Digite o Código do produto 2 : ");
+		int produto1 = sc.nextInt();
+		System.out.println("Digite a quantidade de produtos : ");
+		int qtd1 = sc.nextInt();
+		System.out.println("Digite o valor unitario de cada produto : ");
+		double valor1 = sc.nextDouble();
+		double calc1 = valor1 * qtd1;
+		double rest = calc + calc1;
+
+		
+		System.out.printf("Valor a pagar : R$ %.2f", rest);
+	
+
+		
+		// TRIANGULO,CIRCULO,TRAPEZIO,QUADRADO,RETANGULO
+		
+		System.out.println("Digite 3 valores para o calculo de TRIANGULO,CIRCULO,TRAPEZIO,QUADRADO,RETANGULO ");
+		double a = sc.nextDouble();
+		double b = sc.nextDouble();
+		double c = sc.nextDouble();
+		
+		
+		// Triangulo
+		double triangulo = (a * c) / 2;
+		System.out.printf("TRIANGULO : %.3f %n", triangulo);
+		
+		//Area do circulo
+		double pi = 3.14159;
+		double area = c * c * pi;  
+		System.out.printf("CIRCULO: : %.3f%n", area);
+		
+		//Trapézio
+		double trapezio = (b + a) * c / 2;
+		System.out.printf("TRAPEZIO: : %.3f%n", trapezio);
+		
+		
+		//QUADRADO
+		double lado = b * b;
+		System.out.printf("QUADRADO: : %.3f%n", lado);
+		
+		
+		//RETANGULO
+		double ret = a*b;
+		System.out.printf("RETANGULO: : %.3f%n", ret);
+				
+		
+		
+		sc.close();
+	}
+
+}
