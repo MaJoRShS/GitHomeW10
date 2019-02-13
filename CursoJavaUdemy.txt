@@ -551,3 +551,59 @@ public class Program {
 	}
 
 }
+
+Aula 21 : Operadores comparativos
+
+Operador    Significado
+> 			maior
+< 			menor
+>= 			maior ou igual
+<= 			menor ou igual
+== 			igual
+!= 			diferente
+
+
+int a = 10;
+boolean c1 = a < 10;
+boolean c2 = a < 20;
+boolean c3 = a > 10;
+boolean c4 = a > 5;
+System.out.println(c1);
+System.out.println(c2);
+System.out.println(c3);
+System.out.println(c4);
+System.out.println("------------");
+boolean c5 = a <= 10;
+boolean c6 = a >= 10;
+boolean c7 = a == 10;
+boolean c8 = a != 10;
+System.out.println(c5);
+System.out.println(c6);
+System.out.println(c7);
+System.out.println(c8);
+
+Basicamente ele testou todas as possibilidades com a mesma variavel, ou seja testou se era igual, maior, menor, ou diferente.
+
+
+
+Aula 22 : Operadores lógicos
+
+Operador	 Significado
+&& 			 E
+||  		 OU
+! 			 NÃO
+
+
+primeiro vem o não(!), depois o e(&&) e por ultimo o ou(||)
+
+boolean c1 = 2 > 3 || 4 != 5; // true
+boolean c2 = !(2>3) && 4 != 5; // true
+System.out.println(c1);
+System.out.println(c2);
+System.out.println("--------------");
+boolean c3 = 10 < 5; // false
+boolean c4 = c1 || c2 && c3; // true
+System.out.println(c4);
+
+
+fez a mesma coisa da aula passada, porém com alguns exemplos da tabela verdade e mostrando que no java a existe precedencia de operadores e não apenas na declaração por exemplo a negação sempre vai ser 1º e depois o and e por ultimo o or.
