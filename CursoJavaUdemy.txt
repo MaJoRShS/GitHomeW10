@@ -607,3 +607,41 @@ System.out.println(c4);
 
 
 fez a mesma coisa da aula passada, porém com alguns exemplos da tabela verdade e mostrando que no java a existe precedencia de operadores e não apenas na declaração por exemplo a negação sempre vai ser 1º e depois o and e por ultimo o or.
+
+
+Aula 23 : Operadores bitwise
+
+
+Operador 		Significado
+& 				Operação "E" bit a bit
+| 				Operação "OU" bit a bit
+^ 				Operação "OU-exclusivo" bit a bit
+
+
+int n1 = 89;
+int n2 = 60;
+System.out.println(n1 & n2);
+System.out.println(n1 | n2);
+System.out.println(n1 ^ n2);
+
+
+Basicamente essa parada aqui é usada em micro controladores e em arduino, essa parada é em nivel binario, então aqui eu faço uma comparação em nivel binario bit a bit no valor que foi inputado ou pré cadastrado, respeitando as regras de e (&) , ou (|) e XOR (^).
+
+
+Aula 24 : Estruturas Condicionais
+
+System.out.println("Digite os valores de entrada :");
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		
+		if (a > b && a > c) {
+			System.out.printf("Higher =%d", a);
+		}else if(b > c) {
+			System.out.printf("Higher =%d", b);
+		}else {
+			System.out.printf("Higher =%d", c);
+		}
+
+
+Aqui eu faço uma validação simples de qual numero é o maior dentre 3 numeros.
