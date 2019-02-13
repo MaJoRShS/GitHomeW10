@@ -645,3 +645,11 @@ System.out.println("Digite os valores de entrada :");
 
 
 Aqui eu faço uma validação simples de qual numero é o maior dentre 3 numeros.
+
+Aula 25 : AVISO: exercícios para iniciantes PARTE 2
+
+Aviso que tinha exercicios.
+
+Aula 26 : Exercícios para Iniciantes - PARTE 2
+
+ainda vou fazer são 8 exercicios.
