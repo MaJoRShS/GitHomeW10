@@ -653,3 +653,160 @@ Aviso que tinha exercicios.
 Aula 26 : Exercícios para Iniciantes - PARTE 2
 
 ainda vou fazer são 8 exercicios.
+
+
+package basic;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class basic {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		//Negativo ou não
+//		System.out.println("Digite o Valor a Ser Verificado : ");
+//		int verify = sc.nextInt();
+//		
+//		if(verify >= 0) {
+//			System.out.println("NAO NEGATIVO ");
+//		}else {
+//			System.out.println("NEGATIVO ");
+//		}
+		
+		
+		//Par ou Impar
+//		System.out.println("Digite um numero para a verificação : ");
+//		int num = sc.nextInt();
+//		if (num % 2 == 0) {
+//			System.out.println("Numero PAR ");
+//		}else {
+//			System.out.println("Numero IMPAR");
+//		}
+		
+
+		
+		
+		//Multiplos
+//		System.out.println("Digite dois valores em ordem Crescente ou Decrescente :");
+//		
+//		int A = sc.nextInt();
+//		int B = sc.nextInt();
+//		
+//		if(A % B == 0 || B % A == 0) {
+//			System.out.println("Sao Multiplos ");
+//		}else {
+//			System.out.println("Nao sao Multiplos ");
+//		}
+		
+
+		//Duração do Jogo
+//		System.out.println("Digite os horarios de inicio e termino do JOGO :");
+//		int horaInicial = sc.nextInt();
+//		int horaFinal = sc.nextInt();
+//		
+//
+//		int duracao;
+//		if (horaInicial < horaFinal) {
+//			duracao = horaFinal - horaInicial;
+//		}
+//		else {
+//			duracao = 24 - horaInicial + horaFinal;
+//		}
+//		
+//		System.out.println("O JOGO DUROU " + duracao + " HORA(S)");
+		//Esse aqui eu não tinha pensado desta forma, ficou bem mais simples e resumindo, eu peguei o que ele resolveu mesmo.
+		
+		
+		
+		//Calcular valor
+//		System.out.println("Digite o código do produto que você deseja ");
+//		
+//		int cod = sc.nextInt();
+//		int qtd = sc.nextInt();
+//		
+//		double total;
+//		
+//		if(cod == 1) {
+//			total = qtd * 4.00;
+//			System.out.printf("Total: R$ %.2f",total);
+//		}else if(cod == 2) {
+//			total = qtd * 4.50;
+//			System.out.printf("Total: R$ %.2f",total);
+//		}else if(cod == 3) {
+//			total = qtd * 5.00;
+//			System.out.printf("Total: R$ %.2f",total);
+//		}else if(cod == 4) {
+//			total = qtd * 2.00;
+//			System.out.printf("Total: R$ %.2f",total);
+//		}else if(cod == 5) {
+//			total = qtd * 1.50;
+//			System.out.printf("Total: R$ %.2f",total);
+//		}
+		
+		
+		
+		//Intervalo
+//		System.out.println("Digite um valor para ser verificado :");
+//		double numero = sc.nextDouble();
+//		
+//		if (numero < 0.0 || numero > 100.0) {
+//			System.out.println("Fora de intervalo");
+//		}
+//		else if (numero <= 25.0) {
+//			System.out.println("Intervalo [0,25]");
+//		}
+//		else if (numero <= 50.0) {
+//			System.out.println("Intervalo (25,50]");
+//		}
+//		else if (numero <= 75.0) {
+//			System.out.println("Intervalo (50,75]");
+//		}		
+//		else {
+//			System.out.println("Intervalo (75,100]");
+//		}
+//Aqui eu peguei de novo o código dele porque eu não estava conseguindo fazer o range de fora e ai eu peguei o esquema dele no git e vi que o meu tava certo mais o do cara esta melhor pensado.
+		
+		
+		
+		
+		
+		
+		//Eixos
+//		System.out.println("Digite os valores do eixo X e Y nessa ordem.");
+//		double x = sc.nextDouble();
+//		double y = sc.nextDouble();
+//		
+//		if (x == 0.0 && y == 0.0) {
+//			System.out.println("Origem");
+//		}
+//		else if (x == 0.0) {
+//			System.out.println("Eixo Y");
+//		}
+//		else if (y == 0.0) {
+//			System.out.println("Eixo X");
+//		}
+//		else if (x > 0.0 && y > 0.0) {
+//			System.out.println("Q1");
+//		}
+//		else if (x < 0.0 && y > 0.0) {
+//			System.out.println("Q2");
+//		}
+//		else if (x < 0.0 && y < 0.0) {
+//			System.out.println("Q3");
+//		}
+//		else {
+//			System.out.println("Q4");
+//		}
+		
+		
+//Mais uma vez eu peguei o esquema dele, acho que preciso ou dormir melhor ou melhorar minha logica e tentar usar melhor minha cabeça, porque eu só me liguei em como fazer ou como ele tinha feito depois de ver o código dele, e na real é até simples, ele vai por exclusão e ai acaba sendo poucas validações.
+			
+		
+		sc.close();
+		
+	}
+}
