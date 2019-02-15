@@ -806,7 +806,328 @@ public class basic {
 //Mais uma vez eu peguei o esquema dele, acho que preciso ou dormir melhor ou melhorar minha logica e tentar usar melhor minha cabeça, porque eu só me liguei em como fazer ou como ele tinha feito depois de ver o código dele, e na real é até simples, ele vai por exclusão e ai acaba sendo poucas validações.
 			
 		
+
+//Imposto de Renda
+//		double salario = sc.nextDouble();
+//		
+//		double imposto;
+//		if (salario <= 2000.0) {
+//			imposto = 0.0;
+//		}
+//		else if (salario <= 3000.0) {
+//			imposto = (salario - 2000.0) * 0.08;
+//		}
+//		else if (salario <= 4500.0) {
+//			imposto = (salario - 3000.0) * 0.18 + 1000.0 * 0.08;
+//		}
+//		else {
+//			imposto = (salario - 4500.0) * 0.28 + 1500.0 * 0.18 + 1000.0 * 0.08;
+//		}
+//
+//		if (imposto == 0.0) {
+//			System.out.println("Isento");
+//		}
+//		else {
+//			System.out.printf("R$ %.2f%n", imposto);
+//		}
+		
+		//Esse aqui eu nem peguei a conta, não intendi o porque de tanta conta com valores que eu ultrapassei, se essa é a conta real do IR que lixo mano, e peguei mesmo dele de novo.
+		
+
 		sc.close();
 		
 	}
 }
+
+
+
+Aula 27 : Funções interessantes para String
+
+package basic;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class basic {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		//Manipulando Strings	
+		
+		
+		String s = "Irineu o que comeu in ?         ";
+		
+		String s01 = s.toLowerCase();
+		//Deixa tudo maiusculo
+		
+		String s02 = s.toUpperCase();
+		//Deixa tudo minusculo
+		
+		String s03 = s.trim();
+		//Remove todos os espaços do final da string
+		
+		String s04 = s.substring(3);
+		//Substitui na string da posição 1 até o valor informado
+		
+		String s05 = s.substring(3, 6);
+		//Apresenta apenas o range entre os valores informados
+		
+		String s06 = s.replace('I', 'g');
+		//Substitui todas as ocorrencias do primeiro parâmetro pelo segundo
+		
+		String s07 = s.replace("eu", "fh");
+		//Faz a mesma coisa do de cima porém para mudar um conjunto de caractéres é necessario usar aspas duplas.
+		
+		
+		int i = s.indexOf("in");
+		//Aqui ele procura a primeira ocorrencia do valor que foi passado e devolve a posição dele
+		
+		int j = s.lastIndexOf("in");
+		//Aqui ele procura a ultima ocorrencia do valor que foi passado e devolve a posição dele
+
+		
+		
+		System.out.println("Original: -" + s + "-");
+		System.out.println("toLowerCase: -" + s01 + "-");
+		System.out.println("toUpperCase: -" + s02 + "-");
+		System.out.println("trim: -" + s03 + "-");
+		System.out.println("substring(2): -" + s04 + "-");
+		System.out.println("substring(2, 9): -" + s05 + "-");
+		System.out.println("replace('a', 'x'): -" + s06 + "-");
+		System.out.println("replace('abc', 'xy'): -" + s07 + "-");
+		System.out.println("Index of 'bc': " + i);
+		System.out.println("Last index of 'bc': " + j);
+		
+		
+		
+		
+		sc.close();
+		
+	}
+}
+
+
+
+
+Operação split
+
+String s = "Irineu o que comeu in ?         ";
+
+		String[] vect = s.split(" ");
+		String word1 = vect[0];
+		String word2 = vect[1];
+		String word3 = vect[2];
+		String word4 = vect[3];
+		String word5 = vect[4];
+		
+		
+		System.out.println(word1);
+		System.out.println(word2);
+		System.out.println(word3);
+		System.out.println(word4);
+		System.out.println(word5);
+
+aqui eu defino que vai ser um vetor, e que eu quero pegar como separador que eu passo ali como parâmetro, que nesse caso é um espaço em branco mais pode ser qualquer coisa.mais pode ser qualquer coisa, dai ele usa o seu separador para quebrar a string em variaveis e para acessa-las é normal, igual array.
+
+
+Aula 28 : Sintaxe alternativa - switch-case
+
+package basic;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class basic {
+
+	public static void main(String[] args) {
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		int x = sc.nextInt();
+		String day;
+		switch (x) {
+		case 1:
+			day = "Sunday";
+			break;
+		case 2:
+			day = "Monday";
+			break;
+		case 3:
+			day = "Tuesday";
+			break;
+		case 4:
+			day = "Wednesday";
+			break;
+		case 5:
+			day = "Thursday";
+			break;
+		case 6:
+			day = "Friday";
+			break;
+		case 7:
+			day = "Saturday";
+			break;
+		default:
+			day = "Invalid value";
+		}
+		System.out.println("Day: " + day);
+
+		sc.close();
+
+	}
+}
+
+
+Aqui é basicamente uma alternativa ai if else, para não ficar com aquela estrutura encadeada mostrona se usa o switch, que é a mesma coisa mais ainda assim você vai ter que escrever tudo mais é um pouco mais facil.
+
+
+Aula 29 : Expressão condicional ternária
+
+syntax
+( condição ) ? valor_se_verdadeiro : valor_se_falso
+
+
+    double preco = 34.5;
+    double desconto;
+    if (preco < 20.0) {
+        desconto = preco * 0.1;
+    }
+    else {
+        desconto = preco * 0.05;
+    }
+
+Forma normal e mais comum de se codar
+
+
+    double preco = 34.5;
+    double desconto = (preco < 20.0) ? preco * 0.1 : preco * 0.05;
+
+expressão ternária que é o if else bem mais simples e na mesma linha.
+
+
+Aqui eu achei top mano, porque aqui eu to usando o if else sem estar usando o if else e escreve bem menos, claro que com os snippets é bem easy escrever if else, mais é uma execelente opção.
+
+
+Aula 30 : Escopo e inicialização
+
+inicialização é quando eu preciso fazer com que uma varial ou tenho um valor pré-fixado, ou fazer ela receber um valor que o usuario vai digitar, e se eu não fizer isso basicamente vai dar erro de compilação, porque eu não posso criar uma variavel e não instaciar ela e nem atribuir valor a ela.
+
+
+E o esquema de escopo é pior em java porque aqui toda estrutura de repetição (if else, switch e etc) tem um escopo proprio, ou seja se você criar uma variavel dentro de uma dessas estruturas você só vai conseguir printar ela na tela se ela for um retorno dentro da propria estrutura, por que ela só existe dentro do escopo da estrutura, para poder acessar e printar ela de qualquer lugar é necessario que você crie ela fora e ai sim você consegue printar ela, porém ainda tem um outro porém, se você usar um "if else", você é obrigado ou a criar uma variavel com o "valor = 0 ", ou colocar como "else" essa variavel com "valor = 0", porque se não o compilador intende que essa variavel pode não ser inicializada em nenhuma das condições o que geraria um erro, então ele já da erro antes.
+
+
+if(conta == 10){
+    desconto = conta / 1 * 0.01;
+}
+else{
+    desconto == 0;
+}
+
+
+
+
+Aula 31 : Comentários em Java (básico)
+
+
+Comentários de linha é representado por  :  //
+Comentários de bloco é representado por  : /*   */
+
+
+Aula 32 : Funções (Sintaxe)
+
+
+
+package basic;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter three numbers:");
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		int higher = max(a, b, c);
+		showResult(higher);
+		sc.close();
+	}
+
+	public static int max(int x, int y, int z) {
+		int aux;
+		if (x > y && x > z) {
+			aux = x;
+		} else if (y > z) {
+			aux = y;
+		} else {
+			aux = z;
+		}
+		return aux;
+	}
+
+	public static void showResult(int value) {
+		System.out.println("Higher = " + value);
+	}
+}
+
+
+Aqui quando eu vou criar uma nova função eu tenho que criar ela fora do escopo da "main" e ai eu crio ela e na declaração de nomes eu crio como "public static " e ai depois eu tenho que declarar qual o tipo de dado que a minha função vai retornar, e em seguida eu tenho que colocar o nome dela, e depois eu passo os valores que eu espero que ela trate entre parenteses, após isso abre chaves e ai vem a logica dentro das chaves, e por ultimo depois da logica se minha função for devolver algum dado eu preciso setar o "return" dentro dela para que após o processamento ela me devolva a info que foi processada ou tratada.
+E quando eu eu vou apenas apresentar uma info sem processamento eu passo na definição da função eu não passo o tipo e sim passo "void".
+
+
+Aula 33 : Debugging com Eclipse
+
+
+Basicamente para rodar um debug no java como se faz ou clica na linha onde você quer que comece o debug e clica em "ctrl + shift + b" ou clica na linha que se quer iniciar o debug e vai em "run" e clicla em "toggle breakpoint", ai assim que você iniciar o programa ele só vai entrar no modo de debug quando a execução do programa chegar naquela linha que você marco com o breakpoint, para rodar o debug clica no icone de inseto ao lado do icone de iniciar programa,   e ai ele vai te perguntar se você quer mudar para a pespectiva de debug,    quando você muda ele vai de dar duas opções ou aperta F6 (step over) que seria pular linha por linha mais não vai entrar na execução de nenhuma função que possa existir no meio do processo, e se você apertar F5 (step into) ele vai executar linha a linha e vai entrar nas funções que existirem no meio do caminho.
+
+
+Aula 34 : Estrutura repetitiva while
+
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class basic {
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		Locale.setDefault(Locale.US);
+		
+		
+		System.out.println("Digite um valor : ");
+		double n = sc.nextDouble();
+		
+		
+		while(n > 0.0) {
+			double sr = Math.sqrt(n);
+			System.out.printf("%.3f %n", sr);
+			System.out.println("Digite um novo numero : ");
+			n = sc.nextDouble();
+		}
+		
+		System.out.println("Numero negativo da ruim");
+		
+
+		sc.close();
+	}
+}
+
+Aqui é um while normal, eu to executando até acabar o processamento, mais como eu to mandando ele pedir um novo valor ele para o processamento mais fica sempre ativo e escutando.
+
+
+
+Aula 35 : AVISO: exercícios para iniciantes PARTE 3
+
+Aqui ele só avisou que para iniciantes é obrigatório a execução dos exercicios.
+
+
+Aula 36 : Exercícios para Iniciantes - PARTE 3
+
+Baixar o PDF, e fazer os exercicios.
+
+to fazendo....
