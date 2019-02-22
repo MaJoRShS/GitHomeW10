@@ -1559,3 +1559,427 @@ public class basic {
 // Aqui eu fiz certinho até a parte do while, quando chegou no for deu uma bugada para achar o maior valor, mais pelo que eu intendi desse "Integer.MIN_VALUE", esse cara foi atribuido na variavel "higher" e ai ele faz o seguinte se o "x" for maior que o "heigher" ele atribui o valor do "x" no "higher", Aqui ele está atribuindo a variavel "higher" logo de cara o menor valor inteiro possivel, e ai ele começa a validar, se o valor que foi digitado é maior que o o valor que esta la, provavelmente o 1º vai ser , dai ele atribui o novo valor em "higher" e ai roda de novo, e ai ele pega o segundo valor e verificar se for maior ele muda o valor de "higher" e se não ele mantem esse valor, sendo assim quando acabar de rodar o programa ele vai ter mantido o maior valor.
 //O miseravel é um Genio.
 
+
+
+
+Aula 41 : Estrutura repetitiva do-while
+
+
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class basic {
+
+	public static void main(String[] args) {
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		
+		char letter;
+		
+	do {
+		System.out.println("Entar a nuber :");
+		int num = sc.nextInt();
+		
+
+		double sqrt = Math.sqrt(num);
+		System.out.printf("Square root %.3f %n",sqrt);
+		System.out.println("continue (y/n) ?");
+		letter = sc.next().charAt(0);
+	}while(letter != 'n');
+		
+		
+		
+		sc.close();
+	}
+}
+
+
+Aqui é o seguinte eu estou esperando um numero, e ai eu vou e faço uma raiz quadrada do numero, e depois eu pergunto se ele quer continuar ou não se ele quiser eu faço novamente a solicitação de um numero, se não termino o programa, poderia colocar uma validação para ver se ele dfigitou numero onde eu espero numero e se digitou letra onde eu espero letra, mais to na paz.
+
+
+
+
+Introdução à Programação Orientada a Objetos
+
+Aula 42 : Visão geral do capítulo 3
+
+
+Explicou o que vamos ver nese capitulo e que vamos resolver um problema sem orientação a objetos e depois o mesmo problema com a orientação.
+
+
+Aula 43 : Material de apoio do capítulo
+
+Baixei dois PDFs
+
+
+Aula 44 : Resolvendo um problema sem orientação a objetos
+
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		double xA, xB, xC, yA, yB, yC;
+		System.out.println("Enter the measures of triangle X: ");
+		xA = sc.nextDouble();
+		xB = sc.nextDouble();
+		xC = sc.nextDouble();
+		System.out.println("Enter the measures of triangle Y: ");
+		yA = sc.nextDouble();
+		yB = sc.nextDouble();
+		yC = sc.nextDouble();
+		
+//Aqui to pegando todos os valores que serão digitados
+		double p = (xA + xB + xC) / 2.0;
+		double areaX = Math.sqrt(p * (p - xA) * (p - xB) * (p - xC));
+		p = (yA + yB + yC) / 2.0;
+		double areaY = Math.sqrt(p * (p - yA) * (p - yB) * (p - yC));
+		
+		
+//Aqui é a formula para calcular a area dos triangulos 
+		System.out.printf("Triangle X area: %.4f%n", areaX);
+		System.out.printf("Triangle Y area: %.4f%n", areaY);
+		if (areaX > areaY) {
+		System.out.println("Larger area: X");
+		}
+		else {
+		System.out.println("Larger area: Y");
+		}
+		sc.close();
+	}
+
+}
+
+
+
+
+Aula 45 : Criando uma classe com três atributos para representar melhor o triângulo
+
+
+Casse Triangulo
+
+
+package entities;
+
+public class Triangule {
+
+	public double a;
+	public double b;
+	public double c;
+}
+
+
+Aqui minha classe só tem os atributos sem os metodos, mais ainda assim uma classe é apenas uma definição de tipo, e essa minha classe aqui tem apenas os 3 atributos a,b,c.
+
+
+
+Arquivo que resolve a area do triangulo com O.Object
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Triangule;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Triangule x,y;
+		x = new Triangule();
+		y = new Triangule();
+		System.out.println("Enter the measures of triangle X: ");
+		x.a = sc.nextDouble();
+		x.b = sc.nextDouble();
+		x.c= sc.nextDouble();
+		System.out.println("Enter the measures of triangle Y: ");
+		y.a = sc.nextDouble();
+		y.b = sc.nextDouble();
+		y.c = sc.nextDouble();
+		
+//Aqui to pegando todos os valores que serão digitados
+		double p = (x.a + x.b + x.c) / 2.0;
+		double areaX = Math.sqrt(p * (p - x.a) * (p - x.b) * (p - x.c));
+		p = (y.a + y.b + y.c) / 2.0;
+		double areaY = Math.sqrt(p * (p - y.a) * (p - y.b) * (p - y.c));
+		
+		
+//Aqui é a formula para calcular a area dos triangulos 
+		System.out.printf("Triangle X area: %.4f%n", areaX);
+		System.out.printf("Triangle Y area: %.4f%n", areaY);
+		if (areaX > areaY) {
+		System.out.println("Larger area: X");
+		}
+		else {
+		System.out.println("Larger area: Y");
+		}
+		sc.close();
+	}
+
+}
+
+
+Nesse caso aqui eu primeiro invoquei a classe triangulo e passei para ela dois parametros, depois eu preciso instaciar esses dois caras como sendo "new" ou novo objeto da classe "Triangule", é isso que eu estou fazendo la na declaração, e para acessar eles eu preciso referenciar como objeto, por isso o "x.a" que ai é o objeto "x" acessando o atributo "a".
+
+Ai ainda tem uma parada que ele explicou aqui é o seguinte todas as vezes que  você cria ou instancia variaveis elas são criadas dentro de uma area chamada "STACK" que é onde são criadas as variaveis estaticas, e ai quando eu uso o "new" eu faço uma alocação dinamica de memoria e crio ou instancio o objeto "Triangle" dentro de uma outra area da memoria chamada "HEAP", e ai no meu objeto que está na "STACK" fica o endereço de de onde está o meu OBJ dentro de "HEAP".
+
+
+
+Aula 46 : Criando um método para obtermos os benefícios de reaproveitamento e delegação
+
+
+Classe Triangulo
+
+
+
+package entities;
+
+public class Triangule {
+
+	public double a;
+	public double b;
+	public double c;
+
+
+	public double area() {
+	double p = (a + b + c) / 2.0;
+	return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+	}
+}
+
+
+//Aqui passei toda a regra de calculo da area do triangulo para dentro da classe mesmo, e ai agora ela é responsavel por fazer o calculo e retornar o valor, e como todas as variaveis que eu preciso estão dentro da minha classe eu não preciso passar nada como parâmetro, e alem disso eu coloco tudo como public porque significa que ela pode ser chamada de qualquer lugar sem problemas.
+
+
+Arquivo com o Programa
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Triangule;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Triangule x,y;
+		x = new Triangule();
+		y = new Triangule();
+		
+		//Aqui é a instaciação do objeto "Triangule", passando "x" como um "novo triangulo" e "y" como um novo  "triangulo"
+		System.out.println("Enter the measures of triangle X: ");
+		x.a = sc.nextDouble();
+		x.b = sc.nextDouble();
+		x.c= sc.nextDouble();
+		System.out.println("Enter the measures of triangle Y: ");
+		y.a = sc.nextDouble();
+		y.b = sc.nextDouble();
+		y.c = sc.nextDouble();
+		//Aqui como eu passei ele como objeto eu declaro que os atributos dele vai ser referenciados com o "."(ponto)
+
+		double areaX = x.area();
+		double areaY = y.area();
+		//Aqui mudou porque agora eu tenho todo calculo sendo feito direto dentro da minha classe então eu to passando o "x" e "y" como parÂmetro e dizendo que o valor ou os valores de "x" e "y" que serão calculados dentro da variavel
+		
+		
+
+		System.out.printf("Triangle X area: %.4f%n", areaX);
+		System.out.printf("Triangle Y area: %.4f%n", areaY);
+		if (areaX > areaY) {
+		System.out.println("Larger area: X");
+		}
+		else {
+		System.out.println("Larger area: Y");
+		}
+		sc.close();
+	}
+
+}
+
+
+Aula 47 : Começando a resolver um segundo problema exemplo
+
+
+
+Arquivo Programa
+
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Product;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		Product product = new Product();
+		//Instanciando o meu objeto product.
+		
+		
+		System.out.println("Enter product data: ");
+			System.out.print("Name: ");
+			product.name =sc.nextLine();
+			System.out.print("Price: ");
+			product.price = sc.nextDouble();
+			System.out.print("Quantity in stock: ");
+			product.quantity = sc.nextInt();
+			//Captura de dados
+			
+			
+			//Aqui é apenas para ver se está funcionando
+			System.out.println(product.name+","+product.price+","+product.quantity);
+			
+		
+		
+		
+		
+		
+		sc.close();
+	}
+
+}
+
+
+
+Classe Product
+
+
+
+
+package entities;
+
+public class Product {
+
+	public String name;
+	public double price;
+	public int quantity;
+	//Declaração de atributos da minha classe(objeto)
+	
+	public double totalValueInStock() {
+		return price * quantity;
+	}
+	//Aqui como ele vai retornar uma soma eu tenho que passar o tipo dele e já passo direto o preço calculado como retorno.
+	
+	public void addProducts(int quantity) {
+		this.quantity += quantity;
+	}
+	
+	public void removeProducts(int quantity) {
+		this.quantity -= quantity;
+	}
+	//nesses aqui é decremento e incremento normal, e como eu não retorno nada eu crio eles como "void"
+}
+
+
+
+
+
+Aula 48 : Object e toString
+
+
+Parece que toda classe em java é um "extends" da classe "objects" do java isso significa que eu herdo todos os metodos da classe "objects" e um deles que é o que vai ser usado aqui na classe é o "toString", que praticamente formata o retorno ou o que eu quiser e me devolve como string.
+
+Classe Product
+package entities;
+
+public class Product {
+
+	public String name;
+	public double price;
+	public int quantity;
+	//Declaração de atributos da minha classe(objeto)
+	
+	public double totalValueInStock() {
+		return price * quantity;
+	}
+	//Aqui como ele vai retornar uma soma eu tenho que passar o tipo dele e já passo direto o preço calculado como retorno.
+	
+	public void addProducts(int quantity) {
+		this.quantity += quantity;
+	}
+	
+	public void removeProducts(int quantity) {
+		this.quantity -= quantity;
+	}
+	//nesses aqui é decremento e incremento normal, e como eu não retorno nada eu crio eles como "void"
+	
+	public String toString() {
+		return "Product data: " + name + ", $ " + String.format("%.2f",price) + ", " + quantity + "units, Total: $ " + String.format("%.2f", totalValueInStock());
+		//Aqui eu estou sobrescrevendo o processo normal do metódo "toString" do java e mandando ele devolver o "toString" da maneira como eu parametrizei, e ai o que acontece para poder formatar os doubles ou pontos flutuantes eu preciso colocar esse "String.format("","")" porque agora eu to tratando um double e transformando ele em string dai eu formato ele para pegar as duas casas que eu quero e ai eu mando a string formatada como eu quero.
+	}
+}
+
+
+
+
+
+
+Arquivo Program
+
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Product;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		Product product = new Product();
+		//Instanciando o meu objeto product.
+		
+		
+		System.out.println("Enter product data: ");
+			System.out.print("Name: ");
+			product.name =sc.nextLine();
+			System.out.print("Price: ");
+			product.price = sc.nextDouble();
+			System.out.print("Quantity in stock: ");
+			product.quantity = sc.nextInt();
+			//Captura de dados
+			
+			
+			
+			System.out.println(product);
+			//Aqui é o seguinte eu agora posso mandar printar direto o "product" porque eu sobrepus a execução original do "toString" padrão do java e coloquei a minha execução por cima, e ai por isso que mando printar apenas o produto e ainda assim ele printa uma parada toda formatadinha toda bonitinha.
+		
+		
+		
+		
+		
+		sc.close();
+	}
+
+}
