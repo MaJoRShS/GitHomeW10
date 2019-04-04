@@ -1983,3 +1983,61 @@ public class Program {
 	}
 
 }
+
+
+Aula 49 : Finalizando o programa
+
+Arquivo Program.java
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Product;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		Product product = new Product();
+		//Instanciando o meu objeto product.
+		
+		
+		System.out.println("Enter product data: ");
+			System.out.print("Name: ");
+			product.name =sc.nextLine();
+			System.out.print("Price: ");
+			product.price = sc.nextDouble();
+			System.out.print("Quantity in stock: ");
+			product.quantity = sc.nextInt();
+			//Captura de dados
+			
+			
+			
+			System.out.println(product);
+			//Aqui é o seguinte eu agora posso mandar printar direto o "product" porque eu sobrepus a execução original do "toString" padrão do java e coloquei a minha execução por cima, e ai por isso que mando printar apenas o produto e ainda assim ele printa uma parada toda formatadinha toda bonitinha.
+		
+		System.out.println();
+		System.out.println("Enter the number of products to be added in stock: ");
+		int quantity = sc.nextInt();
+		product.addProducts(quantity);
+		
+		System.out.println("Update data" + product);
+		
+		System.out.println();
+		System.out.println("Enter the number of products to be removed in stock: ");
+		quantity = sc.nextInt();
+		product.removeProducts(quantity);
+		
+		System.out.println("Remove data" + product);
+		
+		sc.close();
+	}
+
+}
+
+basicamente eu estou utilizando as funções que estão na minha classe "Product.java", e fazendo soma e a remoção de produtos, e como já está tudo pronto é só usar o metodo e tudo lindo.
