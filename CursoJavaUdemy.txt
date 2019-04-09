@@ -2041,3 +2041,174 @@ public class Program {
 }
 
 basicamente eu estou utilizando as funções que estão na minha classe "Product.java", e fazendo soma e a remoção de produtos, e como já está tudo pronto é só usar o metodo e tudo lindo.
+
+Aula 50 : Exercicios de fixação
+
+Exercicio 1
+Calcular a area perimetro e a diagonal de um RETANGULO
+
+Aquivo program.java
+
+
+
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+import entities.Rectangle;
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Rectangle rect = new Rectangle();
+		System.out.println("Enter  rectangule  wigth: ");
+		rect.width = sc.nextDouble();
+		
+		System.out.println("Enter rectangule height : ");
+		rect.height = sc.nextDouble();
+				
+		System.out.printf("AREA = %.2f%n", rect.area());
+		System.out.printf("PERIMETER = %.2f%n", rect.perimeter());
+		System.out.printf("DIAGONAL = %.2f%n", rect.diagonal());
+		
+//		Aqui é o padrão eu criei uma classe que tem toda a intelingência de negócio e aqui eu uso essa inteligencia.
+		sc.close();
+	}
+
+}
+
+
+
+
+Arquivo rectangule.java
+
+
+
+
+
+package entities;
+
+public class Rectangle {
+	public double width;
+	public double height;
+	
+	public double area() {
+		return width * height;
+	}
+//	Aqui é para medir a area do retangulo base vezes altura
+	
+	public double perimeter(){
+		return 2* (width * height);
+	}
+//	Aqui é o calculo do perimetro que é 2 vezes base vezes altura.
+	
+	
+	public double diagonal() {
+		return Math.sqrt(width * width + height * height);
+		}
+	
+//	aqui é o valor na diagonal que é raiz quadrada de base x base + altura x altura
+}
+
+
+
+Exercicio 2
+Calcular Salario + imposto do funcionario
+
+
+Arquivo program.java
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Employee;
+
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Employee emp = new Employee();
+//Instanciei uma nova instancia da minha classe e chamei ela de emp		
+		
+		System.out.print("Name: ");
+		emp.name = sc.nextLine();
+//To pegando o nome do piao		
+		
+		System.out.print("Gross salary: ");
+		emp.grossSalary = sc.nextDouble();
+//Aqui to pegando o sario bruto do cara, ou seja sem o desconto
+		
+		System.out.print("Tax: ");
+		emp.tax = sc.nextDouble();
+//Aqui to pegando o valor do imposto que vai ser descontado.
+		
+		System.out.println();
+		System.out.println("Employee: " + emp);
+		System.out.println();
+//Pulei linhas para poder mostrar os dados dele, nome e o valor que foi obtido da operação.	
+		
+		
+		System.out.print("Which percentage to increase salary? ");
+		double percentage = sc.nextDouble();
+		emp.increaseSalary(percentage);
+		System.out.println();
+//Aqui to peguntando para ele o valor em porcentagens que vai ser acrescentado no salario bruto do pião.
+		
+		System.out.println("Updated data: " + emp);	
+//	Aqui já mostro direto na tela o novo valor.
+		
+		sc.close();
+	}
+
+}
+
+
+
+
+Arquivo  Employee.java
+
+package entities;
+
+public class Employee {
+
+	public String name;
+	public double grossSalary;
+	public double tax;
+	
+	public double netSalary() {
+	return grossSalary - tax;
+	}
+//Aqui eu pego o salario e subtraio o valor que tenho que pagar de imposto
+	
+	public void increaseSalary(double percentage) {
+	grossSalary += grossSalary * percentage / 100.0;
+	}
+//Aqui eu multiplico salario pelo valor da porcentagem que foi digitado e divido por 100 e ai somo com o valor antigo do salario
+	
+	public String toString() {
+	return name + ", $ " + String.format("%.2f", netSalary());
+	}
+//por ultimo eu formatei uma String para poder devolver já com as infor certinhas.
+	
+}
+
+
+
+
+Exercicio 3 
+Calculo de notas de aluno
+
+
