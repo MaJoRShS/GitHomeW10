@@ -2211,4 +2211,92 @@ public class Employee {
 Exercicio 3 
 Calculo de notas de aluno
 
+Arquivo program.java
 
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Student;
+
+
+public class Program {
+
+	public static void main(String[] args) {
+		
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Student sts = new Student();
+// Normal instanciei a classe Student
+		
+		System.out.println("Digite o nome do aluno: ");
+		sts.nome = sc.next();
+		
+		System.out.println("Digite a peimeira nota: ");
+		sts.notaUm = sc.nextDouble();
+		
+		System.out.println("Digite a peimeira nota: ");
+		sts.notaDois = sc.nextDouble();
+		
+		System.out.println("Digite a peimeira nota: ");
+		sts.notaTres = sc.nextDouble();
+// Li tudo que foi digitado e armazenei em variaveis.		
+
+		
+		System.out.printf("Nota Final : %.2f%n", sts.soma());
+// Primeiro job feito com as variaveis foi somalas.
+		
+		if (sts.soma() < 60.0) {
+			System.out.println("FAILED");
+			System.out.printf("MISSING %.2f POINTS%n", sts.verify());
+			}
+			else {
+			System.out.println("PASS");
+			}
+// Aqui tem primeiro uma validação se a soma das notas for menor que 60.0 eu entro nesse bloco e mostro a mensagem se não eu já mando um "PASS"
+		
+		
+		sc.close();
+	}
+
+}
+
+
+
+
+
+Arquivo Student.java
+package entities;
+
+public class Student {
+
+
+	public double notaUm;
+	public double notaDois;
+	public double notaTres;
+	public String nome;
+	
+	
+	public double soma() {
+		return notaUm + notaDois + notaTres;
+	}
+//Aqui eu somo todas as notas de um aluno.
+	
+	
+	public double verify() {
+		if(soma() < 60.0) {
+			return 60.0 - soma();
+		}else {
+			return 0.0;
+		}
+		
+	}
+// Aqui eu pego a soma das notas do aluno e se forem menor que  60.0 eu retorno o valor da nota menos 60.0 o que na teoria seria o valor que falta para chegar em em 60.0. 
+	
+	
+	
+}
