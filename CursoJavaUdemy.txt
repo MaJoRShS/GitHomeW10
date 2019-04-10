@@ -2300,3 +2300,265 @@ public class Student {
 	
 	
 }
+
+
+Aula 51 : Membros estáticos - Parte 1
+
+Ao que me parece esse cara aqui meio que serve para que você não precise instanciar uma classe todas as vezes, mais ai como você não instancia você precisa referenciar de alguma forma e a forma é utilizando o nome da classe e o metodo dela.
+
+
+Método 1
+
+Arquivo Program.java
+
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+
+
+public class Program {
+
+	public static final double PI = 3.14159;
+/* Aqui é a declaração de uma constante em JAVA, tem que ser antes do (Atring[] Args) e tem que ser escrito com o nome todo em maiusculo,
+ * e precisa ser "static" e "final" para que o valor não seja alterado. 
+*/
+	
+	public static void main(String[] args) {
+		
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter a radius: ");
+		double radius =  sc.nextDouble();
+		
+		
+		double c = circunference(radius);
+		double v = volume(radius);
+		
+		System.out.printf("Circunference : %.2f%n",c);
+		System.out.printf("Volume : %.2f%n", v);
+		System.out.printf("PI value: %.2f%n", PI);
+		sc.close();
+	}
+
+	public static double circunference(double radius) {
+		return 2.0 * PI * radius;
+	}
+/*
+ *	Aqui é o seguinte todas as vezes que você quiser usar um metodo estatico dentro do outro ele deve ser declarado como estatico nos dois lugares
+ *	eu to usando um "static" nas funções porque eu não consigo chamar um metodo não estatico dentro de uma classe estatica.
+ */
+	
+	
+	public static double volume(double radius) {
+		return 4.0 * PI * radius * radius * radius / 3.0;
+	}
+	
+	
+}
+
+
+
+Método 2 
+
+Arquivo Program.java
+
+
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import util.Calculator;
+
+
+
+public class Program {
+
+
+	
+	public static void main(String[] args) {
+		
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Calculator calc = new Calculator();
+		
+		System.out.println("Enter a radius: ");
+		double radius =  sc.nextDouble();
+		
+		
+		double c = calc.circunference(radius);
+		double v = calc.volume(radius);
+		
+		System.out.printf("Circunference : %.2f%n",c);
+		System.out.printf("Volume : %.2f%n", v);
+		System.out.printf("PI value: %.2f%n", calc.PI);
+		
+		sc.close();
+	}
+
+//Aqui ta normal, instanciei a classe e usei os metodos dela como classe.metodo.
+	
+	
+}
+
+
+
+Arquivo Calculator.java
+
+package util;
+
+public class Calculator {
+	
+	public  final double PI = 3.14159;
+	
+
+	public  double circunference(double radius) {
+		return 2.0 * PI * radius;
+	}
+
+	public  double volume(double radius) {
+		return 4.0 * PI * radius * radius * radius / 3.0;
+	}
+	
+	
+// Aqui eu tive que tirar o "static" porque é um metodo normal de instanciação.
+	
+}
+
+
+
+Aula 52 : Membros estáticos - Parte 2
+
+Método 3 
+
+
+Arquivo Program.java
+
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import util.Calculator;
+
+
+
+public class Program {
+
+
+	
+	public static void main(String[] args) {
+		
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		
+		System.out.println("Enter a radius: ");
+		double radius =  sc.nextDouble();
+		
+		
+		double c = Calculator.circunference(radius);
+		double v = Calculator.volume(radius);
+		
+		System.out.printf("Circunference : %.2f%n",c);
+		System.out.printf("Volume : %.2f%n", v);
+		System.out.printf("PI value: %.2f%n", Calculator.PI);
+		
+		sc.close();
+	}
+
+//	Aqui é o seguinte, eu fiz com que a classe Calculator se torna-se igual a "Math" diferente do primeiro método que como eu estava com todos os métodos dentro da "String [] Args" eu não precisei chamar como sendo classe, mais agora como tem uma classe Calculator eu preciso chamar ele pelo nome da classe, porque dentro da classe está como "static" logo é um membro estatico.
+	
+}
+
+
+
+
+Arquivo Calculator.java
+
+
+package util;
+
+public class Calculator {
+	
+	public static final double PI = 3.14159;
+	
+
+	public static double circunference(double radius) {
+		return 2.0 * PI * radius;
+	}
+
+	public static double volume(double radius) {
+		return 4.0 * PI * radius * radius * radius / 3.0;
+	}
+	
+	
+}
+
+
+Aula 53 : Exercício de fixação
+
+
+Aqui eu tinha que criar uma calculadora de cambio, onde eu calcularia dado o valor do dolar e a quantidade de dolares que eu quero ter mais 6% de IOF eu mostro o valor que ele vai pagar em reais.
+
+Arquivo Program.java
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import util.CurrencyConverter;
+
+
+public class Program {
+
+
+	
+	public static void main(String[] args) {
+		
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		
+		System.out.println("What is the dollar price : ");
+		double dollar =  sc.nextDouble();
+		
+		
+		System.out.println("How many dollars will be bought : ");
+		double money =  sc.nextDouble();		
+		
+		
+		System.out.printf("Amount to be paid in reais =  %.2f%n",CurrencyConverter.calc(dollar, money));
+
+		sc.close();
+	}
+	
+}
+
+
+
+Arquivo CurrencyConverter.java
+
+package util;
+
+public class CurrencyConverter {
+ 
+	
+	public static double calc(double dollar,double money) {
+			double valor =  dollar * money;
+			double percent  = valor * 6 / 100;
+			return valor + percent;
+	}
+}
