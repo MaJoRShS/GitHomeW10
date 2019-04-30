@@ -2562,3 +2562,18 @@ public class CurrencyConverter {
 			return valor + percent;
 	}
 }
+
+
+Seção: 4
+
+Construtores, palavra this, sobrecarga, encapsulamento
+
+Aula 54 : Visão geral do capítulo 4
+
+Aqui ele vai mostrar como fazer o encapsulamento,e absorver tudo que é necessario saber sobre encapsulamento.
+
+
+
+Aula 55 : Material de apoio do capítulo
+
+Só tem material de apoio.
