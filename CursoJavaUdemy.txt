@@ -2577,3 +2577,100 @@ Aqui ele vai mostrar como fazer o encapsulamento,e absorver tudo que é necessar
 Aula 55 : Material de apoio do capítulo
 
 Só tem material de apoio.
+
+
+Aula 56 : Construtores
+
+
+Construtores nada mais são que os metodos que são chamadas para criar uma nova instancia de uma classe, quando usamos :
+
+Scanner sc = new Scanner();
+
+aqui estamos utilizando o construtor padrão do java para instanciar uma nova classe de "Scanner".
+
+mais esse construtor pode ser customizado, para que o objeto permita a inserção ou obrigue que sejam inserido dados no objeto ja na sua inicialização.
+
+Arquivo Program.java
+
+
+package application;
+import java.util.Locale;
+import java.util.Scanner;
+import entities.Product;
+
+public class Program {
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		
+		System.out.println("Enter product data: ");
+		System.out.print("Name: ");
+		String name = sc.nextLine();
+		
+		System.out.print("Price: ");
+		double price = sc.nextDouble();
+		
+		System.out.print("Quantity in stock: ");
+		int quantity = sc.nextInt();
+//Eu tive que instanciar como variaveis locais ou simples esses caras aqui para poder utilzar o construtor com parâmetros, e eu fiz isso para mostrar que da para usar o construtor da maneira que eu quiser.
+		
+		
+		Product product = new Product(name, price, quantity);
+//	Instancia do construtor já recebendo os parâmetros direto na instanciação.
+		
+		System.out.println();
+		System.out.println("Product data: " + product);
+		System.out.print("Enter the number of products to be added in stock: ");
+		quantity = sc.nextInt();
+		product.addProducts(quantity);
+		System.out.println();
+		System.out.println("Updated data: " + product);
+		System.out.println();
+		System.out.print("Enter the number of products to be removed from stock: ");
+		quantity = sc.nextInt();
+		product.removeProducts(quantity);
+		System.out.println();
+		System.out.println("Updated data: " + product);
+		sc.close();
+	}
+}
+
+
+Arquivo Product.java
+
+
+package entities;
+
+public class Product {
+	public String name;
+	public double price;
+	public int quantity;
+
+	
+	public Product(String name, double price, int quantity) {
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
+	}
+//Aqui é onde eu altero o construtor padrão, eu estou usando o "this." porque assim eu estou referenciando o "name" do objeto, e não ao atributo name do construtor.
+	
+	
+	
+	public double totalValueInStock() {
+		return price * quantity;
+	}
+
+	public void addProducts(int quantity) {
+		this.quantity += quantity;
+	}
+
+	public void removeProducts(int quantity) {
+		this.quantity -= quantity;
+	}
+
+	public String toString() {
+		return name + ", $ " + String.format("%.2f", price) + ", " + quantity + " units, Total: $ "
+				+ String.format("%.2f", totalValueInStock());
+	}
+}
