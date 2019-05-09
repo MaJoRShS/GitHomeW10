@@ -2674,3 +2674,241 @@ public class Product {
 				+ String.format("%.2f", totalValueInStock());
 	}
 }
+
+
+Aula 57 : Palavra THIS
+
+Aqui ele mostra que quando eu uso a palavra "this" dentro de um objeto ele está referenciando ao elemento dentro do objeto, ou seja eu peguei o valor de "name" que foi instanciado localmente e passei ela como parâmetro para um objeto, ai quando eu uso o ".this" eu to falando que eu quero pegar o valor da variavel que já está dentro do objeto.
+
+
+
+
+Aula 58 : Sobrecarga
+
+
+Arquivo Program.java
+
+
+
+
+
+package application;
+import java.util.Locale;
+import java.util.Scanner;
+import entities.Product;
+
+public class Program {
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		
+		System.out.println("Enter product data: ");
+		System.out.print("Name: ");
+		String name = sc.nextLine();
+		
+		System.out.print("Price: ");
+		double price = sc.nextDouble();
+//		
+//		System.out.print("Quantity in stock: ");
+//		int quantity = sc.nextInt();
+//	Aqui eu tive que comentar essas linhas porque é o seguinte eu não preciso mais dessas informações porque eu criei uma sobre carga nessa chamada, então eu consigo chamar esse cara sem passar os 3 parâmetros, eu consigo passar ou nenhum, ou 2 parâmetros ou todos os 3.
+		
+		
+		Product product = new Product(name, price);
+
+		
+		System.out.println();
+		System.out.println("Product data: " + product);
+		System.out.print("Enter the number of products to be added in stock: ");
+		int quantity = sc.nextInt();
+		product.addProducts(quantity);
+		System.out.println();
+		System.out.println("Updated data: " + product);
+		System.out.println();
+		System.out.print("Enter the number of products to be removed from stock: ");
+		quantity = sc.nextInt();
+		product.removeProducts(quantity);
+		System.out.println();
+		System.out.println("Updated data: " + product);
+		sc.close();
+	}
+}
+
+
+
+
+
+
+Arquivo Product.java
+
+
+
+
+package entities;
+
+public class Product {
+	public String name;
+	public double price;
+	public int quantity;
+
+	public Product() {
+		
+	}
+//	Aqui é o construtor padrão eu não preciso criar esse cara normalmente mais como eu estou fazendo uma sobrecarga nesse cara eu posso deixar um cara para que seja instanciado normalmente sem nenhum parâmetro.
+	
+	
+	public Product(String name, double price, int quantity) {
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
+	}
+//	Esse cara aqui é o construtor que foi modificado para receber 3 parâmetros de entrada ou seja eu obrigo que o cara quando for instanciar esse objeto ele passe todos esses parâmetros como sendo obrigatórios.
+	
+	
+	public Product(String name, double price) {
+		this.name = name;
+		this.price = price;
+	}	
+//	Aqui é a mesma coisa, só que com 2 parâmetros apenas, e isso aqui caracteriza sobre carga eu consigo instanciar um objeto com varios parâmetros como sendo obrigatório e também mudar essa obrigatoriedade na chamada.
+	
+	public double totalValueInStock() {
+		return price * quantity;
+	}
+
+	public void addProducts(int quantity) {
+		this.quantity += quantity;
+	}
+
+	public void removeProducts(int quantity) {
+		this.quantity -= quantity;
+	}
+
+	public String toString() {
+		return name + ", $ " + String.format("%.2f", price) + ", " + quantity + " units, Total: $ "
+				+ String.format("%.2f", totalValueInStock());
+	}
+}
+
+
+
+
+Aula 59 : Encapsulamento
+
+
+
+Aqui ele mostra como é feito encapsulamento.
+
+
+
+Arquivo Program.java
+
+
+
+package application;
+import java.util.Locale;
+import java.util.Scanner;
+import entities.Product;
+
+public class Program {
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		
+		System.out.println("Enter product data: ");
+		System.out.print("Name: ");
+		String name = sc.nextLine();
+		
+		System.out.print("Price: ");
+		double price = sc.nextDouble();
+
+		
+		
+		Product product = new Product(name, price);
+
+		System.out.println("Nome Agora: " + product.getName()); 
+		product.setName("anal");
+		System.out.println("Nome Depois: " + product.getName());
+		
+		System.out.println();
+		System.out.println("Product data: " + product);
+		System.out.print("Enter the number of products to be added in stock: ");
+		int quantity = sc.nextInt();
+		product.addProducts(quantity);
+		System.out.println();
+		System.out.println("Updated data: " + product);
+		System.out.println();
+		System.out.print("Enter the number of products to be removed from stock: ");
+		quantity = sc.nextInt();
+		product.removeProducts(quantity);
+		System.out.println();
+		System.out.println("Updated data: " + product);
+		sc.close();
+	}
+}
+
+
+
+
+
+
+Arquvio Product.java
+
+
+
+package entities;
+
+public class Product {
+	private String name;
+	private double price;
+	private int quantity;
+// Para começar a fazer o encapsulament você deve deixar os parâmetros como private, isso aqui já indica que não é acessivel por qualquer coisa ou qualquer um.
+	
+	
+	public Product() {
+		
+	}
+	
+	
+	public Product(String name, double price, int quantity) {
+		this.name = name;
+		this.price = price;
+		this.quantity = quantity;
+	}
+
+	
+	
+	public Product(String name, double price) {
+		this.name = name;
+		this.price = price;
+	}	
+
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+//  Como os parâmetros só são acessiveis pela propria classe eu preciso acessar ele com o "get" e para atribuir um novo valor eu preciso declarar o "set".
+	
+		
+	public double totalValueInStock() {
+		return price * quantity;
+	}
+
+	public void addProducts(int quantity) {
+		this.quantity += quantity;
+	}
+
+	public void removeProducts(int quantity) {
+		this.quantity -= quantity;
+	}
+
+	public String toString() {
+		return name + ", $ " + String.format("%.2f", price) + ", " + quantity + " units, Total: $ "
+				+ String.format("%.2f", totalValueInStock());
+	}
+}
