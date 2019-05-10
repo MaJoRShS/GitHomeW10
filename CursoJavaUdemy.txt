@@ -2828,8 +2828,23 @@ public class Program {
 		Product product = new Product(name, price);
 
 		System.out.println("Nome Agora: " + product.getName()); 
-		product.setName("anal");
+		product.setName("Lucas");
 		System.out.println("Nome Depois: " + product.getName());
+//	Aqui eu estou passand o nome "Lucas" com sendo um novo nome para o meu produto, e como eu configurei os getters and setters la no "Product" ele aceita na moral
+		
+		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+		
+		System.out.println("Preço Agora: "+ product.getPrice());
+		product.setPrice(1000.00);
+		System.out.println("Preço Depois: "+ product.getPrice());
+//	Aqui é a mesma coisa do exemplo acima.
+		
+		System.out.println("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+		
+		System.out.println("Quantidade Inicial : "+ product.getQuantity());
+//	Esse cara é um diferencial, porque como eu já tenho metodos que fazem todos os tramites para a quantidade e tals eu só criei o "GET" porque eu pegar a quantidade que o cara está digitando, porque eu não posso deixar ele alterar as quantidades.
+		
+		//OBS. eu deixei assim apenas para ver os passos da execução.
 		
 		System.out.println();
 		System.out.println("Product data: " + product);
@@ -2844,9 +2859,13 @@ public class Program {
 		product.removeProducts(quantity);
 		System.out.println();
 		System.out.println("Updated data: " + product);
+		
+		System.out.println("Quantidade Depois: "+ product.getQuantity());
 		sc.close();
 	}
-}
+
+	}
+
 
 
 
@@ -2894,6 +2913,21 @@ public class Product {
 	}
 //  Como os parâmetros só são acessiveis pela propria classe eu preciso acessar ele com o "get" e para atribuir um novo valor eu preciso declarar o "set".
 	
+	
+	public double getPrice() {
+		return price;
+	}
+	
+	public void setPrice(double price) {
+		this.price = price;
+	}
+// 	Aqui é a mesma coisa do de cima.
+	
+	
+	
+	public int getQuantity() {
+		return quantity;
+	}
 		
 	public double totalValueInStock() {
 		return price * quantity;
@@ -2911,4 +2945,5 @@ public class Product {
 		return name + ", $ " + String.format("%.2f", price) + ", " + quantity + " units, Total: $ "
 				+ String.format("%.2f", totalValueInStock());
 	}
+
 }
