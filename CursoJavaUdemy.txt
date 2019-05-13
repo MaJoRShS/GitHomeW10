@@ -2910,7 +2910,7 @@ public class Product {
 
 	public void setName(String name) {
 		this.name = name;
-	}
+	}	
 //  Como os parâmetros só são acessiveis pela propria classe eu preciso acessar ele com o "get" e para atribuir um novo valor eu preciso declarar o "set".
 	
 	
@@ -2977,3 +2977,98 @@ sem nada = podem ser acessadas por elas mesmas, e por classes diferentes mais do
 Aula 62 : Exercicios de Fixação
 
 
+Arquivo Program.java
+
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+import entities.Product;
+
+public class Program {
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		Product product = new Product();
+
+		System.out.println("Digite o numero da conta: ");
+		product.account = sc.nextInt();
+
+		System.out.println("Digite o nome do Cliente: ");
+		product.name = sc.next();
+
+		System.out.println("Tem depósito inicial (s/n) ? ");
+		product.deposito = sc.next();
+
+		if (product.deposito.equalsIgnoreCase("s")) {
+//		Aqui os caras me derem a call de usar esse metodo aqui , segundo a lenda ele é melhor para se usar em comparações com sting.
+			System.out.println("Digite o Valor do Depósito : ");
+			product.Soma(sc.nextDouble());
+
+			System.out.println(product);
+
+			System.out.println("Enter a Deposit Value : ");
+			product.Soma(sc.nextDouble());
+//		aqui eu to passando como parâmetro o valor que foi digitado 
+			System.out.println(product);
+			
+			System.out.println("Enter a withdraw value: ");
+			product.subtracao(sc.nextDouble());
+			System.out.println(product);
+
+		} else {
+			System.out.println("end of program");
+		}
+//		Aqui eu fiz o seguinte eu coloquei todos dentro do if/else porque fica mais tranquilo a verificação.
+		sc.close();
+	}
+
+}
+
+
+
+Arquivo Product.java
+
+package entities;
+
+public class Product {
+	public int  account;
+	public String name;
+	public String deposito;
+	private double saldo;
+//		Aqui eu deixei como private só os metodos que eu acho que não devem ser acessados por qualquer um
+
+	public Product() {
+		
+	}
+
+	public Product(int account, String name, String deposito, double value) {
+		this.account = account;
+		this.name = name;
+		this.deposito = deposito;
+		this.saldo = value;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Account Data : " + account + ", Holder : " + name + ", Balance "  + saldo;
+	}
+//		aqui é o metodo principal que vai devolver as informações cadastradas.
+	
+	public  String Soma(double value) {
+		saldo += value;
+		return "Account Data : " + account + ", Holder : " + name + ", Balance "  + saldo;
+	}
+//		Aqui eu estou fazendo a soma do saldo atual mais o novo deposito
+	
+
+	public double subtracao(double value) {
+		saldo = (saldo - 5) - value;
+		return saldo;
+	}
+	
+//		Aqui a subtração do valor digitado do saldo atual.
+}
