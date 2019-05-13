@@ -2947,3 +2947,33 @@ public class Product {
 	}
 
 }
+
+
+
+Aula 60 : Gerando automaticamente construtores, getters e setters com Eclipse
+
+
+Basicamente aqui é simples você vai na sua classe e clica com o botão direto na tela e vai em "source" ou "Alt+Shift+S" e clica em "Generate Constructor using fields" isso aqui para gerar o construtor da classe, e ai ele sempre vem com um "super();" que é algo de super classe ele ainda vai explicar, ai você seleciona os parâmetros que você quer que sejam instanciados na criação da sua classe e pronto, construtor criado, para fazer sobrecarga repete os passos e muda os parâmetros.
+
+Para gerar os Getters and Setters é o mesmo caminho mais ai você seleciona "Generate Getters and Setters..." e ai escolhe quais os parâmetros que você quer criar os getters e os setters e pronto.
+
+
+
+
+Aula 61 : Modificadores de Acesso
+
+Falou sobre os modificadores de acesso do JAVA.
+
+Publuc = pode ser acesso por todas as classes do mesmo pacote, e pacotes diferentes que tenham um relacionamento de herança, e em uma classe que não tem nada a ver com o projeto mais é do mesmo pacote.
+
+Private = São atributos que são acessos apenas pela propria classe.
+
+Protected = São acessados pela propria classe, e por todas as classes que são filhas
+
+sem nada = podem ser acessadas por elas mesmas, e por classes diferentes mais do mesmo pacote.
+
+
+
+Aula 62 : Exercicios de Fixação
+
+
