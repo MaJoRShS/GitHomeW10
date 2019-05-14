@@ -3072,3 +3072,242 @@ public class Product {
 	
 //		Aqui a subtração do valor digitado do saldo atual.
 }
+
+
+
+Eu fiz agora como eu acho que ele queria que realmente fosse feito, eu usei apenas metodos para setar os valores e ai trabalho os dados la na classe e dó devolvo o resultado, sem mais meios de acesso as info.
+
+
+Arquivo Program.java
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+import entities.Product;
+
+public class Program {
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		Product product = new Product();
+
+		System.out.println("Digite o numero da conta: ");
+		product.setAccount(sc.nextInt());
+
+		System.out.println("Digite o nome do Cliente: ");
+		product.setName(sc.next());
+
+		System.out.println("Tem depósito inicial (s/n) ? ");
+		product.setDeposito(sc.next());
+
+		if (product.getDeposito().equalsIgnoreCase("s")) {
+			System.out.println("Digite o Valor do Depósito : ");
+			product.Soma(sc.nextDouble());
+
+			System.out.println(product);
+
+			System.out.println("Enter a Deposit Value : ");
+			product.Soma(sc.nextDouble());
+			System.out.println(product);
+
+			System.out.println("Enter a withdraw value: ");
+			product.subtracao(sc.nextDouble());
+			System.out.println(product);
+
+		} else {
+			System.out.println("end of program");
+		}
+		sc.close();
+	}
+
+}
+
+
+
+Arquivos Product.java
+
+
+
+package entities;
+
+public class Product {
+	private int account;
+	private String name;
+	private String deposito;
+	private double saldo;
+
+	public Product() {
+
+	}
+
+	public Product(int account, String name, String deposito, double value) {
+		this.account = account;
+		this.name = name;
+		this.deposito = deposito;
+		this.saldo = value;
+	}
+
+	public void setAccount(int account) {
+		this.account = account;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDeposito() {
+		return deposito;
+	}
+
+	public void setDeposito(String deposito) {
+		this.deposito = deposito;
+	}
+
+	@Override
+	public String toString() {
+		return "Account Data : " + account + ", Holder : " + name + ", Balance " + saldo;
+	}
+
+	public String Soma(double value) {
+		saldo += value;
+		return "Account Data : " + account + ", Holder : " + name + ", Balance " + saldo;
+	}
+
+	public double subtracao(double value) {
+		saldo = (saldo - 5) - value;
+		return saldo;
+	}
+
+}
+
+
+Aula 63 : Correção do exercício de fixação - Parte 1
+
+Nessa aula ele mostrou uma forma mais inteligente de se fazer a classe, ele chamou a classe de "Account" passou 3 parâmetros, usou dois construturoes (sobrecarga) e ainda as operações dele ficaram muito mais bonitinhas e faceis de intender.
+
+
+Aula 64 : Correção do exercício de fixação - Parte 2
+
+Aqui ele finalizou os arquivos e tals e mostrou como ficaria em um "mundo ideal" esse projetinho.
+
+
+
+
+
+Arquivo Program.java (do professor)
+
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Account;
+
+public class Program {
+
+	public static void main(String[] args) {
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		Account account;
+
+		System.out.print("Enter account number: ");
+		int number = sc.nextInt();
+		System.out.print("Enter account holder: ");
+		sc.nextLine();
+		String holder = sc.nextLine();
+		System.out.print("Is there an initial deposit (y/n)? ");
+		char response = sc.next().charAt(0);
+		if (response == 'y') {
+			System.out.print("Enter initial deposit value: ");
+			double initialDeposit = sc.nextDouble();
+			account = new Account(number, holder, initialDeposit);
+		}
+		else {
+			account = new Account(number, holder);
+		}
+		
+		System.out.println();
+		System.out.println("Account data:");
+		System.out.println(account);
+		
+		System.out.println();
+		System.out.print("Enter a deposit value: ");
+		double depositValue = sc.nextDouble();
+		account.deposit(depositValue);
+		System.out.println("Updated account data:");
+		System.out.println(account);
+		
+		System.out.println();
+		System.out.print("Enter a withdraw value: ");
+		double withdrawValue = sc.nextDouble();
+		account.withdraw(withdrawValue);
+		System.out.println("Updated account data:");
+		System.out.println(account);
+		
+		sc.close();
+	}
+}
+
+
+
+
+Arquivo Account.java(do professor)
+
+
+
+package entities;
+
+public class Account {
+
+	private int number;
+	private String holder;
+	private double balance;
+	
+	public Account(int number, String holder) {
+		this.number = number;
+		this.holder = holder;
+	}
+
+	public Account(int number, String holder, double initialDeposit) {
+		this.number = number;
+		this.holder = holder;
+		deposit(initialDeposit);
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public String getHolder() {
+		return holder;
+	}
+
+	public void setHolder(String holder) {
+		this.holder = holder;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void deposit(double amount) {
+		balance += amount;
+	}
+	
+	public void withdraw(double amount) {
+		balance -= amount + 5.0;
+	}
+	
+	public String toString() {
+		return "Account "
+				+ number
+				+ ", Holder: "
+				+ holder
+				+ ", Balance: $ "
+				+ String.format("%.2f", balance);
+	}
+}
