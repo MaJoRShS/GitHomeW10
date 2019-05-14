@@ -3311,3 +3311,62 @@ public class Account {
 				+ String.format("%.2f", balance);
 	}
 }
+
+
+
+Seção: 5
+
+Comportamento de memória, arrays, listas
+
+Aula 65 : Visão geral do capítulo 5
+
+
+Aqui ele simplesmente fala como vai ser o modulo, encheu linguiça aqui.
+
+
+
+Aula 66 : Material de apoio do capítulo
+
+Baixei o material.
+
+
+Aula 67 : Tipos referência vs. tipos valor
+
+Classes são tipo referencia
+
+o que significa que toda classe na realidade trabalha como um ponteiro, ela armazena um valor de memória do objeto e não o valor dele propriamente dito, isso significa que quando se manda printar uma classe ou objeto você precisa referenciar ele como "CLASSE.PARAMETRO" que ai a referencia da memória diz onde que aquele objeto está e o parâmetro mostra qual o valor daquele objeto.
+
+primeiro na area chamada "STACK" fica a referencia de memória  que é a "HEAP" onde ficam armazenados os valores reais do objeto.
+
+
+
+
+Tipos primitivos são tipos valor
+
+Isso significa que ele não armazena uma referencia de memoria ele armazena o valor mesmo que foi digitado ou passado, e quando usamos o valor de um como sendo o do outro ex."x = y"  "y" recebe uma cópia do valor do "x"  enquanto que na classe a segunda instancia recebe o mesmo caminho de memória da primeira instaciação.
+
+já nos tipos primitivos não existe a "HEAP", os dados ficam armazenados diretamente na "STACK" dentro do proprio elemento.
+
+
+Tipos primitivos e inicialização
+
+Tipos primitivos são os normais que já vimos la atrás, mais quando vamos inicializalos temos que passar um valor obrigatóriamente, porque se não o proprio compilador já avisa que você criou uma variavel de um tipo primitivo que não tem valor, logo você não consegue executar seu programa.
+
+
+Valores padrão
+
+Quando não iniciamos variaveis ou objetos com valores, eles são iniciados com valores padrão(default).
+
+numéricos = 0 
+boolean = false
+char = caractere de código 0
+objeto = null
+
+CLASSE                                                                                |TIPO PRIMITIVO
+Vantagem: usufrui de todos recursos OO                                                |Vantagem: é mais simples e mais performático
+Variáveis são ponteiros                                                               |Variáveis são caixas
+Objetos precisam ser instanciados usando new, ou apontar para um objeto já existente. |Não instancia. Uma vez declarados, estão prontos para uso.
+Aceita valor null                                                                     |Não aceita valor null
+Y = X;"Y passa a apontar para onde X aponta"                                          |Y = X; "Y recebe uma cópia de X"
+Objetos instanciados no heap                                                          | "Objetos" instanciados no stack
+Objetos não utilizados são desalocados em um momento próximo pelo garbage collector   | "Objetos" são desalocados imediatamente quando seu escopo de xecução é finalizado
