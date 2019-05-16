@@ -3370,3 +3370,21 @@ Aceita valor null                                                               
 Y = X;"Y passa a apontar para onde X aponta"                                          |Y = X; "Y recebe uma cópia de X"
 Objetos instanciados no heap                                                          | "Objetos" instanciados no stack
 Objetos não utilizados são desalocados em um momento próximo pelo garbage collector   | "Objetos" são desalocados imediatamente quando seu escopo de xecução é finalizado
+
+
+Aula 68 : Desalocação de memória - garbage collector e escopo local
+
+Desalocação pelo Garbage Collector
+
+Aqui ele explica que quando eu tenho objeto ou variavel alocado dinamicamente ou seja por referencia, 
+ex:
+p1 = new Product ("TV", 900.00, 0); 
+p2 = new Product ("Mouse", 30.00, 0); 
+
+se eu passar a utilizar assim 	"p1 = p2;" ele vai depois de um tempo apagar o valor de "p1" da "HEAP" porque ninguém mais está utilizando esse cara ,isso é feito pelo "garbage collector".
+
+Desalocação por escopo
+
+Esse cara aqui é mais simples, aqui todas as vezes em que eu tenho um escopo local tudo que eu declarar dentro do meu escopo local só existe e só faz parte do escopo local e assim que acabar a execução do meu metodo, ou da minha função as variaveis não existem mais, igual acho que todas as linguagens.
+
+ele ainda deu um exemplo ainda melhor que fala que dentro do "STACK" ele empilha(por isso o nome de stack) mais de um escopo local, é um escopo local que existe apenas dentro de um outro escopo local.
