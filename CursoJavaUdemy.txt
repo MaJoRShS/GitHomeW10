@@ -3388,3 +3388,48 @@ Desalocação por escopo
 Esse cara aqui é mais simples, aqui todas as vezes em que eu tenho um escopo local tudo que eu declarar dentro do meu escopo local só existe e só faz parte do escopo local e assim que acabar a execução do meu metodo, ou da minha função as variaveis não existem mais, igual acho que todas as linguagens.
 
 ele ainda deu um exemplo ainda melhor que fala que dentro do "STACK" ele empilha(por isso o nome de stack) mais de um escopo local, é um escopo local que existe apenas dentro de um outro escopo local.
+
+
+
+Aula 69 : Vetores - Parte 1
+
+Aqui ele começa a explicar como que funciona um vetor(array), ele diz que sempre temos que declarar todos os valores na hora da criação, e sempre que temos que remover algum valor do meio do array é necessario mover todos os outros valores para cima, para cobrir o espaço que ficou "vago".
+
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+	public static void main(String[] args) {
+	
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		int n = sc.nextInt();
+		double[] vect = new double[n];
+		
+		
+// Aqui é onde começa a iteração do vetor, eu to falando que vou iterar um numero novo até que valor de 'i' seja igual ao de 'n'.
+		for(int i=0; i<n; i++) {
+			vect[i] = sc.nextDouble();
+		}
+
+		
+		
+// Aqui é onde eu somo todos os valores passados.		
+		Double sum = 0.0;
+			for(int i = 0; i < n; i++) {
+				sum += vect[i];
+			}
+			
+// e aqui onde eu divido pelo valor de 'n'.			
+			double avg = sum / n;
+			
+			
+			System.out.printf("AVERAGE HEIGHT : %.2f%n", avg);
+		
+		sc.close();
+	}
+
+}
