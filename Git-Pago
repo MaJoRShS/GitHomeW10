@@ -1,0 +1,53 @@
+Curso de Git (pago)
+
+
+
+Seção 1: Informações gerais sobre o curso
+
+1. Estrutura do curso
+Montrou como vai ser a sequencia das aulas e o seguimento do curso
+
+2. Problemas, perguntas e sugestões
+Mostrou como podemos fazer para nós comunicarmos com ele e onde e como fazer isso pelo proprio udemy e por redes sociais dele.
+
+
+Seção 2: Introdução ao controle de versão Git
+
+3. O que é controle de versão e quais as vantagens?
+Mostrou que com o controle de versão eu consigo saber exatamente em qual fase eu estou do meu projeto e como eu consigo prosseguir ou até mesmo voltar para uma versão onde não aconteciam problemas
+
+4. Tipos de controle de versão
+Existem dois tipos o centralizado e o distribuido
+
+Centralizado  = Geralmente fica em um servidor onde tudo que eu fizer fica armazenado e la e todo o histórico de versão fica la, tornando assim mais seguro o desenvolvimento porém muito mais lento e burocratico.
+
+Distribuido = é igual ao git onde quando eu clono um repositório ele trás todas as informações de histórico e mais de uma pessoa pode executar ou mexer na versão ao mesmo tempo, coisa que no centralizado as vezes não da para fazer se for configurado para isso.
+
+
+Seção 3: Instalação e Configuração
+(Windows, Linux, Mac)
+
+5. Instalação do Git (Windows)
+
+6. Instalação do Git (Linux)
+
+7. Instalação do Git (Mac)
+
+
+Seção 4: Comandos Básicos
+Mostrou como inicializar o git dentro de qualquer pasta usando o git init
+
+
+8. Configuração do usuário
+Mostrou como configurar usuario  e email no git no seu repositório local para que fique registrado quem fez aquela alteração e para que eu consiga me autenticar nos lugares
+
+git config --global user.name "Lucas Rodrigues"
+git config --global user.email "Lucas.rodrigues@shscorp.com"
+
+**extra meu. da para configurar até em qual editor eu quero abrir os meus arquivos
+git config --global core.editor emacs  ou code
+
+9. Criação de um repositório local
+Aqui ele mostrou como que é possivel criar um repositório local usando o git init em qualquer pasta do meu PC, e já até consigo mandar criar um arquivo mesmo não existindo repositório em mais nenhum lugar
+
+10. Versionamento - Adicionando alterações
