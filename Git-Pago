@@ -50,4 +50,103 @@ git config --global core.editor emacs  ou code
 9. Criação de um repositório local
 Aqui ele mostrou como que é possivel criar um repositório local usando o git init em qualquer pasta do meu PC, e já até consigo mandar criar um arquivo mesmo não existindo repositório em mais nenhum lugar
 
+
 10. Versionamento - Adicionando alterações
+
+aqui ele mostra que como podemos verificar quais arquivos temos alteração ou arquivos novos podemos addcionar eles ao track ou ao verificação do git
+
+git status  = mostra o estado de todos os arquivos no meu repositório
+
+git add --all  = adiciona todos os arquivos novos ou alterados para serem trackeados pelo git
+
+git add -A   = mesma utilização
+
+git add .  = mesma utilização
+
+e quando vamos adicionar um arquivo especifico temos que usar assim:
+
+git add nomeDoArquivo.txt
+
+
+assim todos eles passam a ser rastrados pelo git,o git tem alguns estados de arquivos 
+
+untracked   = arquivo não rastreado pelo git
+unmodified  = Arquivo está sendo rastrado pelo git e não sofreu nenhuma alteração
+modified    = arquivo modificado, e precisa ser gravado o histórico de mudança no git
+staged      = Arquivo foi commitado(salvo) e volta para o estado de "unmodified"
+
+
+11. Versionamento - Salvando alterações
+
+Para salvar as alterações é necessario realizar o commit (salvar) , quando eu uso o git add eu estou dizendo que o git deve rastrear aquele arquivo,
+ e quando eu dou um commit eu digo que quero que ele salve as minhas alterações e gera um "safepoint" igual de jogo de aventura.
+
+ o comando é :
+
+ git commit -m"Texto que mostra o que eu mudei no arquivo"
+
+ após fazer isso ele vai me mostrar uma mensagem se ele conseguir salvar as minhas alterações .
+
+
+ 12. Funcionamento do Git
+
+ Working directory = Arquivos no meu diretório
+ Staging area(staged) = Aqui é para onde meus arquivos vão após o git add, ou seja estão rastreados e prontos para serem salvos
+ Commited = Salvei minhas alterações e ainda dei um nome para essas minhas alterações e mostrei o que eu fiz nelas.
+
+ aqui ele mostra que se eu não me ligar eu vou acabar perdendo coisas ou até mesmo tendo que commitar duas vezes porque no exemplo dele o mesmo arquivo estava em dois estados ao mesmo tempo,
+isso acontece porque o git meio que cria um arquivo temporario com sua alteração quando você manda um git add, e se você alterar depois de já ter mandado o cara para a Staging area ele vai ter duas versões
+uma com a nova alteração e outra com a alteração que já está na Staging area, memso que a outra ainda não esteja no track ela existe.
+
+
+13. Visualizar alterações
+
+Para ver a diferenças entre o que tinha no arquivo no antigo commit e no que está alterado na area de staged usa o comando 
+
+git diff
+
+ele vai mostrar a diferenças entre os arquivos e em quais linhas estão essas diferenças
+
+
+para ver as alterações nos arquivos já na area de staged usa-se o comando 
+
+git diff --cached
+git diff --staged
+
+mostra a mesma coisa mais dos arquivos na Staging area
+
+
+14. Histórico de alterações
+
+para ver o histórico de alterações eu uso o comando 
+
+git log
+
+ele me trás o histórico de alteração do mais recente para o mais antigo
+
+cada commit tem uma chave unica, ou Introdução (HASH)
+
+e ainda vem uma mensagem de commit e o nome e email do autor
+
+o HEAD sempre aponta para ultima  alteração na branch.
+
+
+git log --oneline
+
+
+Trás tudas as alterações em uma unica linha na hora da apresentação
+
+
+15. Usando commits anteriores
+
+é posivel voltar para um commit especifico e fazer com que o repositório fique com apenas os arquivos existentes naquele commit que é igual a uma versão do meu repositório, usando o comando
+
+git checkout HASH  (Aqui eu uso uma parte ou toda a hash de identificação daquele commit)
+
+fazendo isso eu volto para aquela versão no meu repositório e os arquivos ficam como estavam nessa data ou nessa versão do meu repositório.
+
+para poder voltar para a versão atual do meu repositório eu uso o comando
+
+git checkout nomeDaBranch
+
+e volto para a versão atual do meu repositório.
