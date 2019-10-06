@@ -150,3 +150,62 @@ para poder voltar para a versão atual do meu repositório eu uso o comando
 git checkout nomeDaBranch
 
 e volto para a versão atual do meu repositório.
+
+
+16. Desfazendo alterações
+
+
+Aqui quando eu fiz alguma alteração que eu não quero que suba ou quero desfazer essa alteração sem ter que abrir o arquivo e remover a alteração, eu uso o comando
+
+git checkout nomeDoArquivo.txt
+
+esse comando faz com que o meu repositório volte para o ultimo commit, ou seja ele desconsidera as minhas alterações e volta tudo para o estado anterior.
+
+já para fazer a mesma coisa mais com varios arquivos no mesmo repositório eu uso o 
+
+git reset --hard
+
+que aqui ele vai fazer com que todos os arquivos do meu repositório voltem para o ultimo commit, mais isso serve apenas para arquivos que ainda não estão na area de staged, eles não podem ter sido adicionados com o "git add ."
+
+Obs. o git checkout não funciona com arquivos novos , isso acontece porque arquivos novos o git não sabe o que fazer nem o conteudo dele, por isso não funciona.
+
+17. Desfazendo alterações não rastreadas
+
+Aqui é para justamente resolver os problemas que o comando acima não consegue , quando temos um arquivo que foi criado ou adicionado recentemente o git não sabe o que fazer, e por isso ele não faz nada, como ele não esta nos arquivos trackeados o git ignora eu mais avisa que ele está la, para remover esse tipo de arquivo usa-se o comando
+
+git clean -f
+
+esse comando remove todos os arquivos que estão untracked da lista ou do meu histórico e deixa tudo limpo.
+
+Já quando o arquivo foi adicionado e está na area de staged para poder remover ele é necessario usar o "gir reset --hard" como já visto anteriomente.
+
+
+A diferença real do "git checkout" e do "git clean -f" é que o "checkout" remove alterações em arquivos que já estão trackeados e o git já controla ou já tem um histórico dele, e o "clean" serve para remover arquivos que não estão trackeados e retiralos do histórico.
+
+já o git reset --hard volta o repositório para o ultimo commit daquela branch.
+
+
+18. Ignorando arquivos
+
+Aqui ele mostrou o porque de criar um arquivo git ignore, (gitignore).
+
+aqui basicamente esse cara vai fazer o git ignorar todos os tipos de arquivo que você colocar dentro desse arquivo.
+
+se você quer excluir apenas um arquivo você colocar o nome dele com extensão e tudo, e quer excluir um diretório coloca o nome dele , e se quer excluir todos os tipos de um determinado arquivo manda um "*.extensão", tem agora um arquivo chamado "text.bmp" dentro do diretório e ele está listado no gitignore porque dentro do arquivo está *.bmp, detalhe ele não aparece nem quando se manda um git status como sendo arquivo novo nem nada, mesmo o meu gitignore também estando untracked. (FODA)
+
+
+19. Clonando repositório
+
+Aqui ele está mostrando como é possivel clonar repositórios e serve até mesmo para repositórios dentro do mesmo servidor, o exemplo que ele deu foi de clonar o repositório para o mesmo servidor com outro nome, e assim ele cria copia do repositório mesmo sendo local.
+
+
+
+20. Introdução ao Github
+
+Aqui ele está mostrando como  funciona o Github, e quais as vantagens e desvantagens
+
+
+
+21. Criando repositório
+
+mostrou como criar um repositório no Github (mais do mesmo).
