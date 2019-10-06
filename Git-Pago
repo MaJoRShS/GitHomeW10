@@ -209,3 +209,246 @@ Aqui ele está mostrando como  funciona o Github, e quais as vantagens e desvant
 21. Criando repositório
 
 mostrou como criar um repositório no Github (mais do mesmo).
+
+
+
+22. Versionar alterações no servidor
+
+Aqui ele apresenta o comando "git push" que serve para você enviar as suas alterações para o servidor, e deixa-lo atualizado igual ao seu repositório local, esse comando deve ser utilizado após você já ter adicionado seus arquivos para a area de staged e commitalos, ai quando você mandar um "git push" ele envia essas informações para o seu servidor.
+
+
+23. Baixar a última versão do repositório
+
+Aqui ele mostra o comando "git pull" que serve para baixar a ultima versão do meu repositório no servidor, o que esse comando faz, ele vai no meu servidor e verifica se a versão existente la é superior a que está na minha maquina local e ai ele baixa tudo que estiver la e deixa meu repositório local igual ao do meu servidor.
+
+
+24. Star, fork e pull request
+
+Star
+Aqui são conceitos do Github e servem para colaboração , o "Star" é quando eu favorito um repositório e esse cara aparece para mim na area de favoritos do meu perfil, assim eu não preciso ficar buscando por ele ou pesquisando toda vez que eu quiser ve-lo.
+
+Tem o esquema do "Watch" que eu posso ficar observando o repositório por padrão vem com não observar, mais eu consigo ser notificado por todas as conversas, por todas as novas releases (versões).
+
+
+Fork
+É quando eu crio um clone de um repositório no meu perfil, e sendo assim eu consigo mexer ou criar ou alterar coisas novas nesse repositório sem que eu precise de algo de alguém e assim que eu por exemplo criar uma nova funcionalidade ou algo do tipo e quiser compartilhar com a comunidade eu subo ele para o Github e ai faço um "pull request" para poder juntar as minhas alterações no repositório original de quem eu clonei, mais detalhe o dono do repositório tem que aceitar minhas alterações para que elas tenham efeito.
+
+
+Pull request
+É quando eu quero que as alterações que eu fiz em um repositório cloando de um outra pessoa sejam oficiais no repositório, e ai eu abro uma solicitação para o dono de que as minhas alterações se tornem parte do projeto, e ai eu mando um "pull request" e se o dono aceitar minhas alterações fazem parte do porojeto.
+
+
+25. Issues, milestones, labels
+
+Issues
+É basicamente um lista de tarefas ou de problemas que precisam ser resolvidos, geralmente são abertas por pessoas que colaboram no projeto para que a galera toda consiga ver o que está com problemas ou o que precisa ser melhorado, e nessas "Issues" você coloca as labels.
+
+labels 
+essas labels são marcações nas suas Issues, para mostrar que são importantes ou não, ou até mesmo para apontar o que você vai ou não resolver.
+
+milestones
+Esses caras são como o nome já diz "marcos históricos" ou seja é mais uma marcação para colocar nas Issues, que serve mais ou menos assim, você tem varias Issues e você vai corrigir e publicar as paradas só em um versão futura porque você tem muita coisa importante para resolver ai você coloca a marcação de "milestone" nessa "Issues" informando em qual versão isso vai ser corrigido.
+
+Mais uma coisa muito importante e interresante do pull request é que é possivel você fazer o pull request e já associalo a uma Issues especifica e ai quando o dono do repositório aceitar o seu pull request ele automaticamente fecha a issue.
+
+
+26. Arquivo README
+
+Aqui ele mostra que o arquivo README.md é um arquivo de referencia ou de descrição do seu repositório para que todos ao acessar seu repositório saibam do que se trata ou até mesmo já seja a documentação ou que sirva de referencia para a documentação.
+
+
+27. Introdução ao Bitbucket
+
+Apresentou o Bitbucket
+
+
+28. Autenticação em dois fatores
+
+Mostrou nada com nada, disse que tem e que tem um app que nego precisa usar se habilitar.
+
+
+29. Configuração de chaves SSH
+
+Aqui ele mostrou como configurar chave ssh no windows para usar no Bitbucket, ele mostrou de uma forma diferente porque eu sempre sigo o padrão do git e depois de usar o "ssh-keygen" eu mando um "cat" no diretório e pego o valor da chave ai eu coloco ela no Github e pronto.
+
+mais aqui ele sempre manda um "eval $(ssh-agent)" que serve para inicializar uma conexão via ssh e ai depois manda um ssh-add caminhoDeOndeEstaAChave que ai ele faz a autenticação (claro que sua chave já deve estar configurada la) e ai tudo certo só usar.
+
+
+30. Conceitos de branch
+
+Explicou que branch são caminhos de desenvolvimento ou ramificações de um desenvolvimento, e que temos a branch master que é a oficial do projeto e ai precisamos implementar uma funcionalidade nova é só criar uma branch nova e depois de tudo testado e tudo certo é só mesclar ela com a master e tudo ficar certo e atualizado.
+
+
+31. Alterações não versionadas
+
+Quando eu tenho alguma alteração não versionada e eu tentar mudar de branch o git me avisa que eu vou perder todos os meus dados ou alterações, e ai o esquema é dar um "git reset --hard" que remove qualquer alteração não trackeada e vida que segue, se eu não puder fazer isso e o ideal for eu commitar ou manter essas alterações ai é esquema é ver o que está diferente e commitar tudo.
+
+
+32. Criando branch local
+
+Aqui ele mostra mais funcionalidades do comando "git branch"
+
+git branch = Lista todas as branchs existentes e deixa destacado a branch ao qual estou checkado(logado)
+
+git branch AlgumaCoisa = Cria uma nova branch com o nome que eu digitei, detalhe se essa branch já existir ele não cria uma nova e ainda avisa que já existe
+
+git checkout nomeDaBranch = Muda de uma branch para outra
+
+git checkout -b nomeDaBranch = Cria uma nova branch com o nome que foi digitado e ainda se loga nela por causa do parâmetro "-b"
+
+
+33. Enviando branch para repositório
+
+para enviar um branch que eu criei aqui no meu pc para meu repositório eu uso o comando 
+
+git push --set-upstream origin nomeDaBranch
+
+esse comando envia minha branch local para o servidor e ainda faz a referencia de que essa branch e a mesma na minha maquina local, mais da para fazer isso com menos texto usando comando 
+
+git push -u origin nomeDaBranch
+
+esse comando é o encurtado do comando de cima e tem a mesma utilidade e funcionalidade.
+
+
+34. Atualizando branch
+
+Aqui ele mostra que o comando "git pull" serve tanto para atualizar a branch que eu to trabalhando como para também trazer tudo de novo que existe no servidor, ai o exemplo ele criou uma branch nova em um clone do repositório e enviou para o servidor, ai no outro repositório ele teve que dar um "git pull" para conseguir acessar essa branch.
+
+
+35. Remover branches locais
+
+para remover as branchs locais usa o comando 
+
+git branch -d nomeDaBranch
+
+esse comando remove branches locais mais tem um porém você não pode estar logado nessa branch e é obrigatório passar o nome da branch
+
+mais as vezes você quer obrigar a remoção da branch você usa o comando
+
+git branch -D nomeDaBranch
+
+esse cara é como se fosse uma exclusão forçada, mais funciona igual ao de cima.
+
+
+36. Remover branches remotas
+
+Para remover branch que estão no servidor usa-se o comando 
+
+git push --delete origin nomeDaBranch
+
+esse comando deleta a branch do servidor impedindo que seja restaurada usando o "git checkout nomeDaBranch"
+
+
+37. Renomear branch
+
+Para Renomear branchs locais usa-se o comando qundo já se está checkado nessa branch
+
+git branch -m novoNomeDaBranch
+
+se você não estiver checkado nessa branch é um pouco diferente usa-se o 
+
+git branch -m nomeAtualdaBranch novoNomeDaBranch
+
+fazendo assim eu altero o nome de uma branch que eu não estou checkado
+
+
+Para remover do servidor é simples também usa se o comando 
+
+git push --delete origin nomeDaBranch
+
+sempre tentando lembrar de alinhar com a galera que vai remover saporra.
+
+
+38. Mesclando alterações
+
+Quando eu terminei de fazer alguma coisa em um branch e quero levar isso para outra branch exemplo estou na master e quero traser as paradas da develop
+
+git merge develop
+
+se não houver conflitos no merge ele faz a mescla das duas branch e ainda commita o merge para mim ai é só dar o "git push" que sobe tudo para o servidor
+
+
+39. Resolvendo conflitos
+
+Ele mostra que quando você altera um linha e outra pessoa altera a mesma linha sempre da conflito  na hora de subir para o servidor, ai você é obrigado a resolver esse conflito na mão abre o arquivo em questão e ve qual alteração que você quer que seja a oficial ai é só salvar o arquivo de novo e volta aos passos normal de add, commit e push.
+
+
+40. Resolução de conflitos usando kdiff3
+
+Aqui ele usa uma ferramenta grafica para resolver conflitos, eu achei meio bosta porque eu nunca tive problemas grandes e em varios arquivos, mais é uma opção, se chama kdiff3 e após o download dele é necessario fazer algumas Configurações no git.
+
+git config --global --list
+
+mostra todas as Configurações já existentes no seu git
+
+
+git config --global --add merge.tool kdiff3
+
+configura o programa que eu vou utilizar para fazer o merge
+
+
+git config --global --add mergetool.kdiff3.path"local-Onde-Foi-Instalado-O-Programa"
+
+Local onde foi instalado o programa com o executavel no caminho para que ele consiga inicializar o programa.
+
+
+git config --global --add mergetool.kdiff3.trustExitCode false 
+
+configuração da ferramenta não sei porque disso.
+
+
+41. Exemplo de SCM
+
+Aqui ele mostra mais ou menos a utilização mais comum de SCM - Source Code Management (controle de versão de codigo), e que geralmente da master se cria uma develop e dessa develop se cria as features que após serem testadas e tudo certo são mergeadas com a develop e retestadas e ai sim depois de tudo certo é feito o merge com a branch master e se cria uma TAG(ainda não visto) com a versão fechada do sistema.
+
+
+42. Pull Request
+
+Aqui ele fala sobre o pull request e como fazer e quais as possiveis vantagens , para fazer é simples pelo menos até agora sempre usa o Github não se sé possivel fazer via linha de comando, basicamente ele criou uma branch nova e mandou fazer o merge dela com a master , mais ai ele usou o pull request no Github e ai o conceito é de que quem abriu a pull request deixa la a parada mais alguém precisa revisar o código, e para isso que serve ai sempre vai ter alguém revisando o código que vai subir, ele ainda não mostrou como fazer essa configuração mais disse que é possivel
+
+OBS. ele mostrou que é possivel fazer o "git add --all ou ." direto com o commit que é o (git commit -a -m "Texto do commit"), que assim eu abrevio o add e ainda commito direto.
+
+OBS. tem o comando para criar pull request direto da linha de comando
+
+git request-pull [-p] <start> <url> [<end>]
+
+(extraido do site do git)
+git-request-pull - Gera um resumo das alterações pendentes
+
+SINOPSE
+git request-pull [-p] <start> <url> [<end>]
+DESCRIÇÃO
+Gere uma solicitação solicitando ao seu projeto upstream que puxe as alterações na árvore deles. A solicitação, impressa na saída padrão, começa com a descrição da ramificação, resume as alterações e indica de onde elas podem ser extraídas.
+
+Espera-se que o projeto upstream tenha o commit nomeado por <start>e a saída solicite a integração das alterações feitas desde esse commit, até o commit nomeado por <end>, visitando o repositório nomeado por <url>.
+
+OPÇÕES
+-p
+Inclua texto de correção na saída.
+
+<start>
+Comprometa-se a começar às. Isso nomeia um commit que já está no histórico upstream.
+
+<url>
+A URL do repositório a ser extraída.
+
+<end>
+Confirme para terminar em (o padrão é HEAD). Isso nomeia o commit na ponta do histórico que você está pedindo para ser puxado.
+
+Quando o repositório nomeado por <url>tem o commit na ponta de uma referência diferente da referência local, você pode usar a <local>:<remote>sintaxe para ter seu nome local, dois pontos :e seu nome remoto.
+
+EXEMPLOS
+Imagine que você construiu seu trabalho em sua masterfilial no topo da v1.0versão e deseja que ele seja integrado ao projeto. Primeiro, você envia essa alteração ao seu repositório público para que outras pessoas vejam:
+
+git push https: //git.ko.xz/project master
+Então, você executa este comando:
+
+git request-pull v1.0 https: //git.ko.xz/project master
+que produzirá uma solicitação para o upstream, resumindo as alterações entre o v1.0release e o seu master, para retirá-lo do seu repositório público.
+
+Se você alterou sua alteração para uma ramificação cujo nome é diferente daquele que você possui localmente, por exemplo,
+
+git push https: //git.ko.xz/project master: for-linus
+então você pode pedir que seja puxado com
+
+git request-pull v1.0 https: //git.ko.xz/project master: for-linus
