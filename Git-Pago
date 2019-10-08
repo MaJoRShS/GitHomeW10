@@ -452,3 +452,153 @@ git push https: //git.ko.xz/project master: for-linus
 então você pode pedir que seja puxado com
 
 git request-pull v1.0 https: //git.ko.xz/project master: for-linus
+
+
+43. Criação e listagem de tag
+
+Nessa aula ele mostra como criar uma tag no meu repositório e para que elas são utilziadas, que no caso semvem como referencia igual a HASH que é gerada em cada commit, mais ai ao invés de você usar o git log pegar a HASH você usa o comando
+
+git tag -a nomeDaTag -m"Comentário da Tag"
+
+esse "-a" é de anotada, não sei ao certo para que serve mais é para que a tag seja criada, já o -m é o comentario normal e significa message(mensagem).
+
+
+para pesquisar todas as tags existentes manda o comando 
+
+git tag
+
+e para pesquisar um grupo de tags especificas usa o comando
+
+git tag -l 'v1.4.2.*'
+
+aqui no caso eu to querendo todas as tags que estão no range da v1.4.2.
+
+**Pelo que li na documentação tem como você assinar a tag, é só usar o comando 
+
+git tag -s nomeDaTag -m"Comentário da TAG"
+
+e ai todas as vezes que alguém der um git show vai aparecer sua assinatura na tag.
+
+tem como também fazer pesquisar por grupos de tags que seria 
+
+
+44. Enviando tag para repositório
+
+para enviar a tag da maquina local para o servidor utilizamos o comando
+
+git push origin nomeDaTag
+
+assim eu envio para o meu servidor todo o conteudo da minha tag, la no Github esse cara não aparece como tag mais sim como release porque o Github intende que uma tag é uma release.
+
+
+45. Utilizando tags
+
+aqui o caso é mais ou menos o seguinte, é possivel usar as tags para voltar até aquele momento do código e alterar alguma coisa porém quando eu altero algo eu preciso criar uma nova branch apartir daquele lugar ou com aquela minha alteração, porque se não o meu commit fica perdido em lugar nenhum, e ai depois eu vou perder minhas alterações.
+então o recomendado é fazer sempre uma nova branch de uma TAG, mais o ideal mesmo é não precisar criar uma branch de uma tag, e sim voltar na TAG apenas para confirmar como estava ou voltar o seu repositório para aquela versão mesmo.
+
+para usar é utilizado o comando 
+
+git checkout nomeDaTag
+
+ai ele mostra uma mensagem que contem tudo o que foi informado ali acima.
+
+
+46. Removendo tags
+
+para remover a tag tanto no local quando no servidor é igual o da branch, utiliza-se
+
+git tag -d nomeDaTag 
+
+assim ele remove a tag do repositório local
+
+para remover a tag do servidor também é igual ao da branch
+
+git push --delete origin nomeDaTag
+
+assim eu faço a remoção dessa tag do meu repositório no servidor.
+
+
+47. Tag em commits antigos
+
+para criar as tags em commits antigos exitem duas formas, ou você faz um git checkout e vai para o commit que você quer tagear, e quando você estiver nele você cria a tag.
+
+
+git checkout commitQueVoceQuerVoltar
+git tag -a nomeDaTag
+git checkout nomeDaBranch
+
+pronto assim você voltou no commit que você quer criou a tag no lugar correto e ainda voltou para a branch master na HEAD que é o ponto mais atual do sistema.
+
+o outro modo de se criar tags em commits especificos ou antigos é usando o comando
+
+
+git tag -a nomeDaTag HASHDoCommitQueVoceQuerTagear
+
+tem o mesmo efeito que a sequencia de comando anterior mais não precisa dar toda a volta que os 3 comando acima fazem, é bem mais simples.
+
+
+48. Stash - Uso e criação
+
+aqui ele mostrq que é possivel armazenar as minhas alterações em uma area da memoria que o git utiliza utilizando o comando
+
+git stash
+
+esse comando pega todas as minhas alterações e armazena em algum lugar temporario e volta o meu repositório para o ultimo commit, fazendo assim com que eu consiga trabalhar normalmente em qualquer coisa sem perder o que fiz e sem ter que commitar para salvar o que eu fiz.
+
+
+para listar o que foi armazenado nessa area da memoria eu uso o comando
+
+git stash list
+
+aqui ele mostra todas as minhas alterações salvas na area de memoria do git.
+
+
+
+49. Stash - Listando e removendo
+
+o comando 
+
+git stash
+
+é na verdade uma abreviação , o comando completo é 
+
+git stash save "Texto do commit"
+
+O comando para listar as stash's sempre lista da mais recente para a mais antiga.
+
+git stash list
+
+
+vamos supor que as minhas alterações que estão no stash são as que devem ficar mesmo no repositório para aplicar o meu stash na minha branch atual eu devo usar o comando 
+
+git stash apply
+
+esse comando sempre aplica a primeira stash da lista de stash que tem , então eu tenho que tomar cuidado para não mandar assim direto para não pegar alterações antigas e sobrescrever coisas novas,
+porém esse "git stash apply" aplica a stash na branch mais ele não remove ela da lista de stash, para aplicar a stash na branch e ainda removela do histórico de stash's eu uso o comando 
+
+git stash pop
+
+Para remover o indice de stash sem aplicar ele em lugar nenhum eu uso o comando 
+
+git stash drop NomeDoStash
+
+e tem como você fazer a implementação de uma stach e remoção dela do historico direto pelo comando 
+
+git stash pop NomeDoStash
+
+
+50. Desfazendo commits
+
+para remover um commit já feito o comando utilizado é o 
+
+git reset --hard HEAD~1
+
+sendo que o numero depois do (~) é a quantidade de commits a serem removidos
+
+para adicionar novas alterações em um commit já existente eu utilizo o comando 
+
+git commit --amend
+
+esse cara faz com que as minhas novas alterações sejam incluidas no ultimo commit, fazendo com que não gere um novo historico ou um novo commit.
+
+mais tudo isso é no repositório local, não tem como apagar um commit no servidor, é necessario versionar uma alteração por cima para que ai sim tenha a minha alteração.
