@@ -602,3 +602,109 @@ git commit --amend
 esse cara faz com que as minhas novas alterações sejam incluidas no ultimo commit, fazendo com que não gere um novo historico ou um novo commit.
 
 mais tudo isso é no repositório local, não tem como apagar um commit no servidor, é necessario versionar uma alteração por cima para que ai sim tenha a minha alteração.
+
+
+51. Fetch
+
+basicamente o comando "git fetch" é executado automaticamente quando eu executo o comando "git pull", ele faz basicamente 
+
+git fetch 
+git merge
+
+isso tudo no comando "git pull"
+
+qunado eu faço isso apenas com o "git fetch" ele trás todas as informações do meu repositório mais não aplica elas no meu repositório atual porque não eu não fiz o merge.
+
+algo interessante que ele mostrou agora, quando eu mando um "git log" eu estou querendo ver o log do meu repositório atual , mais é o log local do repositório, para ver o log do server, e do local junto, eu tenho que usar o comando 
+
+git log origin/nomeDaBranch 
+
+assim eu vejo todos os logs do meu repositório local e do meu servidor.
+
+
+52. Rebase
+
+aqui tem o conceito de "fast foward" que significa basicamente que eu tenho duas branchs que tem o mesmo inicio, ou que tem o mesmo principio e uma delas se desenvolvel e a outra não, então é facil para o git fazer o merge, e quando acontece esse cenario quando eu mando o merge o git informa na mensagem quem foi feito dessa forma, fast foward.
+
+
+porém quando temos um merge com duas branchs que tinham informação similares mais diferentes ou avançaram juntas cada uma para um lado ele faz apenas o auto-merge e gera uma mensagem de commit, porque ali precisa ter salvo a info de que foi feito algo, já no fast foward não precisa porque é como se os commits fossem os mesmos nas duas branchs.
+
+o comando 
+
+git rabase nomeDaBranch
+e
+git merge nomeDaBranch
+
+
+não possuem diferença nenhuma, só na forma como eles executam o merge quase sempre gera um commit de merge , só não faz em casos onde não existam commits nas duas branchs mergeadas, já o rebase unifica os commits, e trás tudo de uma branch para outra e deixa tudo mais limpo e organizado.
+
+
+Temos na real 3 cenarios um que você usa o merge de duas branchs uma se origina da outra e só em uma delas tem commit, ele faz o merge chamado "fast foward" que é apenas a junção das branchs e deixando tudo em uma unica linha.
+
+tem o cenario tenho duas branchs uma se origina da outra e nas duas eu fiz commit, ai quand eu fizer o merge ele vai criar um novo commit de merge, porque eu tenho alteração nas duas branchs e ai eu preciso documentar o que está sendo feito e porque está sendo feito.
+
+e o ultimo cenario que é rebase que elimina a necessidade de um commit de merge porque ele pega todos os commits da branch de origem e joga em cima dos commits da minha branch atual, fazendo assim com que meu historico fique mais linear.
+
+
+53. Alias
+
+Alias são apelidos, e é utilizado para criar snippets ou atalhos na digitação dos comando do git, usa-se o comando 
+
+git congfig --global alias.nomeDoAlisQueVoceVaiUsar nomeDoComandoASerSubstituido
+
+assim eu falo que o meu alias.s vai ser o status
+
+na real ainda da para usar o comando nativo normalmente mais com o alias fica ainda mais rapido e dinamico a sua utilização do git.
+
+
+54. Remote
+
+O comando que lista todas as URL's que meu projeto utiliza ou que está configurada é 
+
+git remove -v 
+
+ele trás uma lista com todos as url's que meu repositório utiliza tanto para pull quanto para push
+
+
+55. Grep
+
+O comando que ajuda a listar itens que são iguais  é o
+
+|(pipe) grep valorASerPesquisado
+
+esse comando junto com por exemplo tag, branch, ele trás tudo que tem relacionado ao item pesquisado
+
+
+exemplo:
+
+git tag | grep v1
+
+ele listaria tudo que começa com v1.
+
+
+
+56. Sourcetree
+
+sourcetree é uma ferramenta grafica para auxiliar no desenvolvimento com mo git.
+
+basicamente ele mostra de uma forma grafica, ele mostra tudo que o git mostra mais bem mais visual, e tudo em botões.
+
+
+57. GitKraken
+
+mais uma ferramenta grafica para poder usar o git, parece ser bem mais loko que o sourcetree, pelo menos a apresentação para mim parece mais legal.
+
+
+58. Visual Studio
+
+Mostra como ele fica no Visual Studio.
+
+
+59. Android Studio
+
+Mostra como ele fica no Android Studio.
+
+
+60. Aula bônus - Cupons
+
+Deixou cupom de desconto.
