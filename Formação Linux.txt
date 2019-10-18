@@ -1,0 +1,142 @@
+Treinamento linux
+
+Linux Para Padawans  
+
+Módulo 1 Aula 1: Gravação do 1º Encontro Online
+
+Explicou com vai funcionar o curso e mais ou menos vai ser a sequencia de aulas.
+
+
+Módulo 2 
+
+Aula 1: Gravação da Aula
+
+Mostrou mais conceitos teoricos do que pratica mais deu para ver mais ou menos como vai ser a didatica aplicada no curso.
+
+
+
+Aula 2: Gravação do Treino + Plantão Jedi
+
+Usar digitalocean   
+
+droplets é uma VPS isso na digitalocean
+
+esse é um servidor e que eu posso em um click criar uma maquina pronta, com a versão do linux e a distro que eu quiser no meu servidor.
+
+ele ta criando um ubuntu
+
+whoami - comando que mostra meu usuario 
+
+uname -r  - versão do kernel que está rodando
+
+du -h  - mostra a quantidade de espaço que o arquivo está utilizando
+
+free -m  - mostra a quantidade de memória sendo utilizada
+
+top - mostra os processos rodando 
+
+htop - mesma coisa mais mais boniinho e suporta mouse
+
+kill - encerra um processo, deve ser utilizado com o pid do processo em questão
+
+w -  mostra os usuarios logados
+
+uptime - mostra desde quando essa maquina está ligada
+
+service - serve para ver o status e iniciar ou desligar aqrquivos.
+
+tail + nomeDoArquivodeLog - le as ultimas linas de um registro
+
+tail -f + nomeDoArquivodeLog  - em tempo real
+
+servidor WEB
+
+apache 
+PHP
+MySQL
+
+
+MÓDULO 3 / AULA 1
+Gravação da Aula
+
+
+o $ indica que é um usuário comum que está usando o sistema
+
+o # indica que é um super usuário que está usando o sistema
+
+
+arquivo que define qual o shell o usuário vai utilizar fica no /etc/passwd
+
+para declarar variaveis no terminal é simples  você da um nome para a sua variavel e ai passa o valor dela entre "" (aspas duplas) ex: nome="lucas"
+
+para exibir o valor da variavel é só mandar um echo e o nome da variavel com $.  ex:echo $nome.
+
+Um dos comando mais importantes no terminal é o $PS1 (Prompt String 1)
+
+ele que mostra tudo que está escrito no seu prompt, e é possível ser alterado.
+
+\u = user name
+\h = hostname
+\W = diretório corrente(atual)
+
+$PS1 = variável que contem os dados que aparecem no prompt
+
+$PATH = Mostra os diretórios que estão mapeados como contendo scripts shell para serem executados
+
+$HOME = Sempre mostra a home, ou o diretório raiz daquele usuário.
+
+.bashrc = Arquivo de configuração do bash e em cada instancia do bash é uma execução desse arquivo.
+
+nesse cara eu consigo configurar variaveis e fazer com que elas não sejam apenas temporarias mais sim existam desde o inicio do bash.
+
+.bash_profile = Arquivo que contem as informações do meu perfil e que vão ser usadas como configurações de usuario dentro do bash
+
+.bash_history = arquivo que contem o historico de tudo que foi digitado no terminal, e usando a variavel $HISTORY ele mostra o que está gravado nesse arquivo.
+
+export = esse comando serve para que eu consiga exportar uma variavel entre varios terminais, ou em varias instancias de terminal, é usado sempre "export nomeDaVariavel"
+
+' ' = sempre apresenta o texto como ele é, sem interpretação
+
+" " = sempre interpreta o texto  fazendo com que se existir uma variavel no meio dele essa variavel seja executada.
+
+Comando de ajuda
+
+info - ele mostra uma interface com topicos de ajuda e você pode ir usando as setas para navegar, e se você chegar em um link é só dar um enter que ele entra em uma pagina daquele comando 
+
+man - esse comando mostra uma pagina com todas as informações referentes a um determinado comando, sua utilzação é "man nomeDoComando" ai ele abre a documentação se existir
+
+help - comando que mostra uma versão curta da documentação de um comando é utilizado "nomeDoComando --help" ou "nomeDoComando -h"
+
+apropos - esse comando pesquisa nos meus applicativos pela palavra chave que eu digitar e assim eu consigo saber quais programas eu tenho instalado que executam determinada ação, utilização "apropos termoQueEuQuero"
+
+cd - comando para navegar entre diretórios 
+cd .. - eu subo um nivel de diretório, ou seja eu saio do diretório que eu estou e vou para o diretório pai
+cd (-) - volta para onde eu estava antes por exemplo estou no diretório "Downloads" e fui direto para o "/root" se eu quiser voltar para a "Downloads" é só mandar um "cd -" que eu volto para la sem ter que digitar o comando todo.
+
+Comandos para aqrquivos
+
+touch - serve para criar arquivos 
+
+cp - ele copia arquivos entre diretórios detalhe para que ele consiga copiar é necessario que você aponte o diretório destino do arquivo e se for no mesmo diretório que você está é necessario que você mude o nome do arquivo 
+
+mv - serve para mover arquivos entre diretórios é usado o nome do arquivo e o diretório de destino, e caso você queria alterar o nome no diretório destino também é possivel
+
+
+rm - serve para remover arquivos ou diretórios sempre vem acompanhado do nome do arquivo ou diretório e tem algumas especificidades, se o diretório estiver com arquivos dentro é necessario utilizar a flag "-rf" que força a deleção ou a flag "-r" que faz a mesma coisa, tanto para arquivos quanto para diretórios
+
+Comando para Diretórios
+
+
+mkdir - cria diretórios é utilizado "mkdir nomeDoDiretorio" 
+
+rmdir - remove diretórios é utilizada "rmdir nomeDoDiretorio", aqui tem um porém  ele só remove diretórios vazios
+
+
+Linux é case sensitive ou seja o nome do arquivo se for escrito com tudo minusculo tem que ser acessado ou pesquisado com minusculo e etc.
+
+para pesquisa mais avançada da para usar o "?" no meio do comando ex. "ls a?" esse cara vai me trazes tudo que tiver a letra "a" e só mais um caracter depois do "a" e vai ser assim em quantos "?" em colocar.
+
+outra forma de pesquisar tudo mais padrão é o "*" ele lista tudo que existir do asterisco para frente.
+
+outra forma é com [] da para pesquisar usando "ls a[1-3]" ele vai listar tudo que tiver com essa nomeclatura mais trazendo só de 1-3
+
