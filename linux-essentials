@@ -30,3 +30,55 @@ Instalação Prática do Debian
 
 Está mostrando como que é feita a instalação do debian  em uma maquina virtual, explicou que sempre se deve instalar a versão estavel e não a ultima versão porque na ultima pode conter bugs ainda não corrigidos.
 
+
+
+
+MÓDULO 1 / AULA 6
+Instalação Prática do CentOS
+
+
+Mesma coisa, mostrando os passos para criar uma maquina virtual só que com o centOS.
+
+
+MÓDULO 1 / AULA 6
+Gravação: Aula com o Bruno Fraga
+
+
+Aqui ta com cara de ser a mesma aula que eu vi no mini curso de linux para padawans.
+
+
+
+MÓDULO 1 / AULA 7
+Gravação: Plantão Jedi c/ Bruno Fraga
+
+
+mesma coisa da outra aula, é um dos videos do linux para padawans.
+
+
+
+
+MÓDULO 2 / AULA 1
+Noções Básicas de Linha de Comando
+
+
+shell - interpretador de comando do linux
+
+
+bash - Bourne-Again SHell .
+
+é um shell com algumas modificações ou customizações, ele é um dos mais utilizados hoje no mundo linux.
+
+tipo de usuario no terminal 
+
+$ - usuario comum 
+
+# - usuario administrativo (root)
+
+o shell é um interpretador, e existem comando embarcados(embutidos) e comando externos
+
+para saber qual o shell eu to usando usa $SHELL
+
+comando "set" - mostra no arquivo de criação os meus comandos, ou como eles vão funcionar.
+
+comando "env" - mostra as variaveis que eu tenho disponiveis no meu usuario e no meu GLOBAL.
+
