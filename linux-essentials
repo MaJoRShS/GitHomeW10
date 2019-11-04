@@ -82,3 +82,89 @@ comando "set" - mostra no arquivo de criação os meus comandos, ou como eles v�
 
 comando "env" - mostra as variaveis que eu tenho disponiveis no meu usuario e no meu GLOBAL.
 
+
+
+MÓDULO 2 / AULA 2
+Obtendo Ajuda via Linha de Comando
+
+
+comando type
+
+serve para você saber se o comando que você quer executar é do sistema ou é de terceiros
+
+type nomeDoPrograma
+
+
+para acessar a documentação do seu comando é só usar o comando man
+
+man nomeDoPrograma
+
+comando info é a mesma coisa do man, só que mais simplificado.
+
+info nomeDoPrograma
+
+comando cat le as ultimas linhas de um arquivo, ou o arquivo todo mesmo.
+
+cat caminhoDoArquivo/nomeDoArquivo.extensao
+
+comando --help mostra uma pagina de ajuda daquele comando.
+
+
+MÓDULO 2 / AULA 3
+Usando Diretórios e Arquivos de Listagem
+
+Aqui ele mostra mais ou menos todos os diretórios ou estrutura de diretórios do linux, e mostra que para navegar entre diretórios é com o comando 'cd', e que para voltar um diretório por vez é só usar o comando 'cd ..' para voltar mais de um diretório por vez usa o comando 'cd ../..' que assim ele volta dois ou quantos diretórios você precisar.
+
+
+MÓDULO 2 / AULA 4
+Criando, Movendo e Excluindo Arquivos
+
+
+comando 'su' indica que eu quero acessar o terminal com o super usuario, é possivel acessar com 'su' ou com 'su -' e para acessar um outro usuario do sistema utiliza-se 'su -nomeDoUsuario'
+
+
+Criar um diretório 
+
+mkdir = make diretocry
+
+mkdir nomeDaPasta
+
+criar Arquivos
+
+touch nomeDoArquivo.extensao
+
+é possivel criar varios arquivos ou diretórios com o mesmo comando apenas separando por espaços.
+
+mkdir teste1 teste2 teste 3
+touch arquivo1 arquivo2 arquivo3
+
+Copiar arquivos
+
+
+cp nomeDoArquivo/caminhoDoArquivo
+
+Mover arquivos 
+
+mv nomeDoArquivo/diretórioDestino
+
+
+Remover arquivos
+
+rm nomeDoArquivo 
+
+ou
+
+rmdir nomeDoDiretorio
+
+e para removar diretórios com arquivos dentro sem ter que remover primeiro os arquivos e deposi o diretório usa se o comando 
+
+
+rm -rf nomeDoDiretorio
+
+
+existe ainda um metodo de cópia recursiva
+
+cp -R nomeDoDiretorio ou nomeDoArquivo /diretórioDestino
+
+quando eu coloco o nome do diretório copiado com / ele copía só o conteudo do diretório para o novo lugar, mais se eu colocar só o nome do diretório de origem ele copia o diretório e todo o conteudo dele.
+
