@@ -168,3 +168,98 @@ cp -R nomeDoDiretorio ou nomeDoArquivo /diretórioDestino
 
 quando eu coloco o nome do diretório copiado com / ele copía só o conteudo do diretório para o novo lugar, mais se eu colocar só o nome do diretório de origem ele copia o diretório e todo o conteudo dele.
 
+
+
+MÓDULO 3 / AULA 1
+Arquivar Arquivos via Linha de Comando
+
+Aqui ele mostrou melhor com funciona o tar, o tar é um compactador de arquivos do linux.
+
+
+aqui ele manda um tar cvf nomeDoArquivoCompactado.tar * ou nome  dos arquivos que eu quero compactar, ou apenas as extenções.
+
+
+as flags significam 
+
+c - compact
+v - verbose
+f - file
+
+para descompactar um arquivo que foi compactado pelo tar.
+
+tar xvf nomeDoArquivoCompactado.tar
+
+flags 
+
+x - extract 
+v - verbose
+f - file
+
+
+
+
+compactando com gzip
+
+segundo a lenda esse cara é o mais rapido dos compactadores para linux.
+
+
+tar czvf nomeDoArquivoCompactado.tar.gz  * ou nome  dos arquivos que eu quero compactar, ou apenas as extenções.
+
+
+as flags significam 
+
+c - compact
+z - flag que indica que eu estou usando o gzip
+v - verbose
+f - file
+
+
+
+tar xzvf nomeDoArquivoCompactado.tar
+
+flags 
+
+x - extract 
+z - flag que indica que eu estou usando o gzip
+v - verbose
+f - file
+
+
+
+compactando arquivos com o bzip
+
+
+tar cjvf nomeDoArquivoCompactado.tar.bz2  * ou nome  dos arquivos que eu quero compactar, ou apenas as extenções.
+
+
+as flags significam 
+
+c - compact
+z - flag que indica que eu estou usando o gzip
+v - verbose
+f - file
+
+
+
+tar xJvf nomeDoArquivoCompactado.tar.bz2
+
+flags 
+
+x - extract 
+z - flag que indica que eu estou usando o gzip
+v - verbose
+f - file
+
+
+
+
+Trabalhando com zip
+
+
+
+zip nomeDoArquivoCompactado.zip  * ou nome  dos arquivos que eu quero compactar, ou apenas as extenções.
+
+descompactar 
+
+unzip nomeDoArquivoCompactado.zip
+
