@@ -263,3 +263,130 @@ descompactar
 
 unzip nomeDoArquivoCompactado.zip
 
+
+
+MÓDULO 3 / AULA 2
+Pesquisar e Extrair Dados de Arquivos 1/2
+
+
+comando less é utilizado para ler um arquivo pelo terminal, é apenas leitura sem nenhuma alteração do arquivo, após o arquivo ser aberto para continuar lendo se ele for muito grande é só usar as setas para cima ou para baixo que ele vai avançando no arquivo.
+
+syntax
+
+less nomeDoArquivo
+
+para pesquisar por um termo ou palavra utilizando o less é só usar o comando "/",  a barra procura de onde você está para o final do arquivo, e para buscar voltando é só usar o "?" que ele faz a busca voltando de onde você está.
+
+
+para sair da leitura do arquivo é só digitar a letra "q".
+
+
+Comand o "wc"
+
+o comando wc serve para ver a quantidade de linhas dentro do arquivo, a quantidade de palavras dentro do arquivo e o tamanho dele em bytes.
+
+wc nomeDoArquivo
+
+
+
+Comando "cat"
+
+o comando cat é utilizado para ler as ultimas linhas de um arquivo, e a diferença dele e do wc é que o wc fica com o arquivo aberto até ser digitado a letra "q", e o cat apenas exibe o final do arquivo e já fecha a leitura.
+
+cat nomeDoArquivo
+
+
+
+Comando "tac"
+
+o comnado tac é diferente do cat por ler as primeiras linhas de um arquivo.
+
+tac nomeDoArquivo
+
+
+
+Comando "head"
+
+O comando head é utilizado para ler as 10 primeiras linhas de um arquivo, mais tem a opção de passar uma flag e informar a quantidade de linhas que se quer ler
+
+head nomeDoArquivo
+
+ou 
+
+head -15 nomeDoArquivo
+
+aqui eu vou ler as 15 primeiras linhas do arquivo.
+
+
+
+Comando "tail"
+
+o comando tail serve para ler a ultima linha de um arquivo, e utilizando uma flag é possivel manter a leitura em tempo real do arquivo.
+
+tail nomeDoArquivo
+
+ou 
+
+tail -f nomeDoArquivo
+
+o -f é de follow, e assim você fica lendo todas as linhas que são inseridas no arquivo.
+
+
+Comando "sort"
+
+o comando sort serve para ler o arquivo e apresentar a leitura em ordem alfabetica, ou seja ele vai ler todo o arquivo e apresentar as informações em ordem alfabetica.
+
+
+Comando cut
+
+O comando cut serve para apresentar apenas algumas informações do meu arquivo.
+
+cut -d ':' -f 1,2 nomeDoArquivo
+
+a flag "-d" serve para informar o delimitador que no caso é o ":" 
+a flag "-f" indica que qual é o arquivo que eu quero ler e os numeros são as colunas que eu quero que sejam exibidas.
+
+
+tem um esquema usando o pipe "|" não intendi muito bem , mais parece que eu consigo uzar o pipe e passar mais de um comando , ou seja eu concateno mais de um comando na mesma linha, nos meus testes não deu em nada.
+
+
+Redirecionadores
+
+
+No linux existem tipos de redirecionadores que fazem com que comandos de entra sejam redirecionados as suas saidas para outro lugar ao invés de simplemente exibir na tela.
+
+ls -la > saida-ls.txt
+
+aqui eu estou falando que todas as vezes em que eu digitar o comando "ls -la" eu vou redirecionar a saida para dentro do arquivo saida-ls.txt ou seja meio que crio um arquivo de log, de tudo que foi digitado no terminal.
+
+
+da forma que está o exemplo acima todas as vezes que for digitado o "ls -la" ele vai sobrescrever o que estava anteriormente no arquivo, mais se eu passar mais um sinal de maior ele vai acrescentar o que foi pesquisado no arquivo.
+
+ls -la >> saida-ls.txt
+
+
+dessa forma eu vou acrescentar no arquivo o que foi digitado no arquivo.
+
+
+
+
+MÓDULO 3 / AULA 3
+Pesquisar e Extrair Dados de Arquivos 2/2
+
+Aqui ele mostra como usar o RegEx na pesquisa por palavras dentro de Arquivos,
+
+egrep "[RegEx]" nomeDoArquivo
+
+^ - Pesquisa por palavra no começo da linha
+$ - Pesquisa por palavra no final da linha
+. - Qualquer caracter dentro do arquivo
+* - qualquer sequencia com tamanho igual ou superior  a zero do  caracter precedente.[aqui é qualquere coisa que tenha no arquivo]
+? - uma ou nenhuma ocorrencia
+[] - qualquer carcater que esteja dentro dos colchetes.
+
+
+
+MÓDULO 3 / AULA 4
+Como Transformar Comandos em Scripts 1/2
+
+
