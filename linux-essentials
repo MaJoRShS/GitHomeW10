@@ -390,3 +390,73 @@ MÓDULO 3 / AULA 4
 Como Transformar Comandos em Scripts 1/2
 
 
+Aqui mostrou primeiro o vi e o vim, que são editores de texto via linha de comando, ele é bem simples e bem facil de usar, claro que eu preciso dar uma praticada porque todas as minhas ações nos editores são por comandos, então eu preciso decorar essas paradas.
+
+
+para sair do vi e do vim
+:q   = quit
+
+forçar a saida sem salvar nada
+:q!
+
+para salvar antes de sair
+:wq
+
+Criando Scripts com vim ou vi
+
+primeira linha tem que colocar que é um arquivo executavel, 
+
+comandos conhecidos como she bang, que é o que indica que é um executavel.
+
+#! = she bang
+
+#!/bin/bash esse cara é o que indica que o arquivo é um executavel e que ele vai ser interpretado é o bash.
+
+se eu colocar # após a 1ª liha isso indica que é um comentário.
+
+
+para apresentar mensagens texto ou algo do tipo é só mandar o echo "" igual o PHP
+
+Para adiconar variaveis dentro arquivo é igual a qualquer linguagem de programaão, declara a variavel com nome sem caracter especial, e o linux é case sensitive, para declara um comando do linux como sendo uma variavel é necessário declarar ele ou com acrase (` `) ou com $(comando).
+
+exemplo : 
+
+oucomando_varivel=`ls -la`
+ou
+comando_varivel=$(ls -la)
+
+
+
+Interação com usuario
+
+para pegar algo que o usuario digitou direto no shell é so usar o comando read
+
+
+read nomeDaVariavel;
+
+Estrutura condicional
+
+if condicao 
+then 
+    faz alguma coisa
+fi(fecha o if)
+
+ou
+
+if condicao 
+then 
+    faz alguma coisa
+else 
+    faz alguma coisa
+fi(fecha o if)
+
+
+ou 
+
+if [condicao] 
+then 
+    faz alguma coisa
+elif [condicao]
+then
+    faz alguma coisa
+fi(fecha o if)
