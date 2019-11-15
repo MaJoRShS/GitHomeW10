@@ -3433,3 +3433,6 @@ public class Program {
 	}
 
 }
+
+
+Aqui vou parar de acrescentar aulas porque vou começar do 0, o professor inseriu varias aulas no meio do curso, até antes de onde eu já tinha passado, por isso vou iniciar do 0.
