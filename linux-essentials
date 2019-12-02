@@ -402,6 +402,8 @@ forçar a saida sem salvar nada
 para salvar antes de sair
 :wq
 
+/ = Serve para fazer uma pesquisa dentro de um arquivo
+
 Criando Scripts com vim ou vi
 
 primeira linha tem que colocar que é um arquivo executavel, 
@@ -431,8 +433,13 @@ Interação com usuario
 
 para pegar algo que o usuario digitou direto no shell é so usar o comando read
 
-
 read nomeDaVariavel;
+
+aqui você cria a varivel já com ela sendo utilizada, exemplo.
+
+echo "Alguma coisa"
+read nome_alguma_coisa;
+echo "Imprime o alguma coisa $nome_alguma_coisa!"
 
 Estrutura condicional
 
@@ -460,3 +467,6 @@ elif [condicao]
 then
     faz alguma coisa
 fi(fecha o if)
+
+
+
